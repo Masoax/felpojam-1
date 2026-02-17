@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bwj8f75xtgpbn"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1363727023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=951998910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=238548951]
+layout_mode = 2
+
+[node name="BtnIniciar" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1232188284]
+layout_mode = 2
+text = "Iniciar"
+
+[node name="BtnSair" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1959171468]
+layout_mode = 2
+text = "Sair"
