@@ -1,6 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771359506
+::res://::1771451924
+cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771444087::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2696706914000194429::1771356291::1771356291::1::::<><><>0<>0<>40742816e9b49155a0d58f4b319e1da2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-level.tscn::PackedScene::1682310076427593122::1771356351::0::1::::<><><>0<>0<><>::
-menu_principal.tscn::PackedScene::3951168961409164715::1771356292::0::1::::<><><>0<>0<><>::
-::res://Scripts/::1771356320
+menu_principal.gd::GDScript::5184321158131886496::1771443526::0::1::::<>Control<><>0<>0<><>::
+menu_principal.tscn::PackedScene::3951168961409164715::1771451884::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/Caderno_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg
+::res://Scripts/::1771442280
+::res://Sprites/::1771444535
+Caderno_placeholder.webp::CompressedTexture2D::2768207553330934824::1771444533::1771444535::1::::<><><>0<>0<>e5fa45116db06e8acee754b30ad425c5<>res://.godot/imported/Caderno_placeholder.webp-f1a517eb029ba22bdac0921e128d306c.ctex::

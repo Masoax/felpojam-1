@@ -1,4 +1,10 @@
+Label
+TextureRect
+Control
+MarginContainer
+CenterContainer
+HBoxContainer
+TextEdit
 Button
 VBoxContainer
-CenterContainer
 Sprite2D
