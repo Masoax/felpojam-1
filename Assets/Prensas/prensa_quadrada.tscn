@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d3g2ssfo4j0kg"]
+
+[ext_resource type="Texture2D" uid="uid://7ejrlkcm3vt7" path="res://Sprites/gameplay/Prensas/prensa_quadrada.png" id="1_i2j28"]
+[ext_resource type="Script" uid="uid://cjc4g3webjl2a" path="res://Assets/Prensas/texture_button.gd" id="3_e36iw"]
+[ext_resource type="Texture2D" uid="uid://bu1p831mcveg8" path="res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png" id="3_wq1xs"]
+
+[node name="PrensaQuadrada" type="Node2D" unique_id=1770594812]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=948831397]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_i2j28")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=552891195]
+offset_right = 1080.0
+offset_bottom = 1920.0
+scale = Vector2(0.1, 0.1)
+keep_pressed_outside = true
+texture_normal = ExtResource("1_i2j28")
+texture_pressed = ExtResource("3_wq1xs")
+texture_hover = ExtResource("3_wq1xs")
+script = ExtResource("3_e36iw")
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

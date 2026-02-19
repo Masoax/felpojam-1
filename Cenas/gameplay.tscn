@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://csvwtbeuyp48q"]
+
+[ext_resource type="Script" uid="uid://jhske44whbf6" path="res://Cenas/gameplay.gd" id="1_jyft0"]
+[ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/prensa_quadrada.tscn" id="1_qcc3b"]
+[ext_resource type="Texture2D" uid="uid://dyoqei7mehgx" path="res://Sprites/gameplay/background.png" id="1_s4ywb"]
+[ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/prensa_circular.tscn" id="2_6y4ne"]
+[ext_resource type="PackedScene" uid="uid://ksgortoex2hf" path="res://Assets/esteira.tscn" id="4_5xcy5"]
+[ext_resource type="PackedScene" uid="uid://t57gftldiusw" path="res://Assets/Dispensers/dispenser_rosa.tscn" id="5_s4ywb"]
+[ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/dispenser_amarelo.tscn" id="6_jhwwu"]
+[ext_resource type="PackedScene" uid="uid://dudddt1eabtxl" path="res://Assets/Dispensers/dispenser_verde.tscn" id="7_jyft0"]
+[ext_resource type="PackedScene" uid="uid://ct5mno1i3ebn4" path="res://Assets/hud.tscn" id="8_jhwwu"]
+
+[node name="Gameplay" type="Node" unique_id=466691166]
+script = ExtResource("1_jyft0")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1570480575]
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("1_s4ywb")
+centered = false
+
+[node name="Esteira" parent="." unique_id=1633439148 instance=ExtResource("4_5xcy5")]
+position = Vector2(478, 615)
+
+[node name="PrensaQuadrada" parent="." unique_id=1770594812 instance=ExtResource("1_qcc3b")]
+position = Vector2(255, 427)
+
+[node name="PrensaCircular" parent="." unique_id=1770485869 instance=ExtResource("2_6y4ne")]
+position = Vector2(222, 517)
+
+[node name="teto" parent="." unique_id=556147889 instance=ExtResource("4_5xcy5")]
+position = Vector2(538, 405)
+
+[node name="DispenserRosa" parent="." unique_id=758154067 instance=ExtResource("5_s4ywb")]
+position = Vector2(448, 554)
+
+[node name="DispenserAmarelo" parent="." unique_id=2065178081 instance=ExtResource("6_jhwwu")]
+position = Vector2(543, 555)
+
+[node name="DispenserVerde" parent="." unique_id=565269441 instance=ExtResource("7_jyft0")]
+position = Vector2(644, 552)
+
+[node name="Hud" parent="." unique_id=1909643394 instance=ExtResource("8_jhwwu")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ksgortoex2hf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nqvds"]
+
+[node name="Esteira" type="Node2D" unique_id=1633439148]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=927490384]
+position = Vector2(0, 11.500001)
+scale = Vector2(1500, 123)
+texture = SubResource("PlaceholderTexture2D_nqvds")

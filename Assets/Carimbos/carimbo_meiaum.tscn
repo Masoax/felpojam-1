@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cka2b2u1h034q"]
+
+[ext_resource type="Texture2D" uid="uid://6q6w3nln03" path="res://Sprites/gameplay/Carimbos/carimbo_meiaum.png" id="1_ac6nw"]
+
+[node name="CarimboMeiaum" type="Node2D" unique_id=2017139842]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1563789617]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_ac6nw")
