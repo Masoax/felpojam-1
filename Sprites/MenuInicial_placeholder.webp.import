@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfo68d5wb3mce"
-path="res://.godot/imported/Caderno_placeholder.webp-f1a517eb029ba22bdac0921e128d306c.ctex"
+path="res://.godot/imported/MenuInicial_placeholder.webp-312c8ae59224edfcfbdd454527274264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Caderno_placeholder.webp"
-dest_files=["res://.godot/imported/Caderno_placeholder.webp-f1a517eb029ba22bdac0921e128d306c.ctex"]
+source_file="res://Sprites/MenuInicial_placeholder.webp"
+dest_files=["res://.godot/imported/MenuInicial_placeholder.webp-312c8ae59224edfcfbdd454527274264.ctex"]
 
 [params]
 

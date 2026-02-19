@@ -16,3 +16,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Jogo Começou"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1557320456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 260
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=151596975]
+layout_mode = 2
+
+[node name="PgnEsquerda" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1935841031]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PgnDireita" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1873570680]
+layout_mode = 2
+size_flags_horizontal = 3

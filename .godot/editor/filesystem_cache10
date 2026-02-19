@@ -1,9 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771451924
-cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771444087::0::1::::<><><>0<>0<><>::
+::res://::1771532368
+cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771530290::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2696706914000194429::1771356291::1771356291::1::::<><><>0<>0<>40742816e9b49155a0d58f4b319e1da2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-menu_principal.gd::GDScript::5184321158131886496::1771443526::0::1::::<>Control<><>0<>0<><>::
-menu_principal.tscn::PackedScene::3951168961409164715::1771451884::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/Caderno_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg
+menu_principal.gd::GDScript::5184321158131886496::1771531660::0::1::::<>Control<><>0<>0<><>::
+menu_principal.tscn::PackedScene::3951168961409164715::1771532368::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/MenuInicial_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg<>uid://bkhmkvj5bfjmy::::res://Sprites/MenuConfig_placeholder.png
 ::res://Scripts/::1771442280
-::res://Sprites/::1771444535
-Caderno_placeholder.webp::CompressedTexture2D::2768207553330934824::1771444533::1771444535::1::::<><><>0<>0<>e5fa45116db06e8acee754b30ad425c5<>res://.godot/imported/Caderno_placeholder.webp-f1a517eb029ba22bdac0921e128d306c.ctex::
+::res://Sprites/::1771532283
+MenuConfig_placeholder.png::CompressedTexture2D::3103507344462289036::1771532410::1771532415::1::::<><><>0<>0<>b9be6274c466669bb2bb7d839f0612af<>res://.godot/imported/MenuConfig_placeholder.png-ca79e803a1864b7628d5dba116ab8619.ctex::
+MenuInicial_placeholder.webp::CompressedTexture2D::2768207553330934824::1771444533::1771531777::1::::<><><>0<>0<>43ea8fc092ffa002d880f83dd3c3e30b<>res://.godot/imported/MenuInicial_placeholder.webp-312c8ae59224edfcfbdd454527274264.ctex::
