@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://yeqyiff83e5q" path="res://Assets/Prensas/prensa_quadrada.gd" id="1_e36iw"]
 [ext_resource type="Texture2D" uid="uid://7ejrlkcm3vt7" path="res://Sprites/gameplay/Prensas/prensa_quadrada.png" id="1_i2j28"]
+[ext_resource type="Script" uid="uid://cjc4g3webjl2a" path="res://Assets/Prensas/texture_button.gd" id="3_e36iw"]
 [ext_resource type="Texture2D" uid="uid://bu1p831mcveg8" path="res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png" id="3_wq1xs"]
 
 [sub_resource type="Curve2D" id="Curve2D_347wk"]
@@ -70,14 +71,26 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f1mhl"]
 _data = {
-&"PrensarQuadrado": SubResource("Animation_bq6px"),
+&"Prensar": SubResource("Animation_bq6px"),
 &"RESET": SubResource("Animation_ehuvs")
 }
 
 [node name="PrensaQuadrada" type="Node2D" unique_id=1770594812]
 script = ExtResource("1_e36iw")
 
+[node name="TextureButton" type="TextureButton" parent="." unique_id=552891195]
+visible = false
+offset_right = 1080.0
+offset_bottom = 1920.0
+scale = Vector2(0.1, 0.1)
+keep_pressed_outside = true
+texture_normal = ExtResource("1_i2j28")
+texture_pressed = ExtResource("3_wq1xs")
+texture_hover = ExtResource("3_wq1xs")
+script = ExtResource("3_e36iw")
+
 [node name="Path2D" type="Path2D" parent="." unique_id=737811344]
+position = Vector2(155, 106)
 curve = SubResource("Curve2D_347wk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1040538032]
@@ -100,5 +113,7 @@ libraries/ = SubResource("AnimationLibrary_f1mhl")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1258576639]
 bus = &"SFX"
 
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
 [connection signal="mouse_entered" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

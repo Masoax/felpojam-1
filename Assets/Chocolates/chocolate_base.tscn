@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://8fbklpon0anc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ynq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkiwg"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cml8k"]
+size = Vector2(0.5, 1)
+
+[node name="ChocolateBase" type="Node2D" unique_id=1235136312]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=273408905]
+position = Vector2(225.625, 155.125)
+scale = Vector2(228.74998, 63.750004)
+texture = SubResource("PlaceholderTexture2D_7ynq5")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=921433282]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1587106671]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_kkiwg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=196719642]
+position = Vector2(-0.25, 0)
+shape = SubResource("RectangleShape2D_cml8k")

@@ -1,4 +1,9 @@
-res://cena_gameplay_test.tscn
-res://menu_principal.tscn
-res://menu_principal.gd
-res://default_bus_layout.tres
+res://Cenas/gameplay.tscn
+res://Assets/Prensas/prensa_quadrada.tscn
+res://Assets/Prensas/path_follow_2d.gd
+res://Assets/Prensas/prensa_quadrada.gd
+res://Assets/hud.tscn
+res://Cenas/gameplay.gd
+res://Cenas/testesColisao.tscn
+res://Assets/Chocolates/chocolate_base.tscn
+res://Assets/esteira.tscn

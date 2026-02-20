@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/dispenser_amarelo.tscn" id="6_jhwwu"]
 [ext_resource type="PackedScene" uid="uid://dudddt1eabtxl" path="res://Assets/Dispensers/dispenser_verde.tscn" id="7_jyft0"]
 [ext_resource type="PackedScene" uid="uid://ct5mno1i3ebn4" path="res://Assets/hud.tscn" id="8_jhwwu"]
+[ext_resource type="PackedScene" uid="uid://dc65x0c08vy80" path="res://Assets/Carimbos/carimbo_bela.tscn" id="10_2ch6n"]
+[ext_resource type="PackedScene" uid="uid://vokqpcw2vwc5" path="res://Assets/Carimbos/carimbo_carinha.tscn" id="11_ecr5f"]
+[ext_resource type="PackedScene" uid="uid://cka2b2u1h034q" path="res://Assets/Carimbos/carimbo_meiaum.tscn" id="12_oryen"]
 
 [node name="Gameplay" type="Node" unique_id=466691166]
 script = ExtResource("1_jyft0")
@@ -19,25 +22,25 @@ texture = ExtResource("1_s4ywb")
 centered = false
 
 [node name="Esteira" parent="." unique_id=1633439148 instance=ExtResource("4_5xcy5")]
-position = Vector2(478, 615)
+position = Vector2(644, 385.99997)
+scale = Vector2(0.7, 0.7)
 
 [node name="PrensaQuadrada" parent="." unique_id=1770594812 instance=ExtResource("1_qcc3b")]
-position = Vector2(255, 427)
+position = Vector2(319, 276)
+scale = Vector2(2, 2)
 
 [node name="PrensaCircular" parent="." unique_id=1770485869 instance=ExtResource("2_6y4ne")]
-position = Vector2(222, 517)
-
-[node name="teto" parent="." unique_id=556147889 instance=ExtResource("4_5xcy5")]
-position = Vector2(538, 405)
+position = Vector2(148, 361)
+scale = Vector2(2, 2)
 
 [node name="DispenserRosa" parent="." unique_id=758154067 instance=ExtResource("5_s4ywb")]
-position = Vector2(448, 554)
+position = Vector2(467, 404)
 
 [node name="DispenserAmarelo" parent="." unique_id=2065178081 instance=ExtResource("6_jhwwu")]
-position = Vector2(543, 555)
+position = Vector2(579, 411)
 
 [node name="DispenserVerde" parent="." unique_id=565269441 instance=ExtResource("7_jyft0")]
-position = Vector2(644, 552)
+position = Vector2(667, 418)
 
 [node name="Hud" parent="." unique_id=1909643394 instance=ExtResource("8_jhwwu")]
 anchors_preset = 0
@@ -45,3 +48,15 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="CarimboBela" parent="." unique_id=2017139842 instance=ExtResource("10_2ch6n")]
+position = Vector2(810.00006, 455)
+scale = Vector2(1.5, 1.5)
+
+[node name="CarimboCarinha" parent="." unique_id=946577508 instance=ExtResource("11_ecr5f")]
+position = Vector2(935.00006, 462)
+scale = Vector2(1.5, 1.5)
+
+[node name="CarimboMeiaum" parent="." unique_id=1556160325 instance=ExtResource("12_oryen")]
+position = Vector2(1054, 451.00003)
+scale = Vector2(1.5, 1.5)
