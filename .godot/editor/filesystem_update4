@@ -7,3 +7,5 @@ res://Cenas/gameplay.gd
 res://Cenas/testesColisao.tscn
 res://Assets/Chocolates/chocolate_base.tscn
 res://Assets/esteira.tscn
+res://Assets/Prensas/PrensarQuadrado.res
+res://Assets/Chocolates/chocolate_controler.gd

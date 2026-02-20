@@ -1,13 +1,13 @@
+Control
+Line2D
+AnimatedSprite2D
 CollisionShape2D
 Area2D
 Sprite2D
-Line2D
-Control
 Button
 AudioStreamPlayer2D
 TextureProgressBar
 Timer
-AnimatedSprite2D
 ReferenceRect
 Path2D
 PathFollow2D
