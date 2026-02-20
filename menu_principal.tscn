@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bfo68d5wb3mce" path="res://Sprites/MenuInicial_placeholder.webp" id="3_ul6ys"]
 [ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="4_ns3he"]
 [ext_resource type="Texture2D" uid="uid://bkhmkvj5bfjmy" path="res://Sprites/MenuConfig_placeholder.png" id="5_fa1tu"]
+[ext_resource type="Texture2D" uid="uid://hdj71ovf8320" path="res://Sprites/MenuTutorial_placeholder.png" id="6_a6518"]
+[ext_resource type="Texture2D" uid="uid://b0qhparkhfxr1" path="res://Sprites/MenuCreditos_placeholder.png" id="7_yxm4i"]
 
 [node name="MenuPrincipal" type="Control" unique_id=1363727023]
 layout_mode = 3
@@ -36,7 +38,7 @@ texture = ExtResource("3_ul6ys")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnIniciar" type="Button" parent="MenuInicial/TextureRect" unique_id=1232188284]
+[node name="BtnIniciar" type="Button" parent="MenuInicial" unique_id=1232188284]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.309375
@@ -47,7 +49,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Iniciar"
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnTutorial" type="Button" parent="MenuInicial/TextureRect" unique_id=81930302]
+[node name="BtnTutorial" type="Button" parent="MenuInicial" unique_id=81930302]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.30234376
@@ -58,7 +60,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Tutorial"
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnConfig" type="Button" parent="MenuInicial/TextureRect" unique_id=179059515]
+[node name="BtnConfig" type="Button" parent="MenuInicial" unique_id=179059515]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2921875
@@ -69,7 +71,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Configurações"
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnCreditos" type="Button" parent="MenuInicial/TextureRect" unique_id=705765288]
+[node name="BtnCreditos" type="Button" parent="MenuInicial" unique_id=705765288]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
@@ -81,7 +83,7 @@ text = "Créditos
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnSair" type="Button" parent="MenuInicial/TextureRect" unique_id=1959171468]
+[node name="BtnSair" type="Button" parent="MenuInicial" unique_id=1959171468]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.13125
@@ -93,7 +95,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sair"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="MenuInicial/TextureRect" unique_id=840569768]
+[node name="TextureRect2" type="TextureRect" parent="MenuInicial" unique_id=840569768]
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 1
 anchors_preset = -1
@@ -104,7 +106,7 @@ anchor_bottom = 0.74027777
 texture = ExtResource("4_ns3he")
 metadata/_edit_use_anchors_ = true
 
-[node name="NomeDoJogo" type="Label" parent="MenuInicial/TextureRect" unique_id=193045302]
+[node name="NomeDoJogo" type="Label" parent="MenuInicial" unique_id=193045302]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.26953125
@@ -114,6 +116,38 @@ anchor_bottom = 0.29305556
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "NOME DO JOGO"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuTutorial" type="Control" parent="." unique_id=1380683657]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MenuTutorial" unique_id=555649731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_a6518")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=211087816]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12265625
+anchor_top = 0.12777779
+anchor_right = 0.22172852
+anchor_bottom = 0.18788588
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuConfig" type="Control" parent="." unique_id=574583915]
@@ -137,7 +171,7 @@ texture = ExtResource("5_fa1tu")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnVoltar" type="Button" parent="MenuConfig/TextureRect" unique_id=1489302557]
+[node name="BtnVoltar" type="Button" parent="MenuConfig" unique_id=1489302557]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.12265625
@@ -148,7 +182,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
-[node name="Configuracoes" type="Label" parent="MenuConfig/TextureRect" unique_id=903175959]
+[node name="Configuracoes" type="Label" parent="MenuConfig" unique_id=903175959]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2625
@@ -160,7 +194,7 @@ theme_override_font_sizes/font_size = 30
 text = "Configurações"
 metadata/_edit_use_anchors_ = true
 
-[node name="Geral" type="Label" parent="MenuConfig/TextureRect" unique_id=2131817894]
+[node name="Geral" type="Label" parent="MenuConfig" unique_id=2131817894]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.20234375
@@ -172,7 +206,7 @@ theme_override_font_sizes/font_size = 30
 text = "Geral"
 metadata/_edit_use_anchors_ = true
 
-[node name="Musica" type="Label" parent="MenuConfig/TextureRect" unique_id=1407362580]
+[node name="Musica" type="Label" parent="MenuConfig" unique_id=1407362580]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.19453125
@@ -184,7 +218,7 @@ theme_override_font_sizes/font_size = 30
 text = "Música"
 metadata/_edit_use_anchors_ = true
 
-[node name="SFX" type="Label" parent="MenuConfig/TextureRect" unique_id=1033873499]
+[node name="SFX" type="Label" parent="MenuConfig" unique_id=1033873499]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.20078126
@@ -196,7 +230,7 @@ theme_override_font_sizes/font_size = 30
 text = "SFX"
 metadata/_edit_use_anchors_ = true
 
-[node name="TelaCheia" type="Label" parent="MenuConfig/TextureRect" unique_id=2123009757]
+[node name="TelaCheia" type="Label" parent="MenuConfig" unique_id=2123009757]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25234374
@@ -208,7 +242,7 @@ theme_override_font_sizes/font_size = 30
 text = "Tela Cheia"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="MenuConfig/TextureRect" unique_id=761214042]
+[node name="TextureRect2" type="TextureRect" parent="MenuConfig" unique_id=761214042]
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 1
 anchors_preset = -1
@@ -219,7 +253,7 @@ anchor_bottom = 0.74027777
 texture = ExtResource("4_ns3he")
 metadata/_edit_use_anchors_ = true
 
-[node name="SliderGeral" type="HSlider" parent="MenuConfig/TextureRect" unique_id=2058826330]
+[node name="SliderGeral" type="HSlider" parent="MenuConfig" unique_id=2058826330]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32265624
@@ -229,7 +263,7 @@ anchor_bottom = 0.38055557
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="SliderMusica" type="HSlider" parent="MenuConfig/TextureRect" unique_id=2055322101]
+[node name="SliderMusica" type="HSlider" parent="MenuConfig" unique_id=2055322101]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3265625
@@ -239,33 +273,71 @@ anchor_bottom = 0.5013889
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="SliderSFX" type="HSlider" parent="MenuConfig/TextureRect" unique_id=1010897813]
+[node name="SliderSFX" type="HSlider" parent="MenuConfig" unique_id=1010897813]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.32734376
 anchor_top = 0.60555553
 anchor_right = 0.4890625
 anchor_bottom = 0.62777776
+offset_bottom = 3.0517578e-05
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig/TextureRect" unique_id=1408302889]
+[node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig" unique_id=1408302889]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.38046876
 anchor_top = 0.7083333
 anchor_right = 0.425
 anchor_bottom = 0.85
+offset_right = 51.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 text = "Tela Cheia"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MenuInicial/TextureRect/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
-[connection signal="pressed" from="MenuInicial/TextureRect/BtnConfig" to="." method="_on_btn_config_pressed"]
-[connection signal="pressed" from="MenuInicial/TextureRect/BtnSair" to="." method="_on_btn_sair_pressed"]
-[connection signal="pressed" from="MenuConfig/TextureRect/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
-[connection signal="value_changed" from="MenuConfig/TextureRect/SliderGeral" to="." method="_on_slider_geral_value_changed"]
-[connection signal="value_changed" from="MenuConfig/TextureRect/SliderMusica" to="." method="_on_slider_musica_value_changed"]
-[connection signal="value_changed" from="MenuConfig/TextureRect/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
-[connection signal="toggled" from="MenuConfig/TextureRect/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
+[node name="MenuCreditos" type="Control" parent="." unique_id=827831790]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MenuCreditos" unique_id=1006726884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_yxm4i")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnVoltar" type="Button" parent="MenuCreditos/TextureRect" unique_id=1255496654]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14296874
+anchor_top = 0.14027777
+anchor_right = 0.23422852
+anchor_bottom = 0.20038588
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MenuInicial/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnTutorial" to="." method="_on_btn_tutorial_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnCreditos" to="." method="_on_btn_creditos_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnSair" to="." method="_on_btn_sair_pressed"]
+[connection signal="pressed" from="MenuTutorial/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="pressed" from="MenuConfig/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="value_changed" from="MenuConfig/SliderGeral" to="." method="_on_slider_geral_value_changed"]
+[connection signal="value_changed" from="MenuConfig/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="MenuConfig/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="toggled" from="MenuConfig/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
+[connection signal="pressed" from="MenuCreditos/TextureRect/BtnVoltar" to="." method="_on_btn_voltar_pressed"]

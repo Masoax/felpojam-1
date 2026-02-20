@@ -1,10 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771532368
+::res://::1771615988
 cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771530290::0::1::::<><><>0<>0<><>::
+default_bus_layout.tres::AudioBusLayout::6349775516858901539::1771533701::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2696706914000194429::1771356291::1771356291::1::::<><><>0<>0<>40742816e9b49155a0d58f4b319e1da2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-menu_principal.gd::GDScript::5184321158131886496::1771531660::0::1::::<>Control<><>0<>0<><>::
-menu_principal.tscn::PackedScene::3951168961409164715::1771532368::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/MenuInicial_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg<>uid://bkhmkvj5bfjmy::::res://Sprites/MenuConfig_placeholder.png
+menu_principal.gd::GDScript::5184321158131886496::1771536972::0::1::::<>Control<><>0<>0<><>::
+menu_principal.tscn::PackedScene::3951168961409164715::1771615988::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/MenuInicial_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg<>uid://bkhmkvj5bfjmy::::res://Sprites/MenuConfig_placeholder.png
 ::res://Scripts/::1771442280
-::res://Sprites/::1771532283
+::res://Sprites/::1771616785
 MenuConfig_placeholder.png::CompressedTexture2D::3103507344462289036::1771532410::1771532415::1::::<><><>0<>0<>b9be6274c466669bb2bb7d839f0612af<>res://.godot/imported/MenuConfig_placeholder.png-ca79e803a1864b7628d5dba116ab8619.ctex::
+MenuCreditos_placeholder.png::CompressedTexture2D::4174623651292413136::1771616785::1771616810::1::::<><><>0<>0<>cf44d57a6b26bd643e0ba30e8d4e34be<>res://.godot/imported/MenuCreditos_placeholder.png-eee3d0e3c1b702714544bbaf4e69e00d.ctex::
 MenuInicial_placeholder.webp::CompressedTexture2D::2768207553330934824::1771444533::1771531777::1::::<><><>0<>0<>43ea8fc092ffa002d880f83dd3c3e30b<>res://.godot/imported/MenuInicial_placeholder.webp-312c8ae59224edfcfbdd454527274264.ctex::
+MenuTutorial_placeholder.png::CompressedTexture2D::498120025264782359::1771616692::1771616810::1::::<><><>0<>0<>5664611065ae105311c1905a17738981<>res://.godot/imported/MenuTutorial_placeholder.png-a3403e183d108b7917ee54cee437c34c.ctex::
