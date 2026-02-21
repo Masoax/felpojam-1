@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3g2ssfo4j0kg"]
 
-[ext_resource type="Script" uid="uid://yeqyiff83e5q" path="res://Assets/Prensas/prensa_quadrada.gd" id="1_e36iw"]
+[ext_resource type="Script" uid="uid://yeqyiff83e5q" path="res://Assets/Prensas/Quadrada/prensa_quadrada.gd" id="1_e36iw"]
 [ext_resource type="Texture2D" uid="uid://7ejrlkcm3vt7" path="res://Sprites/gameplay/Prensas/prensa_quadrada.png" id="1_i2j28"]
 [ext_resource type="Texture2D" uid="uid://bu1p831mcveg8" path="res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png" id="3_wq1xs"]
 
@@ -38,7 +38,7 @@ tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.5),
+"times": PackedFloat32Array(0, 0.47, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("3_wq1xs"), ExtResource("3_wq1xs"), ExtResource("1_i2j28")]

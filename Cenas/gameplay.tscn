@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://csvwtbeuyp48q"]
 
 [ext_resource type="Script" uid="uid://jhske44whbf6" path="res://Cenas/gameplay.gd" id="1_jyft0"]
-[ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/prensa_quadrada.tscn" id="1_qcc3b"]
+[ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/Quadrada/prensa_quadrada.tscn" id="1_qcc3b"]
 [ext_resource type="Texture2D" uid="uid://dyoqei7mehgx" path="res://Sprites/gameplay/background.png" id="1_s4ywb"]
-[ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/prensa_circular.tscn" id="2_6y4ne"]
+[ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/Circular/prensa_circular.tscn" id="2_6y4ne"]
 [ext_resource type="PackedScene" uid="uid://ksgortoex2hf" path="res://Assets/esteira.tscn" id="4_5xcy5"]
 [ext_resource type="PackedScene" uid="uid://t57gftldiusw" path="res://Assets/Dispensers/dispenser_rosa.tscn" id="5_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/dispenser_amarelo.tscn" id="6_jhwwu"]
@@ -30,13 +30,12 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(90, 520)
 
 [node name="PrensaQuadrada" parent="." unique_id=1770594812 instance=ExtResource("1_qcc3b")]
-position = Vector2(311, 220)
+position = Vector2(462, 220)
 scale = Vector2(0.25, 0.25)
 
 [node name="PrensaCircular" parent="." unique_id=1770485869 instance=ExtResource("2_6y4ne")]
-visible = false
-position = Vector2(148, 361)
-scale = Vector2(2, 2)
+position = Vector2(233, 220)
+scale = Vector2(0.25, 0.25)
 
 [node name="DispenserRosa" parent="." unique_id=758154067 instance=ExtResource("5_s4ywb")]
 visible = false

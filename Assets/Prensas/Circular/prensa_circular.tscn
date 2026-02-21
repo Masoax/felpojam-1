@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://csx8aaujrjc46"]
+
+[ext_resource type="Texture2D" uid="uid://c1h2cn4yiyq2m" path="res://Sprites/gameplay/Prensas/prensa_redonda_longa.png" id="1_f7y2k"]
+[ext_resource type="Script" uid="uid://doo6ka7nv4c0c" path="res://Assets/Prensas/Circular/prensa_circular.gd" id="1_lfcmh"]
+[ext_resource type="Animation" uid="uid://h4kudedkuqed" path="res://Assets/Prensas/Circular/PrensarRedondo.res" id="3_xxq78"]
+
+[sub_resource type="Curve2D" id="Curve2D_0j1gv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 450, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfcmh"]
+size = Vector2(200, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxq78"]
+size = Vector2(200, 1000)
+
+[sub_resource type="Animation" id="Animation_1boq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_f7y2k")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1boq2"]
+_data = {
+&"PrensarRedondo": ExtResource("3_xxq78"),
+&"RESET": SubResource("Animation_1boq2")
+}
+
+[node name="PrensaCircular" type="Node2D" unique_id=1770485869]
+script = ExtResource("1_lfcmh")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1406064595]
+curve = SubResource("Curve2D_0j1gv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=144604134]
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=447350219]
+texture = ExtResource("1_f7y2k")
+
+[node name="ClickControl" type="Control" parent="Path2D/PathFollow2D/Sprite2D" unique_id=2147052293]
+custom_minimum_size = Vector2(800, 1000)
+layout_mode = 3
+anchor_left = -0.34
+anchor_top = -0.06
+anchor_right = -0.33
+offset_left = 7.200012
+offset_top = 0.19999695
+offset_right = 796.4
+offset_bottom = 885.0
+
+[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=831004675]
+position = Vector2(-180, 385)
+priority = 1
+
+[node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=1183321503]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_lfcmh")
+
+[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=317065470]
+position = Vector2(300, 385)
+
+[node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=65066802]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_xxq78")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2090981455]
+libraries/ = SubResource("AnimationLibrary_1boq2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=322581771]
+
+[connection signal="mouse_entered" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_exited"]

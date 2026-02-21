@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://csx8aaujrjc46"]
-
-[ext_resource type="Texture2D" uid="uid://c1h2cn4yiyq2m" path="res://Sprites/gameplay/Prensas/prensa_redonda_longa.png" id="1_f7y2k"]
-
-[node name="PrensaCircular" type="Node2D" unique_id=1770485869]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1885489726]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_f7y2k")

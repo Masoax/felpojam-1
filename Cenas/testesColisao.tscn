@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4ksshaytxk4f"]
 
-[ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/prensa_quadrada.tscn" id="1_036yk"]
+[ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/Quadrada/prensa_quadrada.tscn" id="1_036yk"]
 [ext_resource type="PackedScene" uid="uid://ksgortoex2hf" path="res://Assets/esteira.tscn" id="2_oqpad"]
 [ext_resource type="PackedScene" uid="uid://dl4mwlj57d1f7" path="res://tamMovimentoPrensa.tscn" id="3_pl2bn"]
 
