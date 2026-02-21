@@ -18,16 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_bj1uy")
 cena_gameplay = ExtResource("2_gmcsc")
 
-[node name="MenuInicial" type="Control" parent="." unique_id=194904409]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="MenuInicial" unique_id=654902916]
+[node name="CadernoInicial" type="TextureRect" parent="." unique_id=654902916]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +27,51 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ul6ys")
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoTutorial" type="TextureRect" parent="." unique_id=555649731]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_a6518")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoConfig" type="TextureRect" parent="." unique_id=1221728880]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fa1tu")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoCreditos" type="TextureRect" parent="." unique_id=1006726884]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_yxm4i")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuInicial" type="Control" parent="." unique_id=194904409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnIniciar" type="Button" parent="MenuInicial" unique_id=1232188284]
@@ -86,16 +122,16 @@ metadata/_edit_use_anchors_ = true
 [node name="BtnSair" type="Button" parent="MenuInicial" unique_id=1959171468]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.13125
-anchor_top = 0.825
-anchor_right = 0.19609375
-anchor_bottom = 0.87083334
+anchor_left = 0.31796876
+anchor_top = 0.75416666
+anchor_right = 0.3828125
+anchor_bottom = 0.8
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sair"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="MenuInicial" unique_id=840569768]
+[node name="LogoJogo" type="TextureRect" parent="MenuInicial" unique_id=840569768]
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 1
 anchors_preset = -1
@@ -118,6 +154,137 @@ theme_override_font_sizes/font_size = 26
 text = "NOME DO JOGO"
 metadata/_edit_use_anchors_ = true
 
+[node name="MenuConfig" type="Control" parent="MenuInicial" unique_id=574583915]
+visible = false
+layout_mode = 1
+anchor_left = 0.5234375
+anchor_top = 0.13472222
+anchor_right = 0.8109375
+anchor_bottom = 0.87916666
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Configuracoes" type="Label" parent="MenuInicial/MenuConfig" unique_id=903175959]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24728265
+anchor_top = 0.082089536
+anchor_right = 0.8097826
+anchor_bottom = 0.16044775
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Configurações"
+metadata/_edit_use_anchors_ = true
+
+[node name="Geral" type="Label" parent="MenuInicial/MenuConfig" unique_id=2131817894]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035326045
+anchor_top = 0.26492533
+anchor_right = 0.24728256
+anchor_bottom = 0.34328356
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Geral"
+metadata/_edit_use_anchors_ = true
+
+[node name="Musica" type="Label" parent="MenuInicial/MenuConfig" unique_id=1407362580]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016304348
+anchor_top = 0.41791046
+anchor_right = 0.29347825
+anchor_bottom = 0.49626866
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Música"
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" type="Label" parent="MenuInicial/MenuConfig" unique_id=1033873499]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035326086
+anchor_top = 0.5988806
+anchor_right = 0.17391309
+anchor_bottom = 0.6772388
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderGeral" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2058826330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44293478
+anchor_top = 0.29477614
+anchor_right = 1.0027174
+anchor_bottom = 0.3246269
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderMusica" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2055322101]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44565213
+anchor_top = 0.45149255
+anchor_right = 0.9972826
+anchor_bottom = 0.48134327
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderSFX" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=1010897813]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4673913
+anchor_top = 0.61380595
+anchor_right = 1.0108697
+anchor_bottom = 0.6436567
+offset_bottom = 3.0517578e-05
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckTelaCheia" type="CheckBox" parent="MenuInicial/MenuConfig" unique_id=1408302889]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.492799
+anchor_top = 0.75895524
+anchor_right = 0.82785326
+anchor_bottom = 0.92761195
+offset_left = 25.649963
+offset_top = 9.199982
+offset_right = -73.649994
+offset_bottom = -57.200012
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Tela Cheia" type="Label" parent="MenuInicial/MenuConfig" unique_id=1120414215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24184778
+anchor_top = 0.80597013
+anchor_right = 0.5652174
+anchor_bottom = 0.869403
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tela Cheia"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuCreditos" type="Control" parent="MenuInicial" unique_id=827831790]
+visible = false
+layout_mode = 1
+anchor_left = 0.5234375
+anchor_top = 0.13472222
+anchor_right = 0.8109375
+anchor_bottom = 0.87916666
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="MenuTutorial" type="Control" parent="." unique_id=1380683657]
 visible = false
 layout_mode = 1
@@ -128,203 +295,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="MenuTutorial" unique_id=555649731]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_a6518")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
 [node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=211087816]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12265625
-anchor_top = 0.12777779
-anchor_right = 0.22172852
-anchor_bottom = 0.18788588
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Voltar"
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuConfig" type="Control" parent="." unique_id=574583915]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="MenuConfig" unique_id=1221728880]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_fa1tu")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="BtnVoltar" type="Button" parent="MenuConfig" unique_id=1489302557]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.12265625
-anchor_top = 0.12777779
-anchor_right = 0.22172852
-anchor_bottom = 0.18788588
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Voltar"
-metadata/_edit_use_anchors_ = true
-
-[node name="Configuracoes" type="Label" parent="MenuConfig" unique_id=903175959]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2625
-anchor_top = 0.1875
-anchor_right = 0.42421874
-anchor_bottom = 0.24583334
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Configurações"
-metadata/_edit_use_anchors_ = true
-
-[node name="Geral" type="Label" parent="MenuConfig" unique_id=2131817894]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.20234375
-anchor_top = 0.33888888
-anchor_right = 0.3171875
-anchor_bottom = 0.39722222
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Geral"
-metadata/_edit_use_anchors_ = true
-
-[node name="Musica" type="Label" parent="MenuConfig" unique_id=1407362580]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.19453125
-anchor_top = 0.45833334
-anchor_right = 0.3234375
-anchor_bottom = 0.51666665
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Música"
-metadata/_edit_use_anchors_ = true
-
-[node name="SFX" type="Label" parent="MenuConfig" unique_id=1033873499]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.20078126
-anchor_top = 0.5902778
-anchor_right = 0.3203125
-anchor_bottom = 0.6486111
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "SFX"
-metadata/_edit_use_anchors_ = true
-
-[node name="TelaCheia" type="Label" parent="MenuConfig" unique_id=2123009757]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.25234374
-anchor_top = 0.74444443
-anchor_right = 0.371875
-anchor_bottom = 0.80277777
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "Tela Cheia"
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect2" type="TextureRect" parent="MenuConfig" unique_id=761214042]
-modulate = Color(1, 1, 1, 0.39215687)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.521875
-anchor_top = 0.23333333
-anchor_right = 0.8070313
-anchor_bottom = 0.74027777
-texture = ExtResource("4_ns3he")
-metadata/_edit_use_anchors_ = true
-
-[node name="SliderGeral" type="HSlider" parent="MenuConfig" unique_id=2058826330]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.32265624
-anchor_top = 0.35833332
-anchor_right = 0.484375
-anchor_bottom = 0.38055557
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SliderMusica" type="HSlider" parent="MenuConfig" unique_id=2055322101]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3265625
-anchor_top = 0.47916666
-anchor_right = 0.48828125
-anchor_bottom = 0.5013889
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SliderSFX" type="HSlider" parent="MenuConfig" unique_id=1010897813]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.32734376
-anchor_top = 0.60555553
-anchor_right = 0.4890625
-anchor_bottom = 0.62777776
-offset_bottom = 3.0517578e-05
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig" unique_id=1408302889]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38046876
-anchor_top = 0.7083333
-anchor_right = 0.425
-anchor_bottom = 0.85
-offset_right = 51.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-text = "Tela Cheia"
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuCreditos" type="Control" parent="." unique_id=827831790]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="MenuCreditos" unique_id=1006726884]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_yxm4i")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="BtnVoltar" type="Button" parent="MenuCreditos/TextureRect" unique_id=1255496654]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.14296874
-anchor_top = 0.14027777
-anchor_right = 0.23422852
-anchor_bottom = 0.20038588
+anchor_left = 0.18203124
+anchor_top = 0.125
+anchor_right = 0.28110352
+anchor_bottom = 0.1851081
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
@@ -334,10 +311,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="MenuInicial/BtnConfig" to="." method="_on_btn_config_pressed"]
 [connection signal="pressed" from="MenuInicial/BtnCreditos" to="." method="_on_btn_creditos_pressed"]
 [connection signal="pressed" from="MenuInicial/BtnSair" to="." method="_on_btn_sair_pressed"]
+[connection signal="value_changed" from="MenuInicial/MenuConfig/SliderGeral" to="." method="_on_slider_geral_value_changed"]
+[connection signal="value_changed" from="MenuInicial/MenuConfig/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="MenuInicial/MenuConfig/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="toggled" from="MenuInicial/MenuConfig/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
 [connection signal="pressed" from="MenuTutorial/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
-[connection signal="pressed" from="MenuConfig/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
-[connection signal="value_changed" from="MenuConfig/SliderGeral" to="." method="_on_slider_geral_value_changed"]
-[connection signal="value_changed" from="MenuConfig/SliderMusica" to="." method="_on_slider_musica_value_changed"]
-[connection signal="value_changed" from="MenuConfig/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
-[connection signal="toggled" from="MenuConfig/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
-[connection signal="pressed" from="MenuCreditos/TextureRect/BtnVoltar" to="." method="_on_btn_voltar_pressed"]

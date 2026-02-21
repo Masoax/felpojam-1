@@ -4,21 +4,26 @@ extends Control
 @export var cena_gameplay: PackedScene
 
 @onready var menu_inicial = $MenuInicial
+@onready var menu_logo = $MenuInicial/LogoJogo
 @onready var menu_tutorial = $MenuTutorial
-@onready var menu_config = $MenuConfig
-@onready var menu_creditos = $MenuCreditos
+@onready var menu_config = $MenuInicial/MenuConfig
+@onready var menu_creditos = $MenuInicial/MenuCreditos
 
 # Variaveis para salvar as configuções e fazer elas carregarem quando o jogo abrir de novo
 const ARQUIVO_SAVE = "user://config.cfg"
 
-@onready var slider_geral = $MenuConfig/SliderGeral
-@onready var slider_musica = $MenuConfig/SliderMusica
-@onready var slider_sfx = $MenuConfig/SliderSFX
-@onready var check_tela_cheia =$MenuConfig/CheckTelaCheia
+@onready var slider_geral = $MenuInicial/MenuConfig/SliderGeral
+@onready var slider_musica = $MenuInicial/MenuConfig/SliderMusica
+@onready var slider_sfx = $MenuInicial/MenuConfig/SliderSFX
+@onready var check_tela_cheia =$MenuInicial/MenuConfig/CheckTelaCheia
 
 # Função que carrega as configurações salvas
 func _ready():
 	carregar_configuracoes()
+	menu_logo.visible = true
+	exibir_tutorial(false)
+	exibir_configuracoes(false)
+	exibir_creditos(false)
 
 # Função para abrir a cena da gameplay
 func _on_btn_iniciar_pressed():
@@ -33,22 +38,20 @@ func _on_btn_tutorial_pressed():
 	exibir_tutorial(true)
 	
 func _on_btn_voltar_pressed():
+	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
 	exibir_creditos(false)
 	
 # funções para trocar o menu inicial com o das configurações
 func exibir_configuracoes(mostrar_config: bool):
-	menu_inicial.visible = !mostrar_config
+	menu_logo.visible = !mostrar_config
 	menu_config.visible = mostrar_config
-
-func _on_btn_config_pressed():
-	exibir_configuracoes(true)
+	menu_creditos.visible = false
 	
-#func _on_btn_voltar_pressed():
-#	exibir_configuracoes(false)
-#	exibir_tutorial(false)
-
+func _on_btn_config_pressed():
+	exibir_configuracoes(!menu_config.visible)
+	
 # Variaveis para guardas as configurações dos canais de audio
 var bus_geral = AudioServer.get_bus_index("Master")
 var bus_musica = AudioServer.get_bus_index("Musica")
@@ -74,20 +77,19 @@ func _on_check_tela_cheia_toggled(toggled_on: bool):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
 		
-# funções para trocar o menu inicial com os dos creditos
+# funções para trocar o menu inicial com os dos creditos e vice-versa
 func exibir_creditos(mostrar_creditos: bool):
-	menu_inicial.visible = !mostrar_creditos
+	menu_logo.visible = !mostrar_creditos
+	menu_config.visible = false
 	menu_creditos.visible = mostrar_creditos
-
-func _on_btn_creditos_pressed():
-	exibir_creditos(true)
 	
-#func _on_btn_voltar_pressed():
-		
+func _on_btn_creditos_pressed():
+	exibir_creditos(!menu_creditos.visible)
+	
 # Função para fechar o jogo
 func _on_btn_sair_pressed():
 	get_tree().quit()
-
+	
 # Salvando as configurações para serem usadas quando o jogo for aberto de novo
 func salvar_configuracoes():
 	var config = ConfigFile.new()
