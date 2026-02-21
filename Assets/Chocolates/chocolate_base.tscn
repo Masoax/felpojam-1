@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8fbklpon0anc"]
 
-[ext_resource type="Script" uid="uid://dc7668amghppc" path="res://Assets/Chocolates/chocolate_controler.gd" id="1_kkiwg"]
+[ext_resource type="Script" uid="uid://dc7668amghppc" path="res://Assets/Chocolates/estagio_controller.gd" id="1_kkiwg"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ynq5"]
 
@@ -18,5 +18,13 @@ texture = SubResource("PlaceholderTexture2D_7ynq5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1587106671]
 shape = SubResource("RectangleShape2D_kkiwg")
+
+[node name="Label" type="Label" parent="." unique_id=1141054573]
+offset_left = -75.0
+offset_top = -11.0
+offset_right = 74.0
+offset_bottom = 12.0
+text = "MASSA"
+horizontal_alignment = 1
 
 [connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

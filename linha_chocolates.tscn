@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://hrh808352la"]
+
+[node name="linhaChocolates" type="Line2D" unique_id=245442029]
+visible = false
+points = PackedVector2Array(0, 0, 1200, 0)
+closed = true

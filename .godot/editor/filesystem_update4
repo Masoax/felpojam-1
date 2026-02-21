@@ -4,3 +4,8 @@ res://Assets/Prensas/Circular/prensa_circular.tscn
 res://Assets/Prensas/Circular/prensa_circular.gd
 res://Assets/Prensas/Quadrada/prensa_quadrada.tscn
 res://Assets/Prensas/Circular/PrensarRedondo.res
+res://Assets/Chocolates/chocolate_base.tscn
+res://Assets/Chocolates/chocolate_controler.gd
+res://Cenas/seguir_caminho.gd
+res://Assets/Chocolates/estagio_controller.gd
+res://Cenas/chocalete_controller.gd

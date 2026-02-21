@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/Quadrada/prensa_quadrada.tscn" id="1_qcc3b"]
 [ext_resource type="Texture2D" uid="uid://dyoqei7mehgx" path="res://Sprites/gameplay/background.png" id="1_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/Circular/prensa_circular.tscn" id="2_6y4ne"]
-[ext_resource type="PackedScene" uid="uid://ksgortoex2hf" path="res://Assets/esteira.tscn" id="4_5xcy5"]
+[ext_resource type="Texture2D" uid="uid://bnq2pa25qj4a6" path="res://Sprites/gameplay/Esteira/esteira_frame_1.png" id="3_oryen"]
 [ext_resource type="PackedScene" uid="uid://t57gftldiusw" path="res://Assets/Dispensers/dispenser_rosa.tscn" id="5_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/dispenser_amarelo.tscn" id="6_jhwwu"]
 [ext_resource type="PackedScene" uid="uid://dudddt1eabtxl" path="res://Assets/Dispensers/dispenser_verde.tscn" id="7_jyft0"]
@@ -13,41 +13,44 @@
 [ext_resource type="PackedScene" uid="uid://vokqpcw2vwc5" path="res://Assets/Carimbos/carimbo_carinha.tscn" id="11_ecr5f"]
 [ext_resource type="PackedScene" uid="uid://cka2b2u1h034q" path="res://Assets/Carimbos/carimbo_meiaum.tscn" id="12_oryen"]
 [ext_resource type="PackedScene" uid="uid://8fbklpon0anc" path="res://Assets/Chocolates/chocolate_base.tscn" id="13_ecr5f"]
+[ext_resource type="Script" uid="uid://87epl0gblln2" path="res://Cenas/chocalete_controller.gd" id="15_j51uw"]
+
+[sub_resource type="Curve2D" id="Curve2D_j51uw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -140, 490, 0, 0, 0, 0, 1140, 490, 0, 0, 0, 0, 1370, 212)
+}
+point_count = 3
 
 [node name="Gameplay" type="Node" unique_id=466691166]
 script = ExtResource("1_jyft0")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1570480575]
-scale = Vector2(0.67, 0.67)
+[node name="Control" type="Control" parent="." unique_id=88676640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="TextureRect" parent="Control" unique_id=1751968541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_s4ywb")
-centered = false
+expand_mode = 1
 
-[node name="Esteira" parent="." unique_id=1633439148 instance=ExtResource("4_5xcy5")]
-position = Vector2(644, 385.99997)
-scale = Vector2(0.7, 0.7)
-
-[node name="ChocolateBase" parent="." unique_id=1235136312 instance=ExtResource("13_ecr5f")]
-position = Vector2(90, 520)
-
-[node name="PrensaQuadrada" parent="." unique_id=1770594812 instance=ExtResource("1_qcc3b")]
-position = Vector2(462, 220)
-scale = Vector2(0.25, 0.25)
-
-[node name="PrensaCircular" parent="." unique_id=1770485869 instance=ExtResource("2_6y4ne")]
-position = Vector2(233, 220)
-scale = Vector2(0.25, 0.25)
-
-[node name="DispenserRosa" parent="." unique_id=758154067 instance=ExtResource("5_s4ywb")]
-visible = false
-position = Vector2(467, 404)
-
-[node name="DispenserAmarelo" parent="." unique_id=2065178081 instance=ExtResource("6_jhwwu")]
-visible = false
-position = Vector2(579, 411)
-
-[node name="DispenserVerde" parent="." unique_id=565269441 instance=ExtResource("7_jyft0")]
-visible = false
-position = Vector2(667, 418)
+[node name="Esteira" type="TextureRect" parent="Control" unique_id=1217303739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_oryen")
+expand_mode = 1
 
 [node name="Hud" parent="." unique_id=1909643394 instance=ExtResource("8_jhwwu")]
 visible = false
@@ -57,29 +60,61 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="CarimboBela" parent="." unique_id=2017139842 instance=ExtResource("10_2ch6n")]
+[node name="interagiveis" type="Node" parent="." unique_id=1307058191]
+
+[node name="PrensaQuadrada" parent="interagiveis" unique_id=1770594812 instance=ExtResource("1_qcc3b")]
+position = Vector2(462, 200)
+scale = Vector2(0.25, 0.25)
+
+[node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
+position = Vector2(233, 200)
+scale = Vector2(0.25, 0.25)
+
+[node name="DispenserRosa" parent="interagiveis" unique_id=758154067 instance=ExtResource("5_s4ywb")]
+visible = false
+position = Vector2(467, 404)
+
+[node name="DispenserAmarelo" parent="interagiveis" unique_id=2065178081 instance=ExtResource("6_jhwwu")]
+visible = false
+position = Vector2(579, 411)
+
+[node name="DispenserVerde" parent="interagiveis" unique_id=565269441 instance=ExtResource("7_jyft0")]
+visible = false
+position = Vector2(667, 418)
+
+[node name="CarimboBela" parent="interagiveis" unique_id=2017139842 instance=ExtResource("10_2ch6n")]
 visible = false
 position = Vector2(810.00006, 455)
 scale = Vector2(1.5, 1.5)
 
-[node name="CarimboCarinha" parent="." unique_id=946577508 instance=ExtResource("11_ecr5f")]
+[node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 instance=ExtResource("11_ecr5f")]
 visible = false
 position = Vector2(935.00006, 462)
 scale = Vector2(1.5, 1.5)
 
-[node name="CarimboMeiaum" parent="." unique_id=1556160325 instance=ExtResource("12_oryen")]
+[node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 instance=ExtResource("12_oryen")]
 visible = false
 position = Vector2(1054, 451.00003)
 scale = Vector2(1.5, 1.5)
 
 [node name="linhaPrensas" type="Line2D" parent="." unique_id=1145076842]
 visible = false
-position = Vector2(-2, 520)
+position = Vector2(0, 200)
 points = PackedVector2Array(0, 0, 638.21625, 0, 1200, 0)
 closed = true
 
 [node name="linhaChocolates" type="Line2D" parent="." unique_id=1851499075]
 visible = false
-position = Vector2(0, 220)
+position = Vector2(0, 490)
 points = PackedVector2Array(0, 0, 1200, 0)
 closed = true
+
+[node name="CaminhoChocolateReto" type="Path2D" parent="." unique_id=1855470123]
+curve = SubResource("Curve2D_j51uw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CaminhoChocolateReto" unique_id=10136268]
+position = Vector2(-140, 490)
+rotates = false
+script = ExtResource("15_j51uw")
+
+[node name="ChocolateBase" parent="CaminhoChocolateReto/PathFollow2D" unique_id=25184117 instance=ExtResource("13_ecr5f")]
