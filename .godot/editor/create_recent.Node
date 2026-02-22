@@ -1,3 +1,7 @@
+AudioStreamPlayer
+SubViewportContainer
+SubViewport
+CanvasGroup
 Label
 CheckBox
 HSlider
@@ -8,5 +12,3 @@ CenterContainer
 HBoxContainer
 TextEdit
 Button
-VBoxContainer
-Sprite2D

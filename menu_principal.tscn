@@ -6,9 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="4_ns3he"]
 [ext_resource type="Texture2D" uid="uid://bkhmkvj5bfjmy" path="res://Sprites/MenuConfig_placeholder.png" id="5_fa1tu"]
 [ext_resource type="Texture2D" uid="uid://hdj71ovf8320" path="res://Sprites/MenuTutorial_placeholder.png" id="6_a6518"]
+[ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="7_b574n"]
 [ext_resource type="Texture2D" uid="uid://b0qhparkhfxr1" path="res://Sprites/MenuCreditos_placeholder.png" id="7_yxm4i"]
+[ext_resource type="AudioStream" uid="uid://jvy8614a2w03" path="res://Sons/Musicas/MusicaMenu.mp3" id="9_xpioy"]
+[ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="10_kni6g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
+frequency = 0.0002
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_611wp"]
+noise = SubResource("FastNoiseLite_b574n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpioy"]
+shader = ExtResource("7_b574n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.4
+shader_parameter/fps = 4.0
+shader_parameter/noise = SubResource("NoiseTexture2D_611wp")
 
 [node name="MenuPrincipal" type="Control" unique_id=1363727023]
+material = SubResource("ShaderMaterial_xpioy")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,15 +83,16 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuInicial" type="Control" parent="." unique_id=194904409]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="BtnIniciar" type="Button" parent="MenuInicial" unique_id=1232188284]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.309375
@@ -86,6 +104,7 @@ text = "Iniciar"
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnTutorial" type="Button" parent="MenuInicial" unique_id=81930302]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.30234376
@@ -97,6 +116,7 @@ text = "Tutorial"
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnConfig" type="Button" parent="MenuInicial" unique_id=179059515]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2921875
@@ -108,6 +128,7 @@ text = "Configurações"
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnCreditos" type="Button" parent="MenuInicial" unique_id=705765288]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
@@ -120,6 +141,7 @@ text = "Créditos
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnSair" type="Button" parent="MenuInicial" unique_id=1959171468]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.31796876
@@ -133,6 +155,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LogoJogo" type="TextureRect" parent="MenuInicial" unique_id=840569768]
 modulate = Color(1, 1, 1, 0.39215687)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5265625
@@ -143,19 +166,24 @@ texture = ExtResource("4_ns3he")
 metadata/_edit_use_anchors_ = true
 
 [node name="NomeDoJogo" type="Label" parent="MenuInicial" unique_id=193045302]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.26953125
 anchor_top = 0.24305555
 anchor_right = 0.425
 anchor_bottom = 0.29305556
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "NOME DO JOGO"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuConfig" type="Control" parent="MenuInicial" unique_id=574583915]
-visible = false
+use_parent_material = true
 layout_mode = 1
 anchor_left = 0.5234375
 anchor_top = 0.13472222
@@ -166,6 +194,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Configuracoes" type="Label" parent="MenuInicial/MenuConfig" unique_id=903175959]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24728265
@@ -175,9 +204,12 @@ anchor_bottom = 0.16044775
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Geral" type="Label" parent="MenuInicial/MenuConfig" unique_id=2131817894]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.035326045
@@ -187,9 +219,12 @@ anchor_bottom = 0.34328356
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Geral"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Musica" type="Label" parent="MenuInicial/MenuConfig" unique_id=1407362580]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.016304348
@@ -199,9 +234,12 @@ anchor_bottom = 0.49626866
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Música"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SFX" type="Label" parent="MenuInicial/MenuConfig" unique_id=1033873499]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.035326086
@@ -211,9 +249,12 @@ anchor_bottom = 0.6772388
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderGeral" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2058826330]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44293478
@@ -224,6 +265,7 @@ value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderMusica" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2055322101]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44565213
@@ -234,27 +276,26 @@ value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderSFX" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=1010897813]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4673913
 anchor_top = 0.61380595
 anchor_right = 1.0108697
-anchor_bottom = 0.6436567
-offset_bottom = 3.0517578e-05
+anchor_bottom = 0.64365673
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckTelaCheia" type="CheckBox" parent="MenuInicial/MenuConfig" unique_id=1408302889]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.492799
-anchor_top = 0.75895524
-anchor_right = 0.82785326
-anchor_bottom = 0.92761195
-offset_left = 25.649963
-offset_top = 9.199982
-offset_right = -73.649994
-offset_bottom = -57.200012
+anchor_left = 0.5625
+anchor_top = 0.7761194
+anchor_right = 0.7581522
+anchor_bottom = 0.9104478
+offset_right = -48.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -263,6 +304,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Tela Cheia" type="Label" parent="MenuInicial/MenuConfig" unique_id=1120414215]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24184778
@@ -272,10 +314,13 @@ anchor_bottom = 0.869403
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Tela Cheia"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuCreditos" type="Control" parent="MenuInicial" unique_id=827831790]
 visible = false
+use_parent_material = true
 layout_mode = 1
 anchor_left = 0.5234375
 anchor_top = 0.13472222
@@ -287,6 +332,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MenuTutorial" type="Control" parent="." unique_id=1380683657]
 visible = false
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -296,6 +342,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=211087816]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.18203124
@@ -305,6 +352,17 @@ anchor_bottom = 0.1851081
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=697356799]
+stream = ExtResource("9_xpioy")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=1555598231]
+stream = ExtResource("10_kni6g")
+max_polyphony = 5
+bus = &"SFX"
 
 [connection signal="pressed" from="MenuInicial/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
 [connection signal="pressed" from="MenuInicial/BtnTutorial" to="." method="_on_btn_tutorial_pressed"]

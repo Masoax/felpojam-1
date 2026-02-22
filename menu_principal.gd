@@ -17,9 +17,14 @@ const ARQUIVO_SAVE = "user://config.cfg"
 @onready var slider_sfx = $MenuInicial/MenuConfig/SliderSFX
 @onready var check_tela_cheia =$MenuInicial/MenuConfig/CheckTelaCheia
 
+# Variaveis de som
+@onready var musica_menu = $MusicaMenu
+@onready var sfx_clique = $SfxCliqueMenu
+
 # Função que carrega as configurações salvas
 func _ready():
 	carregar_configuracoes()
+	musica_menu.play()
 	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
@@ -27,6 +32,8 @@ func _ready():
 
 # Função para abrir a cena da gameplay
 func _on_btn_iniciar_pressed():
+	sfx_clique.play(0.1)
+	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_packed(cena_gameplay)
 	
 # funções para trocar o menu inicial com o do tutorial
@@ -35,9 +42,11 @@ func exibir_tutorial(mostrar_tutorial: bool):
 	menu_tutorial.visible = mostrar_tutorial
 
 func _on_btn_tutorial_pressed():
+	sfx_clique.play(0.1)
 	exibir_tutorial(true)
 	
 func _on_btn_voltar_pressed():
+	sfx_clique.play(0.1)
 	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
@@ -50,6 +59,7 @@ func exibir_configuracoes(mostrar_config: bool):
 	menu_creditos.visible = false
 	
 func _on_btn_config_pressed():
+	sfx_clique.play(0.1)
 	exibir_configuracoes(!menu_config.visible)
 	
 # Variaveis para guardas as configurações dos canais de audio
@@ -72,8 +82,10 @@ func _on_slider_sfx_value_changed(value: float):
 # Configuração da tela cheia
 func _on_check_tela_cheia_toggled(toggled_on: bool):
 	if toggled_on:
+		sfx_clique.play(0.1)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
+		sfx_clique.play(0.1)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
 		
@@ -84,10 +96,13 @@ func exibir_creditos(mostrar_creditos: bool):
 	menu_creditos.visible = mostrar_creditos
 	
 func _on_btn_creditos_pressed():
+	sfx_clique.play(0.1)
 	exibir_creditos(!menu_creditos.visible)
 	
 # Função para fechar o jogo
 func _on_btn_sair_pressed():
+	sfx_clique.play(0.1)
+	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 	
 # Salvando as configurações para serem usadas quando o jogo for aberto de novo
