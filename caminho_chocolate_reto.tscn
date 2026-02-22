@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dcjiguhyun4gc"]
+
+[ext_resource type="Script" uid="uid://87epl0gblln2" path="res://Cenas/chocalete_controller.gd" id="1_nevak"]
+[ext_resource type="PackedScene" uid="uid://8fbklpon0anc" path="res://Assets/Chocolates/chocolate_base.tscn" id="2_wxjfm"]
+
+[sub_resource type="Curve2D" id="Curve2D_j51uw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -140, 490, 0, 0, 0, 0, 1140, 490, 0, 0, 0, 0, 1370, 212)
+}
+point_count = 3
+
+[node name="CaminhoChocolateReto" type="Path2D" unique_id=1314296765]
+curve = SubResource("Curve2D_j51uw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1200305239]
+position = Vector2(942.9353, 490)
+progress = 1082.935
+rotates = false
+script = ExtResource("1_nevak")
+
+[node name="ChocolateBase" parent="PathFollow2D" unique_id=1235136312 instance=ExtResource("2_wxjfm")]

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://vokqpcw2vwc5"]
+
+[ext_resource type="Texture2D" uid="uid://bpl38wxdew8s" path="res://Sprites/gameplay/Carimbos/carimbo_carinha_felps.png" id="1_6qxlb"]
+[ext_resource type="Script" uid="uid://de23ytcmfw7wf" path="res://Assets/Carimbos/Carinha/carimbo_carinha.gd" id="1_h83fl"]
+[ext_resource type="Animation" uid="uid://cyfp7f28t61v7" path="res://Assets/Carimbos/Carinha/CarimbarCarinha.res" id="3_h83fl"]
+
+[sub_resource type="Curve2D" id="Curve2D_h83fl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1100, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcten"]
+size = Vector2(200, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhow5"]
+size = Vector2(200, 1000)
+
+[sub_resource type="Animation" id="Animation_xp71u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_6qxlb")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1knt"]
+_data = {
+&"CarimbarCarinha": ExtResource("3_h83fl"),
+&"RESET": SubResource("Animation_xp71u")
+}
+
+[node name="CarimboCarinha" type="Node2D" unique_id=2017139842]
+script = ExtResource("1_h83fl")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1476878074]
+curve = SubResource("Curve2D_h83fl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=468228753]
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=647627243]
+texture = ExtResource("1_6qxlb")
+
+[node name="ClickControl" type="Control" parent="Path2D/PathFollow2D/Sprite2D" unique_id=854250653]
+layout_mode = 3
+anchor_left = 0.229
+anchor_top = 0.04398148
+anchor_right = 0.776
+anchor_bottom = 0.9337963
+offset_left = -1000.0
+offset_top = -1080.0
+offset_right = -1000.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1980411099]
+position = Vector2(-180, 385)
+priority = 1
+
+[node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=472197833]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_bcten")
+
+[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=17763046]
+position = Vector2(300, 385)
+
+[node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=1217799640]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_lhow5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2102632294]
+libraries/ = SubResource("AnimationLibrary_p1knt")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=792925006]
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_exited"]

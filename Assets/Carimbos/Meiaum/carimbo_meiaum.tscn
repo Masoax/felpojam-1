@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cka2b2u1h034q"]
+
+[ext_resource type="Texture2D" uid="uid://6q6w3nln03" path="res://Sprites/gameplay/Carimbos/carimbo_meiaum.png" id="1_ac6nw"]
+[ext_resource type="Script" uid="uid://d2bl5bj5q6jor" path="res://Assets/Carimbos/Meiaum/carimbo_meiaum.gd" id="1_uwtqk"]
+[ext_resource type="Texture2D" uid="uid://dvck4mjuanm28" path="res://Sprites/gameplay/Carimbos/carimbo_meiaum_com_o_bapinho.png" id="2_g5pd8"]
+
+[sub_resource type="Curve2D" id="Curve2D_uwtqk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1100, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edkvq"]
+size = Vector2(200, 1000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vowj"]
+size = Vector2(200, 1000)
+
+[sub_resource type="Animation" id="Animation_2rjbq"]
+resource_name = "CarimbarMeiaum"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.47, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_g5pd8"), ExtResource("2_g5pd8"), ExtResource("1_ac6nw")]
+}
+
+[sub_resource type="Animation" id="Animation_7eqop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ac6nw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ne7gh"]
+_data = {
+&"CarimbarMeiaum": SubResource("Animation_2rjbq"),
+&"RESET": SubResource("Animation_7eqop")
+}
+
+[node name="CarimboMeiaum" type="Node2D" unique_id=2017139842]
+script = ExtResource("1_uwtqk")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=608539355]
+curve = SubResource("Curve2D_uwtqk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1292197015]
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1686880611]
+texture = ExtResource("1_ac6nw")
+
+[node name="ClickControl" type="Control" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1882209950]
+layout_mode = 3
+anchor_left = 0.229
+anchor_top = 0.04398148
+anchor_right = 0.776
+anchor_bottom = 0.9337963
+offset_left = -1000.0
+offset_top = -1080.0
+offset_right = -1000.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1216439695]
+position = Vector2(-180, 385)
+priority = 1
+
+[node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=109634461]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_edkvq")
+
+[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=428416582]
+position = Vector2(300, 385)
+
+[node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=2095322105]
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_1vowj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2006441762]
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=362313269]
+libraries/ = SubResource("AnimationLibrary_ne7gh")
+
+[connection signal="mouse_entered" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/PathFollow2D/Sprite2D/ClickControl" to="." method="_on_click_control_mouse_exited"]
