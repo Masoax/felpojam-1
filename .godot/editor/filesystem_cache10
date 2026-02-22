@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771785801
+::res://::1771794334
 caminho_chocolate_curvado.tscn::PackedScene::3565561546749518653::1771785663::0::1::::<><><>0<>0<><>::uid://87epl0gblln2::::res://Cenas/chocalete_controller.gd<>uid://8fbklpon0anc::::res://Assets/Chocolates/chocolate_base.tscn
 caminho_chocolate_reto.tscn::PackedScene::7318716651245822378::1771785663::0::1::::<><><>0<>0<><>::uid://87epl0gblln2::::res://Cenas/chocalete_controller.gd<>uid://8fbklpon0anc::::res://Assets/Chocolates/chocolate_base.tscn
 cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771707681::0::1::::<><><>0<>0<><>::

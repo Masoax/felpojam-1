@@ -24,6 +24,16 @@ shader_parameter/strength = 0.4
 shader_parameter/fps = 4.0
 shader_parameter/noise = SubResource("NoiseTexture2D_611wp")
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xpioy"]
+noise = SubResource("FastNoiseLite_b574n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kni6g"]
+shader = ExtResource("7_b574n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 1.0
+shader_parameter/fps = 6.0
+shader_parameter/noise = SubResource("NoiseTexture2D_xpioy")
+
 [node name="MenuPrincipal" type="Control" unique_id=1363727023]
 material = SubResource("ShaderMaterial_xpioy")
 layout_mode = 3
@@ -81,6 +91,17 @@ grow_vertical = 2
 texture = ExtResource("7_yxm4i")
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=697356799]
+stream = ExtResource("9_xpioy")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=1555598231]
+stream = ExtResource("10_kni6g")
+max_polyphony = 5
+bus = &"SFX"
 
 [node name="MenuInicial" type="Control" parent="." unique_id=194904409]
 use_parent_material = true
@@ -254,7 +275,6 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderGeral" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2058826330]
-use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44293478
@@ -265,7 +285,6 @@ value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderMusica" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=2055322101]
-use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.44565213
@@ -276,7 +295,6 @@ value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderSFX" type="HSlider" parent="MenuInicial/MenuConfig" unique_id=1010897813]
-use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4673913
@@ -287,7 +305,6 @@ value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckTelaCheia" type="CheckBox" parent="MenuInicial/MenuConfig" unique_id=1408302889]
-use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5625
@@ -317,6 +334,19 @@ text = "Tela Cheia"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Ignore isso" type="CanvasGroup" parent="MenuInicial/MenuConfig" unique_id=1515220389]
+material = SubResource("ShaderMaterial_kni6g")
+
+[node name="E isso tbm" type="Control" parent="MenuInicial/MenuConfig/Ignore isso" unique_id=3759681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 368.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MenuCreditos" type="Control" parent="MenuInicial" unique_id=827831790]
 visible = false
@@ -352,17 +382,6 @@ anchor_bottom = 0.1851081
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
-
-[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=697356799]
-stream = ExtResource("9_xpioy")
-autoplay = true
-bus = &"Musica"
-parameters/looping = true
-
-[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=1555598231]
-stream = ExtResource("10_kni6g")
-max_polyphony = 5
-bus = &"SFX"
 
 [connection signal="pressed" from="MenuInicial/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
 [connection signal="pressed" from="MenuInicial/BtnTutorial" to="." method="_on_btn_tutorial_pressed"]
