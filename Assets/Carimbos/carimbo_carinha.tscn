@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://vokqpcw2vwc5"]
-
-[ext_resource type="Texture2D" uid="uid://bpl38wxdew8s" path="res://Sprites/gameplay/Carimbos/carimbo_carinha_felps.png" id="1_6qxlb"]
-
-[node name="CarimboCarinha" type="Node2D" unique_id=2017139842]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1563789617]
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("1_6qxlb")

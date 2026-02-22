@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cubwtqnwh6a37"]
+
+[ext_resource type="Texture2D" uid="uid://chpofinsudtm1" path="res://Sprites/gameplay/Lixeira/lixeira_externa.png" id="1_ciy3h"]
+[ext_resource type="Texture2D" uid="uid://dalwlodxfgqiv" path="res://Sprites/gameplay/Lixeira/lixeira_interna_2.png" id="2_oapv6"]
+
+[node name="Lixeira" type="Node2D" unique_id=378623809]
+
+[node name="Abertura" type="Sprite2D" parent="." unique_id=1712008992]
+position = Vector2(0, 40)
+texture = ExtResource("1_ciy3h")
+
+[node name="Corpo" type="Sprite2D" parent="." unique_id=80371082]
+z_index = 1
+texture = ExtResource("2_oapv6")
