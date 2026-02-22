@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bwj8f75xtgpbn"]
 
 [ext_resource type="Script" uid="uid://cf4lan6bwa4wa" path="res://menu_principal.gd" id="1_bj1uy"]
-[ext_resource type="PackedScene" uid="uid://x76nv0ufogte" path="res://cena_gameplay_test.tscn" id="2_gmcsc"]
 [ext_resource type="Texture2D" uid="uid://bfo68d5wb3mce" path="res://Sprites/MenuInicial_placeholder.webp" id="3_ul6ys"]
+[ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="3_xpioy"]
 [ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="4_ns3he"]
 [ext_resource type="Texture2D" uid="uid://bkhmkvj5bfjmy" path="res://Sprites/MenuConfig_placeholder.png" id="5_fa1tu"]
 [ext_resource type="Texture2D" uid="uid://hdj71ovf8320" path="res://Sprites/MenuTutorial_placeholder.png" id="6_a6518"]
@@ -33,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bj1uy")
-cena_gameplay = ExtResource("2_gmcsc")
+cena_gameplay = ExtResource("3_xpioy")
 
 [node name="CadernoInicial" type="TextureRect" parent="." unique_id=654902916]
 layout_mode = 1
