@@ -92,7 +92,7 @@ rotates = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_gk2jp")
 
-[node name="AreaCoberturaAmarelo" type="Area2D" parent="Path2D/PathFollow2D/CoberturaAmarela" unique_id=709093963]
+[node name="AreaCoberturaAmarelo" type="Area2D" parent="Path2D/PathFollow2D/CoberturaAmarela" unique_id=709093963 groups=["Dispenser Amarelo"]]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Path2D/PathFollow2D/CoberturaAmarela/AreaCoberturaAmarelo" unique_id=420777413]
 position = Vector2(1, 0)

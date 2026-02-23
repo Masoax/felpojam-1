@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8fbklpon0anc"]
 
-[ext_resource type="Script" uid="uid://dc7668amghppc" path="res://Assets/Chocolates/estagio_controller.gd" id="1_kkiwg"]
-[ext_resource type="Texture2D" uid="uid://q3e3lmidw3j7" path="res://Sprites/gameplay/Chocolates/Quadrado/chocolate_quadrado.png" id="2_cml8k"]
+[ext_resource type="Script" uid="uid://dc7668amghppc" path="res://Assets/Chocolates/chocolate_controller.gd" id="1_kkiwg"]
+[ext_resource type="Texture2D" uid="uid://bg7w1m6yt3t5r" path="res://Sprites/gameplay/Chocolates/massa_do_chocolate_sem_formato.png" id="2_cml8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkiwg"]
 size = Vector2(1355, 668)
@@ -13,7 +13,7 @@ script = ExtResource("1_kkiwg")
 position = Vector2(70, -226)
 texture = ExtResource("2_cml8k")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=921433282]
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=921433282 groups=["Chocolate"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1587106671]
 position = Vector2(-69.5, 223)

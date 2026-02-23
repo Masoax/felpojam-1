@@ -75,16 +75,16 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=117972685]
-position = Vector2(-180, 385)
+[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=117972685 groups=["Carimbo Bela"]]
+position = Vector2(-360, 385)
 priority = 1
 
 [node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=1337678159]
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_fot73")
 
-[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=961427641]
-position = Vector2(300, 385)
+[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=961427641 groups=["Carimbo Bela"]]
+position = Vector2(400, 385)
 
 [node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=812061685]
 scale = Vector2(0.9999995, 0.9999995)
