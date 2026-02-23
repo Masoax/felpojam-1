@@ -33,6 +33,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Hud" parent="Control" unique_id=1909643394 instance=ExtResource("8_jhwwu")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="Fundo" type="TextureRect" parent="Control" unique_id=1751968541]
 z_index = -1
 layout_mode = 1
@@ -58,14 +66,6 @@ expand_mode = 1
 position = Vector2(1140, 624)
 scale = Vector2(0.11, 0.11)
 
-[node name="Hud" parent="." unique_id=1909643394 instance=ExtResource("8_jhwwu")]
-visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="interagiveis" type="Node" parent="." unique_id=1307058191]
 
 [node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
@@ -80,32 +80,32 @@ scale = Vector2(0.16, 0.16)
 
 [node name="DispenserRosa" parent="interagiveis" unique_id=758154067 instance=ExtResource("5_s4ywb")]
 z_index = 1
-position = Vector2(445, 349)
+position = Vector2(433, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserAmarelo" parent="interagiveis" unique_id=1214482086 instance=ExtResource("6_jhwwu")]
 z_index = 1
-position = Vector2(570, 349)
+position = Vector2(558, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserVerde" parent="interagiveis" unique_id=1866376794 instance=ExtResource("7_jyft0")]
 z_index = 1
-position = Vector2(695, 349)
+position = Vector2(683, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="CarimboBela" parent="interagiveis" unique_id=2017139842 instance=ExtResource("10_2ch6n")]
 z_index = 1
-position = Vector2(819, 346)
+position = Vector2(807, 346)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 instance=ExtResource("11_ecr5f")]
 z_index = 1
-position = Vector2(927, 348)
+position = Vector2(915, 348)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 instance=ExtResource("12_oryen")]
 z_index = 1
-position = Vector2(1033, 350)
+position = Vector2(1021, 350)
 scale = Vector2(0.08, 0.08)
 
 [node name="linhaPrensas" type="Line2D" parent="." unique_id=1145076842]

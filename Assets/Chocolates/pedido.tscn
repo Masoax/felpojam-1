@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dn2mlmrp5oak6"]
+
+[ext_resource type="Texture2D" uid="uid://buo8bi5aw4bv0" path="res://Sprites/gameplay/Chocolates/Icones/icone_chocolate_quadrado_meiaum_transparente.png" id="1_ps0yh"]
+[ext_resource type="Script" uid="uid://buxldrttpeh4m" path="res://Assets/Chocolates/pedido.gd" id="2_023i1"]
+
+[node name="Pedido" type="Control" unique_id=257230577]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 3
+anchor_right = 0.074
+anchor_bottom = 0.125
+offset_right = 0.27999878
+offset_bottom = -10.0
+script = ExtResource("2_023i1")
+
+[node name="PedidoTexture" type="TextureRect" parent="." unique_id=714676255]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ps0yh")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="PedidoTexture" unique_id=1637176059]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -21.0
+offset_right = 24.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
