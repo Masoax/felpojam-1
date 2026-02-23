@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var _animation_player = $AnimationPlayer
 @onready var _caminhante = $Path2D/PathFollow2D
-@onready var _sprite = $Path2D/PathFollow2D/Sprite2D
+@onready var _sprite = $Path2D/PathFollow2D/CoberturaVerde
 @onready var _audio_player = $AudioStreamPlayer2D
 @onready var permite_clique = false
 

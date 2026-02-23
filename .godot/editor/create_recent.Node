@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ColorRect
 Sprite2D
 AnimationPlayer
 AudioStreamPlayer2D
@@ -13,19 +13,3 @@ Line2D
 AnimatedSprite2D
 CollisionShape2D
 Area2D
-=======
-AudioStreamPlayer
-SubViewportContainer
-SubViewport
-CanvasGroup
-Label
-CheckBox
-HSlider
-TextureRect
-Control
-MarginContainer
-CenterContainer
-HBoxContainer
-TextEdit
-Button
->>>>>>> origin/main
