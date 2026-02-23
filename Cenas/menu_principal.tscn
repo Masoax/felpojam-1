@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://bwj8f75xtgpbn"]
+
+[ext_resource type="Script" uid="uid://cf4lan6bwa4wa" path="res://Cenas/menu_principal.gd" id="1_bj1uy"]
+[ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="3_xpioy"]
+[ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="4_hb70r"]
+[ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="4_ns3he"]
+[ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="7_b574n"]
+[ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="9_tv6oy"]
+[ext_resource type="Texture2D" uid="uid://37vurgy3fs8k" path="res://Sprites/Cadernos/CadernoInicial.png" id="9_uhlvi"]
+[ext_resource type="AudioStream" uid="uid://jvy8614a2w03" path="res://Sons/Musicas/MusicaMenu.mp3" id="9_xpioy"]
+[ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="10_kni6g"]
+[ext_resource type="Texture2D" uid="uid://in4n7ne4m2e6" path="res://Sprites/Cadernos/CadernoCreditos.png" id="11_hb70r"]
+[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfig.png" id="11_tv6oy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
+frequency = 0.0002
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_611wp"]
+noise = SubResource("FastNoiseLite_b574n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpioy"]
+shader = ExtResource("7_b574n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 3.0
+shader_parameter/noise = SubResource("NoiseTexture2D_611wp")
+
+[node name="MenuPrincipal" type="Control" unique_id=1363727023]
+material = SubResource("ShaderMaterial_xpioy")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bj1uy")
+cena_gameplay = ExtResource("3_xpioy")
+
+[node name="CadernoFundo" type="TextureRect" parent="." unique_id=654902916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hb70r")
+expand_mode = 1
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="." unique_id=697356799]
+stream = ExtResource("9_xpioy")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
+[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=1555598231]
+stream = ExtResource("10_kni6g")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SfxCliqueVoltar" type="AudioStreamPlayer" parent="." unique_id=500671138]
+stream = ExtResource("9_tv6oy")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MenuInicial" type="Control" parent="." unique_id=194904409]
+visible = false
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CadernoInicial" type="TextureRect" parent="MenuInicial" unique_id=369521574]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_uhlvi")
+expand_mode = 1
+
+[node name="BtnIniciar" type="Button" parent="MenuInicial" unique_id=1232188284]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17734376
+anchor_top = 0.3236111
+anchor_right = 0.3296875
+anchor_bottom = 0.37638888
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Iniciar"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnTutorial" type="Button" parent="MenuInicial" unique_id=81930302]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17265625
+anchor_top = 0.41111112
+anchor_right = 0.340625
+anchor_bottom = 0.46388888
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Tutorial"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnConfig" type="Button" parent="MenuInicial" unique_id=179059515]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1484375
+anchor_top = 0.50277776
+anchor_right = 0.36953124
+anchor_bottom = 0.5555556
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Configurações"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnCreditos" type="Button" parent="MenuInicial" unique_id=705765288]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17578125
+anchor_top = 0.59305555
+anchor_right = 0.34375
+anchor_bottom = 0.6458333
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Créditos
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnSair" type="Button" parent="MenuInicial" unique_id=1959171468]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20234375
+anchor_top = 0.6805556
+anchor_right = 0.3125
+anchor_bottom = 0.7347222
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sair"
+metadata/_edit_use_anchors_ = true
+
+[node name="LogoJogo" type="TextureRect" parent="MenuInicial" unique_id=840569768]
+modulate = Color(1, 1, 1, 0.39215687)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.021875
+anchor_top = 0.2375
+anchor_right = 1.3070313
+anchor_bottom = 0.74444443
+texture = ExtResource("4_ns3he")
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuTutorial" type="Control" parent="." unique_id=1380683657]
+visible = false
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoTutorial" type="TextureRect" parent="MenuTutorial" unique_id=1183256167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=211087816]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18203124
+anchor_top = 0.125
+anchor_right = 0.28110352
+anchor_bottom = 0.1851081
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuConfig" type="Control" parent="." unique_id=574583915]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoConfig" type="TextureRect" parent="MenuConfig" unique_id=1884008238]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_tv6oy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderGeral" type="HSlider" parent="MenuConfig" unique_id=2058826330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.4138889
+anchor_right = 0.9328125
+anchor_bottom = 0.43611112
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderMusica" type="HSlider" parent="MenuConfig" unique_id=2055322101]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.53194445
+anchor_right = 0.928125
+anchor_bottom = 0.55416673
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderSFX" type="HSlider" parent="MenuConfig" unique_id=1010897813]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5953125
+anchor_top = 0.6513888
+anchor_right = 0.94375
+anchor_bottom = 0.67361104
+offset_top = 3.0517578e-05
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig" unique_id=1408302889]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.7875
+anchor_right = 0.89453137
+anchor_bottom = 0.8875
+offset_left = 6.1035156e-05
+offset_right = -230.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 2)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnVoltar" type="Button" parent="MenuConfig" unique_id=885820691]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.203125
+anchor_top = 0.6805556
+anchor_right = 0.3265625
+anchor_bottom = 0.73333335
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuCreditos" type="Control" parent="." unique_id=827831790]
+visible = false
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CadernoCreditos" type="TextureRect" parent="MenuCreditos" unique_id=485606665]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_hb70r")
+expand_mode = 1
+
+[node name="BtnVoltar" type="Button" parent="MenuCreditos" unique_id=1765152996]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8148438
+anchor_top = 0.8263889
+anchor_right = 0.913916
+anchor_bottom = 0.88649696
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MenuInicial/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnTutorial" to="." method="_on_btn_tutorial_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnCreditos" to="." method="_on_btn_creditos_pressed"]
+[connection signal="pressed" from="MenuInicial/BtnSair" to="." method="_on_btn_sair_pressed"]
+[connection signal="pressed" from="MenuTutorial/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="value_changed" from="MenuConfig/SliderGeral" to="." method="_on_slider_geral_value_changed"]
+[connection signal="value_changed" from="MenuConfig/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="MenuConfig/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="toggled" from="MenuConfig/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
+[connection signal="pressed" from="MenuConfig/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="pressed" from="MenuCreditos/BtnVoltar" to="." method="_on_btn_voltar_pressed"]

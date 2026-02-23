@@ -6,20 +6,21 @@ extends Control
 @onready var menu_inicial = $MenuInicial
 @onready var menu_logo = $MenuInicial/LogoJogo
 @onready var menu_tutorial = $MenuTutorial
-@onready var menu_config = $MenuInicial/MenuConfig
-@onready var menu_creditos = $MenuInicial/MenuCreditos
+@onready var menu_config = $MenuConfig
+@onready var menu_creditos = $MenuCreditos
 
 # Variaveis para salvar as configuções e fazer elas carregarem quando o jogo abrir de novo
 const ARQUIVO_SAVE = "user://config.cfg"
 
-@onready var slider_geral = $MenuInicial/MenuConfig/SliderGeral
-@onready var slider_musica = $MenuInicial/MenuConfig/SliderMusica
-@onready var slider_sfx = $MenuInicial/MenuConfig/SliderSFX
-@onready var check_tela_cheia =$MenuInicial/MenuConfig/CheckTelaCheia
+@onready var slider_geral = $MenuConfig/SliderGeral
+@onready var slider_musica = $MenuConfig/SliderMusica
+@onready var slider_sfx = $MenuConfig/SliderSFX
+@onready var check_tela_cheia =$MenuConfig/CheckTelaCheia
 
 # Variaveis de som
 @onready var musica_menu = $MusicaMenu
 @onready var sfx_clique = $SfxCliqueMenu
+@onready var sfx_voltar = $SfxCliqueVoltar
 
 # Função que carrega as configurações salvas
 func _ready():
@@ -46,7 +47,7 @@ func _on_btn_tutorial_pressed():
 	exibir_tutorial(true)
 	
 func _on_btn_voltar_pressed():
-	sfx_clique.play(0.1)
+	sfx_voltar.play()
 	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
@@ -54,9 +55,8 @@ func _on_btn_voltar_pressed():
 	
 # funções para trocar o menu inicial com o das configurações
 func exibir_configuracoes(mostrar_config: bool):
-	menu_logo.visible = !mostrar_config
+	menu_inicial.visible = !mostrar_config
 	menu_config.visible = mostrar_config
-	menu_creditos.visible = false
 	
 func _on_btn_config_pressed():
 	sfx_clique.play(0.1)
@@ -91,8 +91,7 @@ func _on_check_tela_cheia_toggled(toggled_on: bool):
 		
 # funções para trocar o menu inicial com os dos creditos e vice-versa
 func exibir_creditos(mostrar_creditos: bool):
-	menu_logo.visible = !mostrar_creditos
-	menu_config.visible = false
+	menu_inicial.visible = !mostrar_creditos
 	menu_creditos.visible = mostrar_creditos
 	
 func _on_btn_creditos_pressed():
@@ -101,7 +100,7 @@ func _on_btn_creditos_pressed():
 	
 # Função para fechar o jogo
 func _on_btn_sair_pressed():
-	sfx_clique.play(0.1)
+	sfx_voltar.play()
 	await get_tree().create_timer(0.3).timeout
 	get_tree().quit()
 	
