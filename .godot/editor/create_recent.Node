@@ -1,3 +1,4 @@
+NinePatchRect
 CollisionShape2D
 Area2D
 ColorRect
@@ -12,4 +13,3 @@ Path2D
 Node
 TextureRect
 Line2D
-AnimatedSprite2D

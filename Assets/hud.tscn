@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct5mno1i3ebn4"]
 
 [ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="1_l8s4g"]
+[ext_resource type="Texture2D" uid="uid://db8ryfnwmhe6a" path="res://Sprites/gameplay/monitor_de_pedidos_2.png" id="1_msxdw"]
 
 [node name="Hud" type="Control" unique_id=1909643394]
 layout_mode = 3
@@ -10,16 +11,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Fundo" type="NinePatchRect" parent="." unique_id=1684442046]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = ExtResource("1_msxdw")
+
 [node name="Pedidos" type="Panel" parent="." unique_id=239583328]
+visible = false
 clip_contents = true
-layout_mode = 0
-offset_left = 708.0
-offset_right = 1276.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -568.0
 offset_bottom = 195.0
+grow_horizontal = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Pedidos" unique_id=1943702586]
 layout_mode = 0
-offset_right = 1.0
+offset_right = 130.0
 offset_bottom = 128.0
 fill_mode = 1
 

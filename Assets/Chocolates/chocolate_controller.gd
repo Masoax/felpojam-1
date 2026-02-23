@@ -1,12 +1,5 @@
-#Olhar se grupos (groups) ou camadas de colisão (collision layers/masks) são úteis para identificar qual prensa/cobertura/carimbo acertou o chocolate
-#Ver questão de animação para o dispensers de cobertura, algum splash (olhar jogo da gatinha)
-#Verificar qual forma prensou (utilizar o nome/id_unico da prensa)
-#	somar o valor na variavel tipo_chocolate
-#	alterar sprite para o correspondente
-#Realizar o mesmo para as coberturas e para o carimbo
 #Verificar se o cholate passou pela area das prensas sem ser prensado (desabilitar colisão)
 #	realizar o mesmo para a cobertura e carimbo
-#Utilizar do mesmo sistema das prensas para os dispensers e carimbos
 #NO carimbo tem uma chance dele criar uma com a cara do felps/dourado, conta como sucesso sempre
 #Na checagem verificar tanto o estagio quanto o tipo
 #Animação de falha pode ser tanto ele cair na lixeira quanto explodir (segundo só se a da lixeira ficar esquisita)
