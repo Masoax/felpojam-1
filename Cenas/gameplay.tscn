@@ -68,35 +68,43 @@ grow_vertical = 1
 
 [node name="interagiveis" type="Node" parent="." unique_id=1307058191]
 
-[node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
+[node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 groups=["Prensa Redonda"] instance=ExtResource("2_6y4ne")]
+z_index = 1
 position = Vector2(141, 280)
 scale = Vector2(0.16, 0.16)
 
-[node name="PrensaQuadrada" parent="interagiveis" unique_id=1770594812 instance=ExtResource("1_qcc3b")]
+[node name="PrensaQuadrada" parent="interagiveis" unique_id=1770594812 groups=["Prensa Quadrada"] instance=ExtResource("1_qcc3b")]
+z_index = 1
 position = Vector2(300, 281)
 scale = Vector2(0.16, 0.16)
 
-[node name="DispenserRosa" parent="interagiveis" unique_id=758154067 instance=ExtResource("5_s4ywb")]
+[node name="DispenserRosa" parent="interagiveis" unique_id=758154067 groups=["Dispenser Rosa"] instance=ExtResource("5_s4ywb")]
+z_index = 1
 position = Vector2(445, 349)
 scale = Vector2(0.07, 0.07)
 
-[node name="DispenserAmarelo" parent="interagiveis" unique_id=1214482086 instance=ExtResource("6_jhwwu")]
+[node name="DispenserAmarelo" parent="interagiveis" unique_id=1214482086 groups=["Dispenser Amarelo"] instance=ExtResource("6_jhwwu")]
+z_index = 1
 position = Vector2(570, 349)
 scale = Vector2(0.07, 0.07)
 
-[node name="DispenserVerde" parent="interagiveis" unique_id=1866376794 instance=ExtResource("7_jyft0")]
+[node name="DispenserVerde" parent="interagiveis" unique_id=1866376794 groups=["Dispenser Verde"] instance=ExtResource("7_jyft0")]
+z_index = 1
 position = Vector2(695, 349)
 scale = Vector2(0.07, 0.07)
 
-[node name="CarimboBela" parent="interagiveis" unique_id=2017139842 instance=ExtResource("10_2ch6n")]
+[node name="CarimboBela" parent="interagiveis" unique_id=2017139842 groups=["Carimbo Bela"] instance=ExtResource("10_2ch6n")]
+z_index = 1
 position = Vector2(819, 346)
 scale = Vector2(0.08, 0.08)
 
-[node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 instance=ExtResource("11_ecr5f")]
+[node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 groups=["Carimbo Carinha"] instance=ExtResource("11_ecr5f")]
+z_index = 1
 position = Vector2(927, 348)
 scale = Vector2(0.08, 0.08)
 
-[node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 instance=ExtResource("12_oryen")]
+[node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 groups=["Carimbo Meiaum"] instance=ExtResource("12_oryen")]
+z_index = 1
 position = Vector2(1033, 350)
 scale = Vector2(0.08, 0.08)
 
@@ -121,4 +129,4 @@ rotates = false
 script = ExtResource("15_j51uw")
 
 [node name="ChocolateBase" parent="CaminhoChocolateReto/PathFollow2D" unique_id=25184117 instance=ExtResource("13_ecr5f")]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.07, 0.07)

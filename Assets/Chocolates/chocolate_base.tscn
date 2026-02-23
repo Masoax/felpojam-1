@@ -1,30 +1,22 @@
 [gd_scene format=3 uid="uid://8fbklpon0anc"]
 
 [ext_resource type="Script" uid="uid://dc7668amghppc" path="res://Assets/Chocolates/estagio_controller.gd" id="1_kkiwg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7ynq5"]
+[ext_resource type="Texture2D" uid="uid://q3e3lmidw3j7" path="res://Sprites/gameplay/Chocolates/Quadrado/chocolate_quadrado.png" id="2_cml8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkiwg"]
-size = Vector2(1, 1)
+size = Vector2(1355, 668)
 
 [node name="ChocolateBase" type="Node2D" unique_id=1235136312]
 script = ExtResource("1_kkiwg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=273408905]
-scale = Vector2(150, 75)
-texture = SubResource("PlaceholderTexture2D_7ynq5")
+position = Vector2(70, -226)
+texture = ExtResource("2_cml8k")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=921433282]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1587106671]
+position = Vector2(-69.5, 223)
 shape = SubResource("RectangleShape2D_kkiwg")
-
-[node name="Label" type="Label" parent="." unique_id=1141054573]
-offset_left = -75.0
-offset_top = -11.0
-offset_right = 74.0
-offset_bottom = 12.0
-text = "MASSA"
-horizontal_alignment = 1
 
 [connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

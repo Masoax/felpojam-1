@@ -22,6 +22,17 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+"Prensa Redonda"=""
+"Prensa Quadrada"=""
+"Dispenser Rosa"=""
+"Dispenser Amarelo"=""
+"Dispenser Verde"=""
+"Carimbo Bela"=""
+"Carimbo Carinha"=""
+"Carimbo Meiaum"=""
+
 [input]
 
 clique={
