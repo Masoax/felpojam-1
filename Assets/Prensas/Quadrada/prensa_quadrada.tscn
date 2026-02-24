@@ -12,10 +12,10 @@ _data = {
 point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e36iw"]
-size = Vector2(200, 1000)
+size = Vector2(100, 1000)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wq1xs"]
-size = Vector2(200, 1000)
+size = Vector2(100, 1000)
 
 [sub_resource type="Animation" id="Animation_bq6px"]
 resource_name = "teste"
@@ -101,15 +101,15 @@ offset_top = -2862.8
 offset_right = 796.4
 offset_bottom = 885.0
 
-[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1018571992]
-position = Vector2(-180, 385)
+[node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1018571992 groups=["Prensa Quadrada"]]
+position = Vector2(-250, 385)
 priority = 1
 
 [node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=955742320]
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_e36iw")
 
-[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=372234453]
+[node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=372234453 groups=["Prensa Quadrada"]]
 position = Vector2(300, 385)
 
 [node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=2120570715]

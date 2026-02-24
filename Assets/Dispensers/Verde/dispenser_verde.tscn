@@ -2,11 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://dat2am47x4tb1" path="res://Sprites/gameplay/Dispensers/dispenser_de_cobertura_verde.png" id="1_5qmov"]
 [ext_resource type="Script" uid="uid://ca6ashe3gu7w8" path="res://Assets/Dispensers/Verde/dispenser_verde.gd" id="1_qvlfc"]
-[ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="3_up8d8"]
+[ext_resource type="Texture2D" uid="uid://deuu3s1b8cp33" path="res://Sprites/gameplay/Dispensers/cobertura_caindo_2.png" id="3_38ygs"]
+[ext_resource type="Texture2D" uid="uid://4gvpnee5c7b2" path="res://Sprites/gameplay/Dispensers/cobertura_caindo_verde.png" id="4_up8d8"]
+[ext_resource type="Texture2D" uid="uid://cljysgsxfkqos" path="res://Sprites/gameplay/Dispensers/recheio_quando_cai_na_esteira_verde.png" id="5_xsncd"]
 
 [sub_resource type="Curve2D" id="Curve2D_xsncd"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1200)
 }
 point_count = 2
 
@@ -31,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:visible")
+tracks/1/path = NodePath("Path2D/PathFollow2D/CoberturaVerde:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,6 +41,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D/CoberturaVerde:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_up8d8"), ExtResource("5_xsncd")]
 }
 
 [sub_resource type="Animation" id="Animation_38ygs"]
@@ -58,7 +72,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:visible")
+tracks/1/path = NodePath("Path2D/PathFollow2D/CoberturaVerde:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -66,6 +80,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D/CoberturaVerde:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_38ygs")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up8d8"]
@@ -78,6 +104,7 @@ _data = {
 script = ExtResource("1_qvlfc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1670896603]
+z_index = 1
 position = Vector2(150, 0)
 texture = ExtResource("1_5qmov")
 
@@ -102,13 +129,13 @@ curve = SubResource("Curve2D_xsncd")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=970674359]
 rotates = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=869975338]
-scale = Vector2(2, 2)
-texture = ExtResource("3_up8d8")
+[node name="CoberturaVerde" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=869975338]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_38ygs")
 
-[node name="AreaCoberturaVerde" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1119061858]
+[node name="AreaCoberturaVerde" type="Area2D" parent="Path2D/PathFollow2D/CoberturaVerde" unique_id=1119061858 groups=["Dispenser Verde"]]
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaCoberturaVerde" unique_id=1391265301]
+[node name="CollisionShape" type="CollisionShape2D" parent="Path2D/PathFollow2D/CoberturaVerde/AreaCoberturaVerde" unique_id=1391265301]
 position = Vector2(1, 0)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_nohif")

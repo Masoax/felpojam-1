@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://btahealw6ibsr" path="res://Sprites/gameplay/Dispensers/dispenser_de_cobertura_rosa.png" id="1_has7x"]
 [ext_resource type="Script" uid="uid://cdl5cccfdjyxi" path="res://Assets/Dispensers/Rosa/dispenser_rosa.gd" id="1_hmhnp"]
-[ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="3_y33qt"]
+[ext_resource type="Texture2D" uid="uid://deuu3s1b8cp33" path="res://Sprites/gameplay/Dispensers/cobertura_caindo_2.png" id="3_p3dlc"]
 [ext_resource type="Animation" uid="uid://b07nv6xdtdo7n" path="res://Assets/Dispensers/Rosa/DispensarRosa.res" id="4_p3dlc"]
 
 [sub_resource type="Curve2D" id="Curve2D_y33qt"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1200)
 }
 point_count = 2
 
@@ -31,7 +31,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:visible")
+tracks/1/path = NodePath("Path2D/PathFollow2D/CoberturaRosa:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,6 +39,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D/CoberturaRosa:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_p3dlc")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u5yy6"]
@@ -51,6 +63,7 @@ _data = {
 script = ExtResource("1_hmhnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711905213]
+z_index = 1
 position = Vector2(150, 0)
 texture = ExtResource("1_has7x")
 
@@ -75,13 +88,13 @@ curve = SubResource("Curve2D_y33qt")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=140435131]
 rotates = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1068003829]
-scale = Vector2(2, 2)
-texture = ExtResource("3_y33qt")
+[node name="CoberturaRosa" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1068003829]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_p3dlc")
 
-[node name="AreaCoberturaRosa" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=2108491345]
+[node name="AreaCoberturaRosa" type="Area2D" parent="Path2D/PathFollow2D/CoberturaRosa" unique_id=2108491345 groups=["Dispenser Rosa"]]
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaCoberturaRosa" unique_id=431291784]
+[node name="CollisionShape" type="CollisionShape2D" parent="Path2D/PathFollow2D/CoberturaRosa/AreaCoberturaRosa" unique_id=431291784]
 position = Vector2(1, 0)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_y33qt")

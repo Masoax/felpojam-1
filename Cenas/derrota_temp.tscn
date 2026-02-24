@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjoa1yeovdjl6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_msbkh"]
+font_size = 200
+
+[node name="DerrotaTemp" type="Node" unique_id=217805524]
+
+[node name="Label" type="Label" parent="." unique_id=1763693488]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PERDEU"
+label_settings = SubResource("LabelSettings_msbkh")
+horizontal_alignment = 1
+vertical_alignment = 1
