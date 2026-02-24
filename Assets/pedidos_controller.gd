@@ -9,6 +9,9 @@ const TIPOS_CHOCOLATES: Array[int] = [213141 , 213142 , 213143 ,
 									  223241 , 223242 , 223243 , 
 									  223341 , 223342 , 223343 ]
 
+const CENA_DERROTA: PackedScene = preload("res://Cenas/derrota_temp.tscn")
+const CENA_VITORIA: PackedScene = preload("res://Cenas/vitoria_temp.tscn")
+
 @onready var pedido_scene:       PackedScene = preload("res://Assets/Chocolates/pedido.tscn")
 @onready var chocolates:          Array[int] = []
 @onready var qtd_chocolates:             int = 0
@@ -17,7 +20,6 @@ const TIPOS_CHOCOLATES: Array[int] = [213141 , 213142 , 213143 ,
 func _ready() -> void:
 	caminho_chocolate.chegou_checagem.connect(remove_pedido)
 	qtd_chocolates = randi_range(6, 12)
-	print(qtd_chocolates)
 	for i in range(qtd_chocolates):
 		var tipo_chocolate = TIPOS_CHOCOLATES[randi_range(0, 17)]
 		chocolates.append(tipo_chocolate)
@@ -25,10 +27,11 @@ func _ready() -> void:
 		pedido.tipo = tipo_chocolate
 		add_child(pedido)
 
-
-#se não tiver tratar o pedido como errado
+func _process(delta: float) -> void:
+	if chocolates.is_empty():
+		await get_tree().create_timer(0.3).timeout
+		get_tree().change_scene_to_packed(CENA_VITORIA)
 #quando os pedidos acabarem mandar para tela de vitória
-#se o tempo acabar mandar para tela de derrota
 
 func remove_pedido(tipo_chocolate):
 	if tipo_chocolate in chocolates:
@@ -41,3 +44,8 @@ func remove_pedido(tipo_chocolate):
 		pedido_checado.emit(true)
 	else:
 		pedido_checado.emit(false)
+
+
+func _on_timer_timeout() -> void:
+	await get_tree().create_timer(0.3).timeout
+	get_tree().change_scene_to_packed(CENA_DERROTA)

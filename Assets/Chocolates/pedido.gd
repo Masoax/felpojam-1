@@ -19,8 +19,9 @@ var cores    = [COR_AMARELO, COR_ROSA, COR_VERDE]
 var tipo: int = 0
 
 func _ready() -> void:
-	print("	", name, ": ", tipo)
+	@warning_ignore("integer_division")
 	var cor_i = (((tipo % 1000) - (tipo % 100))/100) - 1
+	@warning_ignore("integer_division")
 	var forma_i = ((tipo - 200000 - (tipo % 10000))/10000) - 1
 	var carimbo_i = (tipo % 10) - 1
 	if forma_i:

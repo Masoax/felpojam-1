@@ -74,7 +74,7 @@ offset_right = 796.4
 offset_bottom = 885.0
 
 [node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=831004675 groups=["Prensa Redonda"]]
-position = Vector2(-250, 385)
+position = Vector2(-230, 385)
 priority = 1
 
 [node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=1183321503]
