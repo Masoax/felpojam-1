@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://csim04br00yqk"]
+
+[ext_resource type="Texture2D" uid="uid://cb5b4mqr8hf6" path="res://Sprites/gameplay/Dispensers/dispenser_de_cobertura.png" id="1_bg1m5"]
+
+[node name="DispenserVazio" type="Node2D" unique_id=758154067]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711905213]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_bg1m5")

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://d3g2ssfo4j0kg"]
+
+[ext_resource type="Script" uid="uid://yeqyiff83e5q" path="res://Assets/Prensas/prensa_quadrada.gd" id="1_e36iw"]
+[ext_resource type="Texture2D" uid="uid://7ejrlkcm3vt7" path="res://Sprites/gameplay/Prensas/prensa_quadrada.png" id="1_i2j28"]
+[ext_resource type="Script" uid="uid://cjc4g3webjl2a" path="res://Assets/Prensas/texture_button.gd" id="3_e36iw"]
+[ext_resource type="Texture2D" uid="uid://bu1p831mcveg8" path="res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png" id="3_wq1xs"]
+
+[sub_resource type="Curve2D" id="Curve2D_347wk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e36iw"]
+size = Vector2(800, 1000)
+
+[sub_resource type="Animation" id="Animation_bq6px"]
+resource_name = "teste"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_wq1xs"), ExtResource("3_wq1xs"), ExtResource("1_i2j28")]
+}
+
+[sub_resource type="Animation" id="Animation_ehuvs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_i2j28")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f1mhl"]
+_data = {
+&"Prensar": SubResource("Animation_bq6px"),
+&"RESET": SubResource("Animation_ehuvs")
+}
+
+[node name="PrensaQuadrada" type="Node2D" unique_id=1770594812]
+script = ExtResource("1_e36iw")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=552891195]
+visible = false
+offset_right = 1080.0
+offset_bottom = 1920.0
+scale = Vector2(0.1, 0.1)
+keep_pressed_outside = true
+texture_normal = ExtResource("1_i2j28")
+texture_pressed = ExtResource("3_wq1xs")
+texture_hover = ExtResource("3_wq1xs")
+script = ExtResource("3_e36iw")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=737811344]
+position = Vector2(155, 106)
+curve = SubResource("Curve2D_347wk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1040538032]
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=948831397]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_i2j28")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=372234453]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/Area2D" unique_id=2120570715]
+position = Vector2(29.999996, 379.99997)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_e36iw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=522561253]
+libraries/ = SubResource("AnimationLibrary_f1mhl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1258576639]
+bus = &"SFX"
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/PathFollow2D/Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

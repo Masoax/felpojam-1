@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ksgortoex2hf"]
+
+[ext_resource type="Texture2D" uid="uid://bnq2pa25qj4a6" path="res://Sprites/gameplay/Esteira/esteira_frame_1.png" id="1_o5iyl"]
+[ext_resource type="Texture2D" uid="uid://db144ewvtyf6t" path="res://Sprites/gameplay/Esteira/esteira_frame_2.png" id="2_qvb2n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb555"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o5iyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qvb2n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Esteira" type="Node2D" unique_id=1633439148]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1915813417]
+sprite_frames = SubResource("SpriteFrames_qb555")
