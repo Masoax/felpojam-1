@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771856783
+::res://::1771946817
 cena_gameplay_test.tscn::PackedScene::1682310076427593122::1771539064::0::1::::<><><>0<>0<><>::
 default_bus_layout.tres::AudioBusLayout::6349775516858901539::1771539064::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1771784231::0::1::::<><><>0<>0<><>::
@@ -8,10 +8,13 @@ linha_chocolates.tscn::PackedScene::15497107141444850::1771640759::0::1::::<><><
 menu_principal.gd::GDScript::5184321158131886496::1771784231::0::1::::<>Control<><>0<>0<><>::
 menu_principal.tscn::PackedScene::3951168961409164715::1771784231::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://menu_principal.gd<>uid://x76nv0ufogte::::res://cena_gameplay_test.tscn<>uid://bfo68d5wb3mce::::res://Sprites/MenuInicial_placeholder.webp<>uid://beokmsopk4eaf::::res://icon.svg<>uid://bkhmkvj5bfjmy::::res://Sprites/MenuConfig_placeholder.png
 tamMovimentoPrensa.tscn::PackedScene::7991974770410563146::1771555681::0::1::::<><><>0<>0<><>::
-::res://Assets/::1771869552
+::res://Assets/::1771906061
 esteira.tscn::PackedScene::739437461915280215::1771557346::0::1::::<><><>0<>0<><>::uid://bnq2pa25qj4a6::::res://Sprites/gameplay/Esteira/esteira_frame_1.png<>uid://db144ewvtyf6t::::res://Sprites/gameplay/Esteira/esteira_frame_2.png
-hud.tscn::PackedScene::6169113324257448379::1771869551::0::1::::<><><>0<>0<><>::uid://beokmsopk4eaf::::res://icon.svg<>uid://db8ryfnwmhe6a::::res://Sprites/gameplay/monitor_de_pedidos_2.png<>uid://bxjhjmycbopx3::::res://Sprites/gameplay/fundo_da_barra_de_progresso_de_tempo.png<>uid://qtwst6aejq6::::res://Sprites/gameplay/barra_de_progresso_de_tempo.png
+hud.tscn::PackedScene::6169113324257448379::1771906061::0::1::::<><><>0<>0<><>::uid://cdgg4a1ucorr4::::res://Assets/pedidos_controller.gd<>uid://db8ryfnwmhe6a::::res://Sprites/gameplay/monitor_de_pedidos_2.png<>uid://bxjhjmycbopx3::::res://Sprites/gameplay/fundo_da_barra_de_progresso_de_tempo.png<>uid://qtwst6aejq6::::res://Sprites/gameplay/barra_de_progresso_de_tempo.png<>uid://bkvxp44faiopt::::res://Assets/temporizador.gd
 lixeira.tscn::PackedScene::6180053183292177600::1771724910::0::1::::<><><>0<>0<><>::uid://chpofinsudtm1::::res://Sprites/gameplay/Lixeira/lixeira_externa.png<>uid://dalwlodxfgqiv::::res://Sprites/gameplay/Lixeira/lixeira_interna_2.png
+Pedido Errado.res::Animation::19679639901914437::1771903269::0::1::::<><><>0<>0<><>::
+pedidos_controller.gd::GDScript::4996210295881365171::1771905322::0::1::::<>HBoxContainer<><>0<>0<><>::
+temporizador.gd::GDScript::3133085898854872809::1771904445::0::1::::<>TextureProgressBar<><>0<>0<><>::
 ::res://Assets/Carimbos/::1771729383
 ::res://Assets/Carimbos/Bela/::1771812931
 CarimbarBela.res::Animation::6636647449840767488::1771729615::0::1::::<><><>0<>0<><>::uid://b0o0lwkph38ch::::res://Sprites/gameplay/Carimbos/carimbo_bela_sapo_com_bapinho.png<>uid://tlllq70bh0bd::::res://Sprites/gameplay/Carimbos/carimbo_bela_sapo.png
@@ -24,9 +27,11 @@ carimbo_carinha.tscn::PackedScene::1503503539562032210::1771812975::0::1::::<><>
 ::res://Assets/Carimbos/Meiaum/::1771812982
 carimbo_meiaum.gd::GDScript::9057146735610078601::1771730196::0::1::::<>Node2D<><>0<>0<><>::
 carimbo_meiaum.tscn::PackedScene::5476372398583358930::1771812982::0::1::::<><><>0<>0<><>::uid://6q6w3nln03::::res://Sprites/gameplay/Carimbos/carimbo_meiaum.png<>uid://d2bl5bj5q6jor::::res://Assets/Carimbos/Meiaum/carimbo_meiaum.gd<>uid://dvck4mjuanm28::::res://Sprites/gameplay/Carimbos/carimbo_meiaum_com_o_bapinho.png
-::res://Assets/Chocolates/::1771821034
+::res://Assets/Chocolates/::1771904317
 chocolate_base.tscn::PackedScene::2326632905340552148::1771813337::0::1::::<><><>0<>0<><>::uid://dc7668amghppc::::res://Assets/Chocolates/chocolate_controller.gd<>uid://bg7w1m6yt3t5r::::res://Sprites/gameplay/Chocolates/massa_do_chocolate_sem_formato.png
-chocolate_controller.gd::GDScript::7367639146696183764::1771821034::0::1::::<>Node2D<><>0<>0<><>::
+chocolate_controller.gd::GDScript::7367639146696183764::1771900635::0::1::::<>Node2D<><>0<>0<><>::
+pedido.gd::GDScript::3838352412230990130::1771904317::0::1::::<>Control<><>0<>0<><>::
+pedido.tscn::PackedScene::8128204122643538403::1771893317::0::1::::<><><>0<>0<><>::uid://buo8bi5aw4bv0::::res://Sprites/gameplay/Chocolates/Icones/icone_chocolate_quadrado_meiaum_transparente.png<>uid://buxldrttpeh4m::::res://Assets/Chocolates/pedido.gd
 ::res://Assets/Dispensers/::1771725263
 dispenser_vazio.tscn::PackedScene::6053530349192863298::1771538666::0::1::::<><><>0<>0<><>::uid://cb5b4mqr8hf6::::res://Sprites/gameplay/Dispensers/dispenser_de_cobertura.png
 ::res://Assets/Dispensers/Amarelo/::1771817787
@@ -42,18 +47,20 @@ DispensarVerde.res::Animation::1174160216328555843::1771729354::0::1::::<><><>0<
 dispenser_verde.gd::GDScript::4836869597176045709::1771808027::0::1::::<>Node2D<><>0<>0<><>::
 dispenser_verde.tscn::PackedScene::8569420603752515565::1771817777::0::1::::<><><>0<>0<><>::uid://dat2am47x4tb1::::res://Sprites/gameplay/Dispensers/dispenser_de_cobertura_verde.png<>uid://ca6ashe3gu7w8::::res://Assets/Dispensers/Verde/dispenser_verde.gd<>uid://deuu3s1b8cp33::::res://Sprites/gameplay/Dispensers/cobertura_caindo_2.png<>uid://4gvpnee5c7b2::::res://Sprites/gameplay/Dispensers/cobertura_caindo_verde.png<>uid://cljysgsxfkqos::::res://Sprites/gameplay/Dispensers/recheio_quando_cai_na_esteira_verde.png
 ::res://Assets/Prensas/::1771626869
-::res://Assets/Prensas/Circular/::1771818711
+::res://Assets/Prensas/Circular/::1771905471
 PrensarRedondo.res::Animation::551831910039465195::1771725411::0::1::::<><><>0<>0<><>::uid://cytr8ng8lckdu::::res://Sprites/gameplay/Prensas/prensa_redonda_longa_com_o_bapinho.png<>uid://c1h2cn4yiyq2m::::res://Sprites/gameplay/Prensas/prensa_redonda_longa.png
 prensa_circular.gd::GDScript::8172707285337010612::1771627226::0::1::::<>Node2D<><>0<>0<><>::
-prensa_circular.tscn::PackedScene::6085724933303535097::1771818711::0::1::::<><><>0<>0<><>::uid://c1h2cn4yiyq2m::::res://Sprites/gameplay/Prensas/prensa_redonda_longa.png<>uid://doo6ka7nv4c0c::::res://Assets/Prensas/Circular/prensa_circular.gd<>uid://chufat6j2lxol::::res://Sprites/gameplay/Prensas/prensa_ao_meio.png<>uid://h4kudedkuqed::::res://Assets/Prensas/Circular/PrensarRedondo.res
+prensa_circular.tscn::PackedScene::6085724933303535097::1771905471::0::1::::<><><>0<>0<><>::uid://c1h2cn4yiyq2m::::res://Sprites/gameplay/Prensas/prensa_redonda_longa.png<>uid://doo6ka7nv4c0c::::res://Assets/Prensas/Circular/prensa_circular.gd<>uid://chufat6j2lxol::::res://Sprites/gameplay/Prensas/prensa_ao_meio.png<>uid://h4kudedkuqed::::res://Assets/Prensas/Circular/PrensarRedondo.res
 ::res://Assets/Prensas/Quadrada/::1771818758
 PrensarQuadrado.res::Animation::1979902260859961196::1771557020::0::1::::<><><>0<>0<><>::uid://bu1p831mcveg8::::res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png<>uid://7ejrlkcm3vt7::::res://Sprites/gameplay/Prensas/prensa_quadrada.png
 prensa_quadrada.gd::GDScript::1693804517450202860::1771562859::0::1::::<>Node2D<><>0<>0<><>::
 prensa_quadrada.tscn::PackedScene::9138608396383108566::1771818758::0::1::::<><><>0<>0<><>::uid://yeqyiff83e5q::::res://Assets/Prensas/Quadrada/prensa_quadrada.gd<>uid://7ejrlkcm3vt7::::res://Sprites/gameplay/Prensas/prensa_quadrada.png<>uid://chufat6j2lxol::::res://Sprites/gameplay/Prensas/prensa_ao_meio.png<>uid://bu1p831mcveg8::::res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png
-::res://Cenas/::1771869588
+::res://Cenas/::1771905477
+derrota_temp.tscn::PackedScene::5433489946730766561::1771904663::0::1::::<><><>0<>0<><>::
 gameplay.gd::GDScript::647261257069587013::1771549869::0::1::::<>Node<><>0<>0<><>::
-gameplay.tscn::PackedScene::6080962249275068126::1771869588::0::1::::<><><>0<>0<><>::uid://jhske44whbf6::::res://Cenas/gameplay.gd<>uid://d3g2ssfo4j0kg::::res://Assets/Prensas/Quadrada/prensa_quadrada.tscn<>uid://dyoqei7mehgx::::res://Sprites/gameplay/background.png<>uid://csx8aaujrjc46::::res://Assets/Prensas/Circular/prensa_circular.tscn<>uid://cubwtqnwh6a37::::res://Assets/lixeira.tscn<>uid://bnq2pa25qj4a6::::res://Sprites/gameplay/Esteira/esteira_frame_1.png<>uid://t57gftldiusw::::res://Assets/Dispensers/Rosa/dispenser_rosa.tscn<>uid://dypf7brkaef84::::res://Assets/Dispensers/Amarelo/dispenser_amarelo.tscn<>uid://dudddt1eabtxl::::res://Assets/Dispensers/Verde/dispenser_verde.tscn<>uid://ct5mno1i3ebn4::::res://Assets/hud.tscn<>uid://dc65x0c08vy80::::res://Assets/Carimbos/Bela/carimbo_bela.tscn<>uid://vokqpcw2vwc5::::res://Assets/Carimbos/Carinha/carimbo_carinha.tscn<>uid://cka2b2u1h034q::::res://Assets/Carimbos/Meiaum/carimbo_meiaum.tscn<>uid://8fbklpon0anc::::res://Assets/Chocolates/chocolate_base.tscn<>uid://87epl0gblln2::::res://Cenas/path_controller.gd
-path_controller.gd::GDScript::2382562199715977193::1771858224::0::1::::<>PathFollow2D<><>0<>0<><>::
+gameplay.tscn::PackedScene::6080962249275068126::1771905477::0::1::::<><><>0<>0<><>::uid://jhske44whbf6::::res://Cenas/gameplay.gd<>uid://d3g2ssfo4j0kg::::res://Assets/Prensas/Quadrada/prensa_quadrada.tscn<>uid://dyoqei7mehgx::::res://Sprites/gameplay/background.png<>uid://csx8aaujrjc46::::res://Assets/Prensas/Circular/prensa_circular.tscn<>uid://cubwtqnwh6a37::::res://Assets/lixeira.tscn<>uid://bnq2pa25qj4a6::::res://Sprites/gameplay/Esteira/esteira_frame_1.png<>uid://t57gftldiusw::::res://Assets/Dispensers/Rosa/dispenser_rosa.tscn<>uid://dypf7brkaef84::::res://Assets/Dispensers/Amarelo/dispenser_amarelo.tscn<>uid://dudddt1eabtxl::::res://Assets/Dispensers/Verde/dispenser_verde.tscn<>uid://ct5mno1i3ebn4::::res://Assets/hud.tscn<>uid://dc65x0c08vy80::::res://Assets/Carimbos/Bela/carimbo_bela.tscn<>uid://vokqpcw2vwc5::::res://Assets/Carimbos/Carinha/carimbo_carinha.tscn<>uid://cka2b2u1h034q::::res://Assets/Carimbos/Meiaum/carimbo_meiaum.tscn<>uid://8fbklpon0anc::::res://Assets/Chocolates/chocolate_base.tscn<>uid://87epl0gblln2::::res://Cenas/path_controller.gd<>uid://jsedvxkqi8d::::res://Assets/Pedido Errado.res
+path_controller.gd::GDScript::2382562199715977193::1771902892::0::1::::<>PathFollow2D<><>0<>0<><>::
+vitoria_temp.tscn::PackedScene::658596026969417441::1771904703::0::1::::<><><>0<>0<><>::
 ::res://Shaders/::1771784231
 squigglevision.gdshader::Shader::6681272067479575742::1771784231::0::1::::<><><>0<>0<><>::
 ::res://Sons/::1771784231
@@ -80,7 +87,7 @@ carimbo_meiaum.png::CompressedTexture2D::1912462977802826::1771538667::177153963
 carimbo_meiaum_com_o_bapinho.png::CompressedTexture2D::8638016126029685135::1771538667::1771539630::1::::<><><>0<>0<>ff21341b687bdecaeb6b74c0876096ea<>res://.godot/imported/carimbo_meiaum_com_o_bapinho.png-ca200dfae0d4c3d7c213e5130edd0764.ctex::
 ::res://Sprites/gameplay/Chocolates/::1771811679
 massa_do_chocolate_sem_formato.png::CompressedTexture2D::2874996717419700393::1771811396::1771811679::1::::<><><>0<>0<>0270f3a52bb80557b0bf23be396c20d9<>res://.godot/imported/massa_do_chocolate_sem_formato.png-303612e8d767146ea78dc9de9570e1e6.ctex::
-::res://Sprites/gameplay/Chocolates/Icones/::1771871664
+::res://Sprites/gameplay/Chocolates/Icones/::1771871682
 icone_chocolate_circular_bela_sapinho_transparente.png::CompressedTexture2D::3484983504897164447::1771871549::1771871682::1::::<><><>0<>0<>47441b1befb1a043bb66e94bf8aaf0a1<>res://.godot/imported/icone_chocolate_circular_bela_sapinho_transparente.png-99d40212c5535c8540c0198fb21d611e.ctex::
 icone_chocolate_circular_carinha_transparente.png::CompressedTexture2D::4021567344850879856::1771871549::1771871682::1::::<><><>0<>0<>c4c01aa9bcd52d2df6a6ab1cc0fbc6ae<>res://.godot/imported/icone_chocolate_circular_carinha_transparente.png-75ce887aef800b7568d25de479e4d537.ctex::
 icone_chocolate_circular_meiaum_transparente.png::CompressedTexture2D::1470376751669407588::1771871549::1771871682::1::::<><><>0<>0<>6176b46485d0a73001d65171cc0e1dec<>res://.godot/imported/icone_chocolate_circular_meiaum_transparente.png-b60c03bcfde384b6d2858b9f7180ba80.ctex::
