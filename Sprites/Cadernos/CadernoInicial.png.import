@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0qhparkhfxr1"
-path="res://.godot/imported/MenuCreditos_placeholder.png-eee3d0e3c1b702714544bbaf4e69e00d.ctex"
+uid="uid://37vurgy3fs8k"
+path="res://.godot/imported/CadernoInicial.png-33ea0e3641844e268939cabab6823f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MenuCreditos_placeholder.png"
-dest_files=["res://.godot/imported/MenuCreditos_placeholder.png-eee3d0e3c1b702714544bbaf4e69e00d.ctex"]
+source_file="res://Sprites/Cadernos/CadernoInicial.png"
+dest_files=["res://.godot/imported/CadernoInicial.png-33ea0e3641844e268939cabab6823f17.ctex"]
 
 [params]
 
