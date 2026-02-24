@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Node
 Label
 Timer
@@ -12,4 +13,3 @@ Container
 NinePatchRect
 CollisionShape2D
 Area2D
-Sprite2D

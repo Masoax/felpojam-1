@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://8fbklpon0anc" path="res://Assets/Chocolates/chocolate_base.tscn" id="13_ecr5f"]
 [ext_resource type="Script" uid="uid://87epl0gblln2" path="res://Cenas/path_controller.gd" id="15_j51uw"]
 [ext_resource type="Animation" uid="uid://jsedvxkqi8d" path="res://Assets/Pedido Errado.res" id="16_q5gh5"]
+[ext_resource type="AudioStream" uid="uid://cqrvv1q124b5u" path="res://Sons/Musicas/GameplaySongBl.mp3" id="17_ke5gh"]
 
 [sub_resource type="Curve2D" id="Curve2D_j51uw"]
 _data = {
@@ -109,7 +110,7 @@ texture = ExtResource("3_oryen")
 expand_mode = 1
 
 [node name="Lixeira" parent="." unique_id=378623809 instance=ExtResource("2_j51uw")]
-position = Vector2(1126, 624)
+position = Vector2(1120, 624)
 scale = Vector2(0.11, 0.11)
 
 [node name="interagiveis" type="Node" parent="." unique_id=1307058191]
@@ -168,6 +169,12 @@ scale = Vector2(0.07, 0.07)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037707540]
 libraries/ = SubResource("AnimationLibrary_ke5gh")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1687985148]
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1687985148]
+bus = &"SFX"
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1436210289]
+stream = ExtResource("17_ke5gh")
+autoplay = true
+bus = &"Musica"
 
 [editable path="Control/Hud"]

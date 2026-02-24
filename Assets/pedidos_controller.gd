@@ -27,7 +27,7 @@ func _ready() -> void:
 		pedido.tipo = tipo_chocolate
 		add_child(pedido)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if chocolates.is_empty():
 		await get_tree().create_timer(0.3).timeout
 		get_tree().change_scene_to_packed(CENA_VITORIA)

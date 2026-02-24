@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://6q6w3nln03" path="res://Sprites/gameplay/Carimbos/carimbo_meiaum.png" id="1_ac6nw"]
 [ext_resource type="Script" uid="uid://d2bl5bj5q6jor" path="res://Assets/Carimbos/Meiaum/carimbo_meiaum.gd" id="1_uwtqk"]
 [ext_resource type="Texture2D" uid="uid://dvck4mjuanm28" path="res://Sprites/gameplay/Carimbos/carimbo_meiaum_com_o_bapinho.png" id="2_g5pd8"]
+[ext_resource type="AudioStream" uid="uid://cnw754vin5nbr" path="res://Sons/SFX/Sfx-CarimboDoBolo.wav" id="4_edkvq"]
 
 [sub_resource type="Curve2D" id="Curve2D_uwtqk"]
 _data = {
@@ -43,6 +44,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("2_g5pd8"), ExtResource("2_g5pd8"), ExtResource("1_ac6nw")]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_edkvq")
+}],
+"times": PackedFloat32Array(0.24)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7eqop"]
 length = 0.001

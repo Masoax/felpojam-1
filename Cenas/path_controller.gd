@@ -2,6 +2,8 @@ extends PathFollow2D
 
 signal chegou_checagem(tipo_chocolate)
 
+const PEDIDO_CORRETO_SFX = preload("res://Sons/SFX/Sfx-PedidoFinalizado.wav")
+
 #consatantes pontos no caminho
 const PONTO_INICIO:       float = 0.00
 const PONTO_CHECAGEM:     float = 0.77
@@ -23,6 +25,7 @@ const TIPOS_CHOCOLATES: Array[int] = [213141 , 213142 , 213143 ,
 									  223341 , 223342 , 223343 ]
 
 @onready var chocolate:          Node2D = $ChocolateBase
+@onready var audio_controler            = $"../../SFXPlayer"
 @onready var animacoes: AnimationPlayer = $"../../AnimationPlayer"
 @onready var pedidos:     HBoxContainer = $"../../Control/Hud/Fundo/BordaPedidos/HBoxContainer"
 @onready var speed:               float = MAX_SPEED
@@ -65,5 +68,7 @@ func volta_inicio() -> void:
 func trata_condicao(passou):
 	if passou:
 		speed = MAX_SPEED
+		audio_controler.stream = PEDIDO_CORRETO_SFX
+		audio_controler.play()
 	else:
 		animacoes.play("Pedido Errado")
