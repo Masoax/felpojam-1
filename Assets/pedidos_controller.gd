@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 func remove_pedido(tipo_chocolate):
 	if tipo_chocolate in chocolates:
 		var pedidos = get_children()
+		pedidos.reverse()
 		for pedido in pedidos:
 			if pedido.tipo == tipo_chocolate:
 				remove_child(pedido)
