@@ -14,12 +14,14 @@ config/name="Felpojam"
 run/main_scene="uid://bwj8f75xtgpbn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+run/movie_file="D:/Users/rodri/ProjetosGodot/felpoJamPasta/teste.ogv"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [global_group]
 
