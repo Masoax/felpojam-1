@@ -1,3 +1,7 @@
+AudioStreamPlayer2D
+AnimationPlayer
+AnimationTree
+Label
 TextureRect
 Control
 ColorRect
@@ -7,8 +11,4 @@ NinePatchRect
 CollisionShape2D
 Area2D
 Sprite2D
-AnimationPlayer
-AudioStreamPlayer2D
 Node2D
-Label
-PathFollow2D

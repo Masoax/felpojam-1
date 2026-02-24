@@ -15,12 +15,60 @@
 [ext_resource type="PackedScene" uid="uid://cka2b2u1h034q" path="res://Assets/Carimbos/Meiaum/carimbo_meiaum.tscn" id="12_oryen"]
 [ext_resource type="PackedScene" uid="uid://8fbklpon0anc" path="res://Assets/Chocolates/chocolate_base.tscn" id="13_ecr5f"]
 [ext_resource type="Script" uid="uid://87epl0gblln2" path="res://Cenas/path_controller.gd" id="15_j51uw"]
+[ext_resource type="Animation" uid="uid://jsedvxkqi8d" path="res://Assets/Pedido Errado.res" id="16_q5gh5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j51uw"]
 
 [sub_resource type="Curve2D" id="Curve2D_j51uw"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -140, 490, 0, 0, 0, 0, 1140, 490, 0, 0, 0, 0, 1370, 212)
 }
 point_count = 3
+
+[sub_resource type="Animation" id="Animation_q5gh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaminhoChocolateReto/PathFollow2D/ChocolateBase:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaminhoChocolateReto/PathFollow2D:animacao_acabou")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CaminhoChocolateReto/PathFollow2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ke5gh"]
+_data = {
+&"Pedido Errado": ExtResource("16_q5gh5"),
+&"RESET": SubResource("Animation_q5gh5")
+}
 
 [node name="Gameplay" type="Node" unique_id=466691166]
 script = ExtResource("1_jyft0")
@@ -63,10 +111,19 @@ texture = ExtResource("3_oryen")
 expand_mode = 1
 
 [node name="Lixeira" parent="." unique_id=378623809 instance=ExtResource("2_j51uw")]
-position = Vector2(1140, 624)
+position = Vector2(1126, 624)
 scale = Vector2(0.11, 0.11)
 
 [node name="interagiveis" type="Node" parent="." unique_id=1307058191]
+
+[node name="Label" type="Label" parent="interagiveis" unique_id=1710200903]
+z_index = 3
+offset_left = 118.0
+offset_top = 228.0
+offset_right = 814.0
+offset_bottom = 251.0
+text = "22                                     21                             32                       31                           33                         43                       41                     42"
+label_settings = SubResource("LabelSettings_j51uw")
 
 [node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
 z_index = 1
@@ -130,3 +187,10 @@ script = ExtResource("15_j51uw")
 
 [node name="ChocolateBase" parent="CaminhoChocolateReto/PathFollow2D" unique_id=25184117 instance=ExtResource("13_ecr5f")]
 scale = Vector2(0.07, 0.07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037707540]
+libraries/ = SubResource("AnimationLibrary_ke5gh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1687985148]
+
+[editable path="Control/Hud"]

@@ -1,5 +1,3 @@
-#Verificar se o cholate passou pela area das prensas sem ser prensado (desabilitar colisão)
-#	realizar o mesmo para a cobertura e carimbo
 #NO carimbo tem uma chance dele criar uma com a cara do felps/dourado, conta como sucesso sempre
 #Na checagem verificar tanto o estagio quanto o tipo
 #Animação de falha pode ser tanto ele cair na lixeira quanto explodir (segundo só se a da lixeira ficar esquisita)
@@ -11,13 +9,6 @@ const DEFORMADO: int = 10
 const FORMADO:   int = 200000
 const COBERTO:   int = 3000
 const CARIMBADO: int = 40
-
-const CHOCOLATES: Array[int] = [213141 , 213142 , 213143 , 
-								213241 , 213242 , 213243 , 
-								213341 , 213342 , 213343 , 
-								223141 , 223142 , 223143 , 
-								223241 , 223242 , 223243 , 
-								223341 , 223342 , 223343 ]
 
 #COLINHA MONTAR CHOCOLATE        COMO         ID     i
 #quadrado_amarelo_carinha = 210000+3100+41 (213141) (0)

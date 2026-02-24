@@ -11,15 +11,23 @@ const ICONE_QUADRADO_BELA:    Texture2D = preload("res://Sprites/gameplay/Chocol
 const ICONE_QUADRADO_CARINHA: Texture2D = preload("res://Sprites/gameplay/Chocolates/Icones/icone_chocolate_quadrado_carinha_transparente.png")
 const ICONE_QUADRADO_MEIAUM:  Texture2D = preload("res://Sprites/gameplay/Chocolates/Icones/icone_chocolate_quadrado_meiaum_transparente.png")
 
-@onready var textura = $PedidoTexture
+@onready var textura   = $PedidoTexture
 @onready var cor_fundo = $PedidoTexture/ColorRect
-var texturas = [ICONE_QUADRADO_BELA, ICONE_QUADRADO_CARINHA, ICONE_QUADRADO_MEIAUM, 
-				ICONE_REDONDO_BELA, ICONE_REDONDO_CARINHA, ICONE_REDONDO_MEIAUM]
+var texturas_quadradas = [ICONE_QUADRADO_CARINHA, ICONE_QUADRADO_MEIAUM, ICONE_QUADRADO_BELA]
+var texturas_redondas  = [ICONE_REDONDO_CARINHA, ICONE_REDONDO_MEIAUM, ICONE_REDONDO_BELA]
 var cores    = [COR_AMARELO, COR_ROSA, COR_VERDE]
+var tipo: int = 0
 
 func _ready() -> void:
-	textura.texture = texturas[randi_range(0, 5)]
-	cor_fundo.color = cores[randi_range(0, 2)]
+	print("	", name, ": ", tipo)
+	var cor_i = (((tipo % 1000) - (tipo % 100))/100) - 1
+	var forma_i = ((tipo - 200000 - (tipo % 10000))/10000) - 1
+	var carimbo_i = (tipo % 10) - 1
+	if forma_i:
+		textura.texture = texturas_redondas[carimbo_i]
+	else:
+		textura.texture = texturas_quadradas[carimbo_i]
+	cor_fundo.color = cores[cor_i]
 
 func get_textura() -> Texture2D:
 	return textura.texture
