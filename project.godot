@@ -13,7 +13,7 @@ config_version=5
 config/name="Felpojam"
 run/main_scene="uid://bwj8f75xtgpbn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dl5f5lk37gin7"
 run/movie_file="D:/Users/rodri/ProjetosGodot/felpoJamPasta/teste.ogv"
 
 [autoload]
