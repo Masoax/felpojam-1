@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://cf4lan6bwa4wa" path="res://Cenas/menu_principal.gd" id="1_bj1uy"]
 [ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="3_xpioy"]
 [ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="4_hb70r"]
-[ext_resource type="Texture2D" uid="uid://beokmsopk4eaf" path="res://icon.svg" id="4_ns3he"]
 [ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="7_b574n"]
+[ext_resource type="Texture2D" uid="uid://d0raukp451qpm" path="res://Sprites/Cadernos/CadernoTutorial.png" id="9_hb70r"]
 [ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="9_tv6oy"]
 [ext_resource type="Texture2D" uid="uid://37vurgy3fs8k" path="res://Sprites/Cadernos/CadernoInicial.png" id="9_uhlvi"]
 [ext_resource type="AudioStream" uid="uid://jvy8614a2w03" path="res://Sons/Musicas/MusicaMenu.mp3" id="9_xpioy"]
 [ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="10_kni6g"]
-[ext_resource type="Texture2D" uid="uid://in4n7ne4m2e6" path="res://Sprites/Cadernos/CadernoCreditos.png" id="11_hb70r"]
+[ext_resource type="Texture2D" uid="uid://c0rkbvhvaed5m" path="res://Sprites/Cadernos/CadernoCreditos.png" id="11_hb70r"]
 [ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="11_tv6oy"]
+[ext_resource type="Texture2D" uid="uid://bkhg8i1ka2bec" path="res://Sprites/Cadernos/SliderBall.png" id="11_uhlvi"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
 frequency = 0.0002
@@ -64,7 +65,6 @@ max_polyphony = 5
 bus = &"SFX"
 
 [node name="MenuInicial" type="Control" parent="." unique_id=194904409]
-visible = false
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -151,19 +151,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sair"
 metadata/_edit_use_anchors_ = true
 
-[node name="LogoJogo" type="TextureRect" parent="MenuInicial" unique_id=840569768]
-modulate = Color(1, 1, 1, 0.39215687)
-use_parent_material = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.021875
-anchor_top = 0.2375
-anchor_right = 1.3070313
-anchor_bottom = 0.74444443
-texture = ExtResource("4_ns3he")
-metadata/_edit_use_anchors_ = true
-
-[node name="MenuTutorial" type="Control" parent="." unique_id=1380683657]
+[node name="MenuTutorial" type="Control" parent="." unique_id=827831790]
 visible = false
 use_parent_material = true
 layout_mode = 1
@@ -174,28 +162,32 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CadernoTutorial" type="TextureRect" parent="MenuTutorial" unique_id=1183256167]
+[node name="CadernoTutorial" type="TextureRect" parent="MenuTutorial" unique_id=485606665]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("9_hb70r")
 expand_mode = 1
 
-[node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=211087816]
+[node name="BtnVoltar" type="Button" parent="MenuTutorial" unique_id=1765152996]
+self_modulate = Color(1, 1, 1, 0)
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.18203124
-anchor_top = 0.125
-anchor_right = 0.28110352
-anchor_bottom = 0.1851081
+anchor_left = 0.0546875
+anchor_top = 0.85833335
+anchor_right = 0.18032226
+anchor_bottom = 0.9138889
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuConfig" type="Control" parent="." unique_id=574583915]
+visible = false
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -219,33 +211,84 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderGeral" type="HSlider" parent="MenuConfig" unique_id=2058826330]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5796875
-anchor_top = 0.4138889
+anchor_top = 0.4
 anchor_right = 0.9328125
-anchor_bottom = 0.43611112
+anchor_bottom = 0.44444445
+mouse_default_cursor_shape = 2
 value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BallGeral" type="TextureRect" parent="MenuConfig/SliderGeral" unique_id=1057952176]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_uhlvi")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SliderMusica" type="HSlider" parent="MenuConfig" unique_id=2055322101]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5796875
-anchor_top = 0.53194445
+anchor_top = 0.5208333
 anchor_right = 0.928125
-anchor_bottom = 0.55416673
+anchor_bottom = 0.56527776
+offset_bottom = 3.0517578e-05
+mouse_default_cursor_shape = 2
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
+[node name="BallMusica" type="TextureRect" parent="MenuConfig/SliderMusica" unique_id=1745658592]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_uhlvi")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="SliderSFX" type="HSlider" parent="MenuConfig" unique_id=1010897813]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5953125
-anchor_top = 0.6513888
+anchor_top = 0.6402778
 anchor_right = 0.94375
-anchor_bottom = 0.67361104
+anchor_bottom = 0.68472224
+offset_top = -3.0517578e-05
+offset_bottom = -3.0517578e-05
+mouse_default_cursor_shape = 2
 value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BallSFX" type="TextureRect" parent="MenuConfig/SliderSFX" unique_id=230148940]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_uhlvi")
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig" unique_id=1408302889]
@@ -280,7 +323,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
-[node name="MenuCreditos" type="Control" parent="." unique_id=827831790]
+[node name="MenuCreditos" type="Control" parent="." unique_id=1380683657]
 visible = false
 use_parent_material = true
 layout_mode = 1
@@ -291,7 +334,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CadernoCreditos" type="TextureRect" parent="MenuCreditos" unique_id=485606665]
+[node name="CadernoCreditos" type="TextureRect" parent="MenuCreditos" unique_id=1183256167]
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -302,14 +345,16 @@ grow_vertical = 2
 texture = ExtResource("11_hb70r")
 expand_mode = 1
 
-[node name="BtnVoltar" type="Button" parent="MenuCreditos" unique_id=1765152996]
+[node name="BtnVoltar" type="Button" parent="MenuCreditos" unique_id=211087816]
+self_modulate = Color(1, 1, 1, 0)
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.8148438
-anchor_top = 0.8263889
-anchor_right = 0.913916
-anchor_bottom = 0.88649696
+anchor_left = 0.05546875
+anchor_top = 0.8597222
+anchor_right = 0.1796875
+anchor_bottom = 0.91427475
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Voltar"
 metadata/_edit_use_anchors_ = true
