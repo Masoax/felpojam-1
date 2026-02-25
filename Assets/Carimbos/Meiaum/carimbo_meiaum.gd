@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var click_control = $Path2D/PathFollow2D/Sprite2D/ClickControl
+
 @onready var _animation_player = $AnimationPlayer
 @onready var _sprite = $Path2D/PathFollow2D/Sprite2D
 @onready var permite_clique = false
@@ -26,3 +28,9 @@ func _on_click_control_mouse_exited() -> void:
 	permite_clique = false
 	if not _animation_player.is_playing():
 		_sprite.texture = SEM_BAPINHO
+
+func desabilita():
+	click_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func habilita():
+	click_control.mouse_filter = Control.MOUSE_FILTER_STOP

@@ -4,13 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/Quadrada/prensa_quadrada.tscn" id="1_qcc3b"]
 [ext_resource type="Texture2D" uid="uid://dyoqei7mehgx" path="res://Sprites/gameplay/background.png" id="1_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/Circular/prensa_circular.tscn" id="2_6y4ne"]
+[ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="2_bkj33"]
 [ext_resource type="PackedScene" uid="uid://cubwtqnwh6a37" path="res://Assets/lixeira.tscn" id="2_j51uw"]
+[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="3_eywp2"]
 [ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="3_bkj33"]
 [ext_resource type="Texture2D" uid="uid://bnq2pa25qj4a6" path="res://Sprites/gameplay/Esteira/esteira_frame_1.png" id="3_oryen"]
+[ext_resource type="Texture2D" uid="uid://i2sctjrbdrc" path="res://Sprites/gameplay/icones_menu_pause.png" id="4_yj3nl"]
 [ext_resource type="PackedScene" uid="uid://t57gftldiusw" path="res://Assets/Dispensers/Rosa/dispenser_rosa.tscn" id="5_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/Amarelo/dispenser_amarelo.tscn" id="6_jhwwu"]
 [ext_resource type="PackedScene" uid="uid://dudddt1eabtxl" path="res://Assets/Dispensers/Verde/dispenser_verde.tscn" id="7_jyft0"]
 [ext_resource type="PackedScene" uid="uid://ct5mno1i3ebn4" path="res://Assets/hud.tscn" id="8_jhwwu"]
+[ext_resource type="Script" uid="uid://daeoj4yia38vi" path="res://Cenas/interagiveis.gd" id="9_6rsyo"]
 [ext_resource type="PackedScene" uid="uid://dc65x0c08vy80" path="res://Assets/Carimbos/Bela/carimbo_bela.tscn" id="10_2ch6n"]
 [ext_resource type="PackedScene" uid="uid://vokqpcw2vwc5" path="res://Assets/Carimbos/Carinha/carimbo_carinha.tscn" id="11_ecr5f"]
 [ext_resource type="PackedScene" uid="uid://cka2b2u1h034q" path="res://Assets/Carimbos/Meiaum/carimbo_meiaum.tscn" id="12_oryen"]
@@ -18,6 +22,16 @@
 [ext_resource type="Script" uid="uid://87epl0gblln2" path="res://Cenas/path_controller.gd" id="15_j51uw"]
 [ext_resource type="Animation" uid="uid://jsedvxkqi8d" path="res://Assets/Pedido Errado.res" id="16_q5gh5"]
 [ext_resource type="AudioStream" uid="uid://cqrvv1q124b5u" path="res://Sons/Musicas/GameplaySongBl.mp3" id="17_ke5gh"]
+[ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="21_66g34"]
+[ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="22_6rsyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66g34"]
+atlas = ExtResource("4_yj3nl")
+region = Rect2(243, 142, 116, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rsyo"]
+atlas = ExtResource("4_yj3nl")
+region = Rect2(160, 304, 298, 104)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
 frequency = 0.0002
@@ -125,11 +139,147 @@ grow_vertical = 2
 texture = ExtResource("3_oryen")
 expand_mode = 1
 
+[node name="BtnPausar" type="TextureButton" parent="Control" unique_id=2130120249]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.042000003
+anchor_right = 0.057000004
+anchor_bottom = 0.097
+offset_left = -0.27999878
+offset_top = -0.24000168
+offset_right = 0.039993286
+offset_bottom = 0.15999603
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_66g34")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="PauseMenu" type="Control" parent="Control" unique_id=656003305]
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlurFundo" type="ColorRect" parent="Control/PauseMenu" unique_id=1222866071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16470589, 0.16470589, 0.16470589, 0.60784316)
+
+[node name="FundoPause" type="TextureRect" parent="Control/PauseMenu" unique_id=402158808]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -318.33334
+offset_right = 450.0
+offset_bottom = 318.33334
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bkj33")
+expand_mode = 5
+
+[node name="CadernoConfig" type="TextureRect" parent="Control/PauseMenu/FundoPause" unique_id=961338843]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_eywp2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderGeral" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=904148412]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.4138889
+anchor_right = 0.9328125
+anchor_bottom = 0.43611112
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderMusica" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=1778559304]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.53194445
+anchor_right = 0.928125
+anchor_bottom = 0.55416673
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderSFX" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=1072138400]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5953125
+anchor_top = 0.6513888
+anchor_right = 0.94375
+anchor_bottom = 0.67361104
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckTelaCheia" type="CheckBox" parent="Control/PauseMenu/FundoPause" unique_id=1003755372]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62500006
+anchor_top = 0.7875
+anchor_right = 0.8945314
+anchor_bottom = 0.8541667
+offset_right = -230.00012
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 2)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnVoltar" type="Button" parent="Control/PauseMenu/FundoPause" unique_id=1501160435]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.203125
+anchor_top = 0.6805556
+anchor_right = 0.3265625
+anchor_bottom = 0.73333335
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voltar"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnVoltarMenu" type="TextureButton" parent="Control/PauseMenu/FundoPause" unique_id=548125495]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 486.33334
+offset_right = 291.0
+offset_bottom = 519.3334
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_6rsyo")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="Lixeira" parent="." unique_id=378623809 instance=ExtResource("2_j51uw")]
 position = Vector2(1120, 624)
 scale = Vector2(0.11, 0.11)
 
 [node name="interagiveis" type="Node" parent="." unique_id=1307058191]
+script = ExtResource("9_6rsyo")
 
 [node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
 z_index = 1
@@ -192,5 +342,24 @@ bus = &"SFX"
 stream = ExtResource("17_ke5gh")
 autoplay = true
 bus = &"Musica"
+
+[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=1475212888]
+stream = ExtResource("21_66g34")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SfxCliqueVoltar" type="AudioStreamPlayer" parent="." unique_id=320494320]
+stream = ExtResource("22_6rsyo")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX"
+
+[connection signal="button_down" from="Control/BtnPausar" to="." method="_on_button_pausar_button_down"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderGeral" to="." method="_on_slider_geral_value_changed"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
+[connection signal="toggled" from="Control/PauseMenu/FundoPause/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
+[connection signal="button_down" from="Control/PauseMenu/FundoPause/BtnVoltar" to="." method="_on_btn_voltar_button_down"]
+[connection signal="button_down" from="Control/PauseMenu/FundoPause/BtnVoltarMenu" to="." method="_on_btn_voltar_menu_button_down"]
 
 [editable path="Control/Hud"]

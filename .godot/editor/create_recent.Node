@@ -1,13 +1,25 @@
+<<<<<<< Updated upstream
 Label
 AudioStreamPlayer
 Node
+=======
+TextureButton
+TextureRect
+Button
+ColorRect
+Control
+AudioStreamPlayer
+Node
+Label
+>>>>>>> Stashed changes
 Timer
 AudioStreamPlayer
-Button
-TextureRect
 Node
 AudioStreamPlayer2D
 AnimationPlayer
+<<<<<<< Updated upstream
 AnimationTree
 Control
 ColorRect
+=======
+>>>>>>> Stashed changes

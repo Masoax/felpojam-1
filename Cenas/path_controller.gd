@@ -72,3 +72,9 @@ func trata_condicao(passou):
 		audio_controler.play()
 	else:
 		animacoes.play("Pedido Errado")
+
+func pausar():
+	speed = 0
+
+func despausar():
+	speed = MAX_SPEED
