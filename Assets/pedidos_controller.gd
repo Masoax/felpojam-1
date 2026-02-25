@@ -9,10 +9,9 @@ const TIPOS_CHOCOLATES: Array[int] = [213141 , 213142 , 213143 ,
 									  223241 , 223242 , 223243 , 
 									  223341 , 223342 , 223343 ]
 
-const CENA_DERROTA: PackedScene = preload("res://Cenas/derrota_temp.tscn")
-const CENA_VITORIA: PackedScene = preload("res://Cenas/vitoria_temp.tscn")
+@onready var RESULTADO: PackedScene = load("res://Cenas/resultados.tscn")
 
-@onready var pedido_scene:       PackedScene = preload("res://Assets/Chocolates/pedido.tscn")
+@onready var pedido_scene:       PackedScene = load("res://Assets/Chocolates/pedido.tscn")
 @onready var chocolates:          Array[int] = []
 @onready var qtd_chocolates:             int = 0
 @onready var caminho_chocolate: PathFollow2D =  $"../../../../../CaminhoChocolateReto/PathFollow2D"
@@ -29,9 +28,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if chocolates.is_empty():
+		Resultado.jogador_venceu = true
 		await get_tree().create_timer(0.3).timeout
-		get_tree().change_scene_to_packed(CENA_VITORIA)
-#quando os pedidos acabarem mandar para tela de vitória
+		get_tree().change_scene_to_packed(RESULTADO)
 
 func remove_pedido(tipo_chocolate):
 	if tipo_chocolate in chocolates:
@@ -48,5 +47,5 @@ func remove_pedido(tipo_chocolate):
 
 
 func _on_timer_timeout() -> void:
-	await get_tree().create_timer(0.3).timeout
-	get_tree().change_scene_to_packed(CENA_DERROTA)
+	Resultado.jogador_venceu = false
+	get_tree().change_scene_to_packed(RESULTADO)

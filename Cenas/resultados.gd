@@ -14,8 +14,8 @@ extends Control
 var troca_frame = true
 
 # Cenas dos botões
-@export var cena_gameplay: PackedScene
-@export var cena_menu: PackedScene
+@onready var cena_gameplay: PackedScene = load("res://Cenas/gameplay.tscn")
+@onready var cena_menu:     PackedScene = load("res://Cenas/menu_principal.tscn")
 
 # Tela final FINAL
 @onready var fundo_final = $ArteFundo

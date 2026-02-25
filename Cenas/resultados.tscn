@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7k3tcacgehmt" path="res://Sprites/Resultado/Vitoria2.png" id="5_nijf3"]
 [ext_resource type="Texture2D" uid="uid://dw8pbbdqyergy" path="res://Sprites/Resultado/Derrota1.png" id="6_cxtbc"]
 [ext_resource type="Texture2D" uid="uid://d3meicagw0fdl" path="res://Sprites/Resultado/Derrota2.png" id="7_t1ao7"]
-[ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="8_kx03k"]
-[ext_resource type="PackedScene" uid="uid://bwj8f75xtgpbn" path="res://Cenas/menu_principal.tscn" id="9_n3chg"]
 
 [node name="Resultados" type="Control" unique_id=74063998]
 layout_mode = 3
@@ -24,8 +22,6 @@ img_vitoria1 = ExtResource("4_0yf5p")
 img_vitoria2 = ExtResource("5_nijf3")
 img_derrota1 = ExtResource("6_cxtbc")
 img_derrota2 = ExtResource("7_t1ao7")
-cena_gameplay = ExtResource("8_kx03k")
-cena_menu = ExtResource("9_n3chg")
 
 [node name="ArteFundo" type="TextureRect" parent="." unique_id=419619991]
 layout_mode = 1
