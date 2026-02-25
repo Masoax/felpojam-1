@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://jvy8614a2w03" path="res://Sons/Musicas/MusicaMenu.mp3" id="9_xpioy"]
 [ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="10_kni6g"]
 [ext_resource type="Texture2D" uid="uid://in4n7ne4m2e6" path="res://Sprites/Cadernos/CadernoCreditos.png" id="11_hb70r"]
-[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfig.png" id="11_tv6oy"]
+[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="11_tv6oy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
 frequency = 0.0002
@@ -206,6 +206,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CadernoConfig" type="TextureRect" parent="MenuConfig" unique_id=1884008238]
+unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -244,24 +245,24 @@ anchor_left = 0.5953125
 anchor_top = 0.6513888
 anchor_right = 0.94375
 anchor_bottom = 0.67361104
-offset_top = 3.0517578e-05
-offset_bottom = 3.0517578e-05
+offset_top = -1072.0
+offset_bottom = 1072.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 100.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CheckTelaCheia" type="CheckBox" parent="MenuConfig" unique_id=1408302889]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.625
+anchor_left = 0.62500006
 anchor_top = 0.7875
-anchor_right = 0.89453137
-anchor_bottom = 0.8875
-offset_left = 6.1035156e-05
-offset_right = -230.0
-offset_bottom = -48.0
+anchor_right = 0.8945314
+anchor_bottom = 0.8541667
+offset_right = -230.00012
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 2)

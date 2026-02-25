@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 run/movie_file="D:/Users/rodri/ProjetosGodot/felpoJamPasta/teste.ogv"
 
+[autoload]
+
+Resultado="*uid://qfgioiqek4me"
+
 [display]
 
 window/size/viewport_width=1280

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://8ab4q7igr6e4"]
+
+[ext_resource type="Script" uid="uid://60u8qm87lpoi" path="res://Cenas/resultados.gd" id="1_f3lky"]
+[ext_resource type="AudioStream" uid="uid://di2bphy8tgjvg" path="res://Sons/Musicas/MusicaVitoria.mp3" id="2_s6udl"]
+[ext_resource type="AudioStream" uid="uid://dm5cm6x5usulr" path="res://Sons/Musicas/MusicaDerrota.mp3" id="3_odp3y"]
+[ext_resource type="Texture2D" uid="uid://d1ydf2ehbpdnl" path="res://Sprites/Resultado/Vitoria1.png" id="4_0yf5p"]
+[ext_resource type="Texture2D" uid="uid://c7k3tcacgehmt" path="res://Sprites/Resultado/Vitoria2.png" id="5_nijf3"]
+[ext_resource type="Texture2D" uid="uid://dw8pbbdqyergy" path="res://Sprites/Resultado/Derrota1.png" id="6_cxtbc"]
+[ext_resource type="Texture2D" uid="uid://d3meicagw0fdl" path="res://Sprites/Resultado/Derrota2.png" id="7_t1ao7"]
+[ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="8_kx03k"]
+[ext_resource type="PackedScene" uid="uid://bwj8f75xtgpbn" path="res://Cenas/menu_principal.tscn" id="9_n3chg"]
+
+[node name="Resultados" type="Control" unique_id=74063998]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f3lky")
+som_vitoria = ExtResource("2_s6udl")
+som_derrota = ExtResource("3_odp3y")
+img_vitoria1 = ExtResource("4_0yf5p")
+img_vitoria2 = ExtResource("5_nijf3")
+img_derrota1 = ExtResource("6_cxtbc")
+img_derrota2 = ExtResource("7_t1ao7")
+cena_gameplay = ExtResource("8_kx03k")
+cena_menu = ExtResource("9_n3chg")
+
+[node name="ArteFundo" type="TextureRect" parent="." unique_id=419619991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnJogarNovamente" type="Button" parent="." unique_id=1019878527]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.7652778
+anchor_right = 0.18671875
+anchor_bottom = 0.80833334
+grow_vertical = 0
+text = "Jogar Novamente"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnMenu" type="Button" parent="." unique_id=1387020362]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.83515626
+anchor_top = 0.75277776
+anchor_right = 0.8765625
+anchor_bottom = 0.79583335
+grow_horizontal = 0
+grow_vertical = 0
+text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1993931511]
+bus = &"Musica"
+
+[node name="TextoFundo" type="Label" parent="." unique_id=717402704]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36992186
+anchor_top = 0.04027778
+anchor_right = 0.63007814
+anchor_bottom = 0.28333333
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "Teste"
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerGif" type="Timer" parent="." unique_id=1292693850]
+autostart = true
+
+[connection signal="pressed" from="BtnJogarNovamente" to="." method="_on_btn_jogar_novamente_pressed"]
+[connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="timeout" from="TimerGif" to="." method="_on_timer_gif_timeout"]
