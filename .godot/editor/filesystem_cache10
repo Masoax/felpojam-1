@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1771978777
+::res://::1772045989
 default_bus_layout.tres::AudioBusLayout::6349775516858901539::1771964964::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1771960319::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::2696706914000194429::1771539064::1771978777::1::::<><><>0<>0<>40742816e9b49155a0d58f4b319e1da2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -50,12 +50,12 @@ prensa_circular.tscn::PackedScene::6085724933303535097::1771963743::0::1::::<><>
 PrensarQuadrado.res::Animation::1979902260859961196::1771960312::0::1::::<><><>0<>0<><>::uid://bu1p831mcveg8::::res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png<>uid://7ejrlkcm3vt7::::res://Sprites/gameplay/Prensas/prensa_quadrada.png
 prensa_quadrada.gd::GDScript::1693804517450202860::1771963863::0::1::::<>Node2D<><>0<>0<><>::
 prensa_quadrada.tscn::PackedScene::9138608396383108566::1771963544::0::1::::<><><>0<>0<><>::uid://yeqyiff83e5q::::res://Assets/Prensas/Quadrada/prensa_quadrada.gd<>uid://7ejrlkcm3vt7::::res://Sprites/gameplay/Prensas/prensa_quadrada.png<>uid://chufat6j2lxol::::res://Sprites/gameplay/Prensas/prensa_ao_meio.png<>uid://bu1p831mcveg8::::res://Sprites/gameplay/Prensas/prensa_quadrada_com_o_bapinho.png<>uid://baluyjwgg5ifc::::res://Sons/SFX/Sfx-Prensa.wav
-::res://Cenas/::1771981279
+::res://Cenas/::1771981597
 derrota_temp.tscn::PackedScene::5433489946730766561::1771960312::0::1::::<><><>0<>0<><>::
 gameplay.gd::GDScript::647261257069587013::1771960312::0::1::::<>Node<><>0<>0<><>::
 gameplay.tscn::PackedScene::6080962249275068126::1771981180::0::1::::<><><>0<>0<><>::uid://jhske44whbf6::::res://Cenas/gameplay.gd<>uid://d3g2ssfo4j0kg::::res://Assets/Prensas/Quadrada/prensa_quadrada.tscn<>uid://dyoqei7mehgx::::res://Sprites/gameplay/background.png<>uid://csx8aaujrjc46::::res://Assets/Prensas/Circular/prensa_circular.tscn<>uid://cubwtqnwh6a37::::res://Assets/lixeira.tscn<>uid://bnq2pa25qj4a6::::res://Sprites/gameplay/Esteira/esteira_frame_1.png<>uid://t57gftldiusw::::res://Assets/Dispensers/Rosa/dispenser_rosa.tscn<>uid://dypf7brkaef84::::res://Assets/Dispensers/Amarelo/dispenser_amarelo.tscn<>uid://dudddt1eabtxl::::res://Assets/Dispensers/Verde/dispenser_verde.tscn<>uid://ct5mno1i3ebn4::::res://Assets/hud.tscn<>uid://dc65x0c08vy80::::res://Assets/Carimbos/Bela/carimbo_bela.tscn<>uid://vokqpcw2vwc5::::res://Assets/Carimbos/Carinha/carimbo_carinha.tscn<>uid://cka2b2u1h034q::::res://Assets/Carimbos/Meiaum/carimbo_meiaum.tscn<>uid://8fbklpon0anc::::res://Assets/Chocolates/chocolate_base.tscn<>uid://87epl0gblln2::::res://Cenas/path_controller.gd<>uid://jsedvxkqi8d::::res://Assets/Pedido Errado.res<>uid://cqrvv1q124b5u::::res://Sons/Musicas/GameplaySongBl.mp3
 menu_principal.gd::GDScript::5184321158131886496::1771978531::0::1::::<>Control<><>0<>0<><>::
-menu_principal.tscn::PackedScene::3951168961409164715::1771981279::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://Cenas/menu_principal.gd<>uid://csvwtbeuyp48q::::res://Cenas/gameplay.tscn<>uid://q7t23b1l56ni::::res://Sprites/Cadernos/CadernoFundo.png<>uid://beokmsopk4eaf::::res://icon.svg<>uid://c2gptsqfbto3g::::res://Shaders/squigglevision.gdshader<>uid://b5d2saalihq23::::res://Sons/SFX/SfxCliqueVoltar.ogg<>uid://37vurgy3fs8k::::res://Sprites/Cadernos/CadernoInicial.png<>uid://jvy8614a2w03::::res://Sons/Musicas/MusicaMenu.mp3<>uid://brqrw2ufml0ul::::res://Sons/SFX/SfxCliqueMenu.wav<>uid://in4n7ne4m2e6::::res://Sprites/Cadernos/CadernoCreditos.png<>uid://dmrmdimgqhfbw::::res://Sprites/Cadernos/CadernoConfigW.png
+menu_principal.tscn::PackedScene::3951168961409164715::1771981597::0::1::::<><><>0<>0<><>::uid://cf4lan6bwa4wa::::res://Cenas/menu_principal.gd<>uid://csvwtbeuyp48q::::res://Cenas/gameplay.tscn<>uid://q7t23b1l56ni::::res://Sprites/Cadernos/CadernoFundo.png<>uid://beokmsopk4eaf::::res://icon.svg<>uid://c2gptsqfbto3g::::res://Shaders/squigglevision.gdshader<>uid://b5d2saalihq23::::res://Sons/SFX/SfxCliqueVoltar.ogg<>uid://37vurgy3fs8k::::res://Sprites/Cadernos/CadernoInicial.png<>uid://jvy8614a2w03::::res://Sons/Musicas/MusicaMenu.mp3<>uid://brqrw2ufml0ul::::res://Sons/SFX/SfxCliqueMenu.wav<>uid://in4n7ne4m2e6::::res://Sprites/Cadernos/CadernoCreditos.png<>uid://dmrmdimgqhfbw::::res://Sprites/Cadernos/CadernoConfigW.png
 path_controller.gd::GDScript::2382562199715977193::1771967469::0::1::::<>PathFollow2D<><>0<>0<><>::
 resultados.gd::GDScript::2228737728138526360::1771980808::0::1::::<>Control<><>0<>0<><>::
 resultados.tscn::PackedScene::2316345235250626313::1771980980::0::1::::<><><>0<>0<><>::uid://60u8qm87lpoi::::res://Cenas/resultados.gd<>uid://di2bphy8tgjvg::::res://Sons/Musicas/MusicaVitoria.mp3<>uid://dm5cm6x5usulr::::res://Sons/Musicas/MusicaDerrota.mp3<>uid://d1ydf2ehbpdnl::::res://Sprites/Resultado/Vitoria1.png<>uid://c7k3tcacgehmt::::res://Sprites/Resultado/Vitoria2.png<>uid://dw8pbbdqyergy::::res://Sprites/Resultado/Derrota1.png<>uid://d3meicagw0fdl::::res://Sprites/Resultado/Derrota2.png
@@ -74,16 +74,16 @@ MusicaDerrota.mp3::AudioStreamMP3::8063604036014753191::1771978531::1771978775::
 MusicaMenu.mp3::AudioStreamMP3::676569334310287550::1771960312::1771978775::1::::<><><>0<>0<>a0899473c14d10284da4c6819ef34319<>res://.godot/imported/MusicaMenu.mp3-c57b5c96d81007e9c6ab7a2e1a562dd5.mp3str::
 MusicaVitoria.mp3::AudioStreamMP3::7776598909708279412::1771978531::1771978775::1::::<><><>0<>0<>3f6e787489415f0669af0f392590180f<>res://.godot/imported/MusicaVitoria.mp3-c75e56d5482c6c389950e6fa2fb8cdde.mp3str::
 Tutoriel.mp3::AudioStreamMP3::921114168569874062::1771961508::1771968308::1::::<><><>0<>0<>2d4fda9ba6453043eec2da144bce4a08<>res://.godot/imported/Tutoriel.mp3-75df1f99f6d5c7b89bec0e259713f5d5.mp3str::
-::res://Sons/SFX/::1771978778
+::res://Sons/SFX/::1772046984
+CoberturaCremosa.mp3::AudioStreamMP3::2249048842514017412::1772046934::1772046992::1::::<><><>0<>0<>7df91561b2a091523ba29ad2bb3051d2<>res://.godot/imported/CoberturaCremosa.mp3-72953142e472d3c7a1901387d7e928dd.mp3str::
 Sfx-CarimboDoBolo.wav::AudioStreamWAV::5732710718855708775::1771961501::1771962071::1::::<><><>0<>0<>2672ff8da1877dc59dd0e9d23dd89436<>res://.godot/imported/Sfx-CarimboDoBolo.wav-b92e5b7eae11defd2795982705307c2a.sample::
-Sfx-Cobertura.mp3::AudioStreamMP3::5049680729854719109::1771961510::1771962071::1::::<><><>0<>0<>434db24cc692fc326193c3a6d47209d1<>res://.godot/imported/Sfx-Cobertura.mp3-3f06d7aa38919d267bf1a54218436aa1.mp3str::
 Sfx-Lixeira.mp3::AudioStreamMP3::3404756554400480729::1771961513::1771962071::1::::<><><>0<>0<>8702dd0a4f4e6a3b543a1e04ae2f3c21<>res://.godot/imported/Sfx-Lixeira.mp3-f49cc7c39322a9d3be8d6e61404713a3.mp3str::
 Sfx-PedidoFinalizado.wav::AudioStreamWAV::5921064828812880198::1771961498::1771962071::1::::<><><>0<>0<>742ca897c5fefebe55bd19c9a2186889<>res://.godot/imported/Sfx-PedidoFinalizado.wav-79ce9a1a9ada12706434ecd95782373d.sample::
 Sfx-Prensa.wav::AudioStreamWAV::2410386544874472924::1771961489::1771962071::1::::<><><>0<>0<>df9daf1820b31e4839e270ce6d084875<>res://.godot/imported/Sfx-Prensa.wav-dd8c11acdd94de57d521d3593a0c5171.sample::
 Sfx-Retornar.ogg::AudioStreamOggVorbis::6793242876777093716::1771962139::1771962256::1::::<><><>0<>0<>923349e3121eddbe480f5efbae9414f2<>res://.godot/imported/Sfx-Retornar.ogg-7d319907847222b0328a7d63f17d7f2f.oggvorbisstr::
 SfxCliqueMenu.wav::AudioStreamWAV::3613733995217762895::1771960312::1771978778::1::::<><><>0<>0<>cc41542bb6464aca07d2ffa7d89be7b1<>res://.godot/imported/SfxCliqueMenu.wav-3505c5f990925114f02149f378017d51.sample::
 SfxCliqueVoltar.ogg::AudioStreamOggVorbis::4499950629702009482::1771960312::1771960605::1::::<><><>0<>0<>d1002c378ae8d699ee69cfa2a10e2564<>res://.godot/imported/SfxCliqueVoltar.ogg-e93fb00d1b855de3e5d7c7f87fd8c85c.oggvorbisstr::
-::res://Sprites/::1771981558
+::res://Sprites/::1771981563
 icone.png::CompressedTexture2D::7993628417020527786::1771981558::1771981563::1::::<><><>0<>0<>ae969e510f715a399677843d177b4fe0<>res://.godot/imported/icone.png-c3b976110a1bd2431c9b78bbae3ec47f.ctex::
 ::res://Sprites/Cadernos/::1771978778
 CadernoConfigF.png::CompressedTexture2D::5491357701420593505::1771978531::1771978778::1::::<><><>0<>0<>67af6a255b19de7a21d979c312ed47ad<>res://.godot/imported/CadernoConfigF.png-8a0474d352ffe92e9c608d1ee6f665e9.ctex::
