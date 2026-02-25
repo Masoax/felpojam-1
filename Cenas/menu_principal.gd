@@ -4,7 +4,6 @@ extends Control
 @export var cena_gameplay: PackedScene
 
 @onready var menu_inicial = $MenuInicial
-@onready var menu_logo = $MenuInicial/LogoJogo
 @onready var menu_tutorial = $MenuTutorial
 @onready var menu_config = $MenuConfig
 @onready var menu_creditos = $MenuCreditos
@@ -16,6 +15,11 @@ const ARQUIVO_SAVE = "user://config.cfg"
 @onready var slider_musica = $MenuConfig/SliderMusica
 @onready var slider_sfx = $MenuConfig/SliderSFX
 @onready var check_tela_cheia =$MenuConfig/CheckTelaCheia
+
+# Variaveis visuais da bolinha dos sliders
+@onready var ball_geral = $MenuConfig/SliderGeral/BallGeral
+@onready var ball_musica = $MenuConfig/SliderMusica/BallMusica
+@onready var ball_sfx = $MenuConfig/SliderSFX/BallSFX
 
 # Variaveis de som
 @onready var musica_menu = $MusicaMenu
@@ -32,7 +36,6 @@ var textura_Cheia = preload("res://Sprites/Cadernos/CadernoConfigW.png")
 func _ready():
 	carregar_configuracoes()
 	musica_menu.play()
-	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
 	exibir_creditos(false)
@@ -54,12 +57,11 @@ func _on_btn_tutorial_pressed():
 	
 func _on_btn_voltar_pressed():
 	sfx_voltar.play()
-	menu_logo.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
 	exibir_creditos(false)
 	
-# funções para trocar o menu inicial com o das configurações
+# Funções para trocar o menu inicial com o das configurações
 func exibir_configuracoes(mostrar_config: bool):
 	menu_inicial.visible = !mostrar_config
 	menu_config.visible = mostrar_config
@@ -68,6 +70,16 @@ func _on_btn_config_pressed():
 	sfx_clique.play(0.1)
 	exibir_configuracoes(!menu_config.visible)
 	
+# Função para mudar a posição da ball baseada no slider
+func _process(_delta):
+	var ballg = (slider_geral.value - slider_geral.min_value) / (slider_geral.max_value - slider_geral.min_value)
+	var ballm = (slider_musica.value - slider_musica.min_value) / (slider_musica.max_value - slider_musica.min_value)
+	var balls = (slider_sfx.value - slider_sfx.min_value) / (slider_sfx.max_value - slider_sfx.min_value)
+	
+	ball_geral.position.x = (ballg * 442) - 20
+	ball_musica.position.x = (ballm * 436) - 20
+	ball_sfx.position.x = (balls * 436) - 20
+	
 # Variaveis para guardas as configurações dos canais de audio
 var bus_geral = AudioServer.get_bus_index("Master")
 var bus_musica = AudioServer.get_bus_index("Musica")
@@ -75,15 +87,15 @@ var bus_sfx = AudioServer.get_bus_index("SFX")
 
 func _on_slider_geral_value_changed(value: float):
 	AudioServer.set_bus_volume_db(bus_geral, linear_to_db(value / 100))
-	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
+	salvar_configuracoes()
 	
 func _on_slider_musica_value_changed(value: float):
 	AudioServer.set_bus_volume_db(bus_musica, linear_to_db(value / 100))
-	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
+	salvar_configuracoes()
 	
 func _on_slider_sfx_value_changed(value: float):
 	AudioServer.set_bus_volume_db(bus_sfx, linear_to_db(value / 100))
-	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
+	salvar_configuracoes()
 	
 # Configuração da tela cheia
 func _on_check_tela_cheia_toggled(toggled_on: bool):
@@ -95,7 +107,7 @@ func _on_check_tela_cheia_toggled(toggled_on: bool):
 		sfx_clique.play(0.1)
 		Visual_Config.texture = textura_Cheia
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	salvar_configuracoes() # Salvando as alterações para quando o jogo abrir de novo
+	salvar_configuracoes()
 		
 # funções para trocar o menu inicial com os dos creditos e vice-versa
 func exibir_creditos(mostrar_creditos: bool):

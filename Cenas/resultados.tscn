@@ -1,14 +1,44 @@
 [gd_scene format=3 uid="uid://8ab4q7igr6e4"]
 
 [ext_resource type="Script" uid="uid://60u8qm87lpoi" path="res://Cenas/resultados.gd" id="1_f3lky"]
+[ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="1_xh7he"]
 [ext_resource type="AudioStream" uid="uid://di2bphy8tgjvg" path="res://Sons/Musicas/MusicaVitoria.mp3" id="2_s6udl"]
 [ext_resource type="AudioStream" uid="uid://dm5cm6x5usulr" path="res://Sons/Musicas/MusicaDerrota.mp3" id="3_odp3y"]
 [ext_resource type="Texture2D" uid="uid://d1ydf2ehbpdnl" path="res://Sprites/Resultado/Vitoria1.png" id="4_0yf5p"]
 [ext_resource type="Texture2D" uid="uid://c7k3tcacgehmt" path="res://Sprites/Resultado/Vitoria2.png" id="5_nijf3"]
 [ext_resource type="Texture2D" uid="uid://dw8pbbdqyergy" path="res://Sprites/Resultado/Derrota1.png" id="6_cxtbc"]
 [ext_resource type="Texture2D" uid="uid://d3meicagw0fdl" path="res://Sprites/Resultado/Derrota2.png" id="7_t1ao7"]
+[ext_resource type="FontFile" uid="uid://bx0mxpdo3it4e" path="res://fonts/Gaegu-Regular.ttf" id="9_f3lky"]
+[ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="10_odp3y"]
+[ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="11_0yf5p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
+frequency = 0.0002
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f3lky"]
+noise = SubResource("FastNoiseLite_b574n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6udl"]
+shader = ExtResource("1_xh7he")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.1
+shader_parameter/fps = 3.0
+shader_parameter/noise = SubResource("NoiseTexture2D_f3lky")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3lky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6udl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odp3y"]
+
+[sub_resource type="FontVariation" id="FontVariation_s6udl"]
+base_font = ExtResource("9_f3lky")
+
+[sub_resource type="FontVariation" id="FontVariation_odp3y"]
+base_font = ExtResource("9_f3lky")
 
 [node name="Resultados" type="Control" unique_id=74063998]
+material = SubResource("ShaderMaterial_s6udl")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,6 +54,7 @@ img_derrota1 = ExtResource("6_cxtbc")
 img_derrota2 = ExtResource("7_t1ao7")
 
 [node name="ArteFundo" type="TextureRect" parent="." unique_id=419619991]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,32 +65,83 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnJogarNovamente" type="Button" parent="." unique_id=1019878527]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.075
-anchor_top = 0.7652778
-anchor_right = 0.18671875
-anchor_bottom = 0.80833334
+anchor_left = 0.06796875
+anchor_top = 0.8138889
+anchor_right = 0.28671876
+anchor_bottom = 0.87916666
+offset_top = -1.0
+offset_bottom = -1.0
 grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.4960128, 0.5237906, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f3lky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s6udl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_odp3y")
+metadata/_edit_use_anchors_ = true
+
+[node name="JogarNovamente" type="Label" parent="BtnJogarNovamente" unique_id=1332449248]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008928572
+anchor_right = 1.0089285
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.972549, 0.79607844, 0.2901961, 1)
+theme_override_colors/font_outline_color = Color(0.16862746, 0.12156863, 0.42745098, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_s6udl")
+theme_override_font_sizes/font_size = 40
 text = "Jogar Novamente"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnMenu" type="Button" parent="." unique_id=1387020362]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.83515626
-anchor_top = 0.75277776
-anchor_right = 0.8765625
-anchor_bottom = 0.79583335
+anchor_left = 0.85625
+anchor_top = 0.8125
+anchor_right = 0.9320313
+anchor_bottom = 0.88611114
 grow_horizontal = 0
 grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 32
 text = "Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Label" parent="BtnMenu" unique_id=1296080688]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.972549, 0.79607844, 0.2901961, 1)
+theme_override_colors/font_outline_color = Color(0.16862746, 0.12156863, 0.42745098, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_s6udl")
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1993931511]
 bus = &"Musica"
 
 [node name="TextoFundo" type="Label" parent="." unique_id=717402704]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.36992186
@@ -67,12 +149,29 @@ anchor_top = 0.04027778
 anchor_right = 0.63007814
 anchor_bottom = 0.28333333
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972549, 0.79607844, 0.2901961, 1)
+theme_override_colors/font_outline_color = Color(0.16862746, 0.12156863, 0.42745098, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("FontVariation_odp3y")
 theme_override_font_sizes/font_size = 128
 text = "Teste"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="TimerGif" type="Timer" parent="." unique_id=1292693850]
 autostart = true
+
+[node name="SfxCliqueMenu" type="AudioStreamPlayer" parent="." unique_id=2105010613]
+stream = ExtResource("10_odp3y")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SfxCliqueVoltar" type="AudioStreamPlayer" parent="." unique_id=109324924]
+stream = ExtResource("11_0yf5p")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX"
 
 [connection signal="pressed" from="BtnJogarNovamente" to="." method="_on_btn_jogar_novamente_pressed"]
 [connection signal="pressed" from="BtnMenu" to="." method="_on_btn_menu_pressed"]

@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+Label
 AudioStreamPlayer
 Node
-Label
-=======
->>>>>>> 0b6cd511d4dbb1aace13d2d4e5e3812f31fd7c4b
 Timer
-Label
 AudioStreamPlayer
 Button
 TextureRect
@@ -15,11 +11,3 @@ AnimationPlayer
 AnimationTree
 Control
 ColorRect
-HBoxContainer
-Container
-NinePatchRect
-<<<<<<< HEAD
-CollisionShape2D
-Area2D
-=======
->>>>>>> 0b6cd511d4dbb1aace13d2d4e5e3812f31fd7c4b
