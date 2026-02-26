@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Felpojam"
-config/version="1.1"
+config/name="A Fanstástica Fábrica de Bapolate"
+config/version="1.2"
 run/main_scene="uid://bwj8f75xtgpbn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://dl5f5lk37gin7"
