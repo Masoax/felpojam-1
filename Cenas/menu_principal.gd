@@ -36,6 +36,7 @@ var textura_Cheia = preload("res://Sprites/Cadernos/CadernoConfigW.png")
 func _ready():
 	carregar_configuracoes()
 	musica_menu.play()
+	menu_inicial.visible = true
 	exibir_tutorial(false)
 	exibir_configuracoes(false)
 	exibir_creditos(false)

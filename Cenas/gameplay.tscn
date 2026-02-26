@@ -6,14 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/Circular/prensa_circular.tscn" id="2_6y4ne"]
 [ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="2_bkj33"]
 [ext_resource type="PackedScene" uid="uid://cubwtqnwh6a37" path="res://Assets/lixeira.tscn" id="2_j51uw"]
-[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="3_eywp2"]
 [ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="3_bkj33"]
+[ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="3_eywp2"]
 [ext_resource type="Texture2D" uid="uid://bnq2pa25qj4a6" path="res://Sprites/gameplay/Esteira/esteira_frame_1.png" id="3_oryen"]
 [ext_resource type="Texture2D" uid="uid://i2sctjrbdrc" path="res://Sprites/gameplay/icones_menu_pause.png" id="4_yj3nl"]
 [ext_resource type="PackedScene" uid="uid://t57gftldiusw" path="res://Assets/Dispensers/Rosa/dispenser_rosa.tscn" id="5_s4ywb"]
 [ext_resource type="PackedScene" uid="uid://dypf7brkaef84" path="res://Assets/Dispensers/Amarelo/dispenser_amarelo.tscn" id="6_jhwwu"]
 [ext_resource type="PackedScene" uid="uid://dudddt1eabtxl" path="res://Assets/Dispensers/Verde/dispenser_verde.tscn" id="7_jyft0"]
 [ext_resource type="PackedScene" uid="uid://ct5mno1i3ebn4" path="res://Assets/hud.tscn" id="8_jhwwu"]
+[ext_resource type="Texture2D" uid="uid://bkhg8i1ka2bec" path="res://Sprites/Cadernos/SliderBall.png" id="9_1f61n"]
 [ext_resource type="Script" uid="uid://daeoj4yia38vi" path="res://Cenas/interagiveis.gd" id="9_6rsyo"]
 [ext_resource type="PackedScene" uid="uid://dc65x0c08vy80" path="res://Assets/Carimbos/Bela/carimbo_bela.tscn" id="10_2ch6n"]
 [ext_resource type="PackedScene" uid="uid://vokqpcw2vwc5" path="res://Assets/Carimbos/Carinha/carimbo_carinha.tscn" id="11_ecr5f"]
@@ -24,14 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://cqrvv1q124b5u" path="res://Sons/Musicas/GameplaySongBl.mp3" id="17_ke5gh"]
 [ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="21_66g34"]
 [ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="22_6rsyo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_66g34"]
-atlas = ExtResource("4_yj3nl")
-region = Rect2(243, 142, 116, 103)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rsyo"]
-atlas = ExtResource("4_yj3nl")
-region = Rect2(160, 304, 298, 104)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
 frequency = 0.0002
@@ -45,6 +38,14 @@ shader_parameter/scale = Vector2(1, 1)
 shader_parameter/strength = 0.1
 shader_parameter/fps = 3.0
 shader_parameter/noise = SubResource("NoiseTexture2D_eywp2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66g34"]
+atlas = ExtResource("4_yj3nl")
+region = Rect2(243, 142, 116, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rsyo"]
+atlas = ExtResource("4_yj3nl")
+region = Rect2(160, 304, 298, 104)
 
 [sub_resource type="Curve2D" id="Curve2D_j51uw"]
 _data = {
@@ -116,6 +117,10 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="Temporizador" parent="Control/Hud/Fundo" parent_id_path=PackedInt32Array(1909643394, 1464341148) index="0" unique_id=1943702586]
+value = 100.0
+texture_progress_offset = Vector2(3.035, 0)
+
 [node name="Fundo" type="TextureRect" parent="Control" unique_id=1751968541]
 z_index = -1
 material = SubResource("ShaderMaterial_yj3nl")
@@ -139,7 +144,7 @@ grow_vertical = 2
 texture = ExtResource("3_oryen")
 expand_mode = 1
 
-[node name="BtnPausar" type="TextureButton" parent="Control" unique_id=2130120249]
+[node name="BtnPausar" type="TextureButton" parent="Control" unique_id=2130120249 node_paths=PackedStringArray("shortcut_context")]
 top_level = true
 layout_mode = 1
 anchors_preset = -1
@@ -152,6 +157,7 @@ offset_top = -0.24000168
 offset_right = 0.039993286
 offset_bottom = 0.15999603
 mouse_default_cursor_shape = 2
+shortcut_context = NodePath("..")
 texture_normal = SubResource("AtlasTexture_66g34")
 ignore_texture_size = true
 stretch_mode = 4
@@ -201,36 +207,6 @@ texture = ExtResource("3_eywp2")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="SliderGeral" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=904148412]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5796875
-anchor_top = 0.4138889
-anchor_right = 0.9328125
-anchor_bottom = 0.43611112
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SliderMusica" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=1778559304]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5796875
-anchor_top = 0.53194445
-anchor_right = 0.928125
-anchor_bottom = 0.55416673
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SliderSFX" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=1072138400]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5953125
-anchor_top = 0.6513888
-anchor_right = 0.94375
-anchor_bottom = 0.67361104
-value = 100.0
-metadata/_edit_use_anchors_ = true
-
 [node name="CheckTelaCheia" type="CheckBox" parent="Control/PauseMenu/FundoPause" unique_id=1003755372]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(115, 0)
@@ -273,6 +249,87 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_6rsyo")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="SliderGeral" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=337694685]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.4
+anchor_right = 0.9328125
+anchor_bottom = 0.44444445
+mouse_default_cursor_shape = 2
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BallGeral" type="TextureRect" parent="Control/PauseMenu/FundoPause/SliderGeral" unique_id=1696954966]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1f61n")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderMusica" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=1858163031]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5796875
+anchor_top = 0.5208333
+anchor_right = 0.928125
+anchor_bottom = 0.56527776
+offset_bottom = 3.0517578e-05
+mouse_default_cursor_shape = 2
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BallMusica" type="TextureRect" parent="Control/PauseMenu/FundoPause/SliderMusica" unique_id=595034936]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1f61n")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SliderSFX" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=697242223]
+self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5953125
+anchor_top = 0.6402778
+anchor_right = 0.94375
+anchor_bottom = 0.68472224
+offset_top = -3.0517578e-05
+offset_bottom = -3.0517578e-05
+mouse_default_cursor_shape = 2
+value = 100.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BallSFX" type="TextureRect" parent="Control/PauseMenu/FundoPause/SliderSFX" unique_id=180455069]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1875
+anchor_right = 0.10619469
+anchor_bottom = 1.3125
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1f61n")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Lixeira" parent="." unique_id=378623809 instance=ExtResource("2_j51uw")]
 position = Vector2(1120, 624)
@@ -355,11 +412,11 @@ max_polyphony = 5
 bus = &"SFX"
 
 [connection signal="button_down" from="Control/BtnPausar" to="." method="_on_button_pausar_button_down"]
-[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderGeral" to="." method="_on_slider_geral_value_changed"]
-[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderMusica" to="." method="_on_slider_musica_value_changed"]
-[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
 [connection signal="toggled" from="Control/PauseMenu/FundoPause/CheckTelaCheia" to="." method="_on_check_tela_cheia_toggled"]
 [connection signal="button_down" from="Control/PauseMenu/FundoPause/BtnVoltar" to="." method="_on_btn_voltar_button_down"]
 [connection signal="button_down" from="Control/PauseMenu/FundoPause/BtnVoltarMenu" to="." method="_on_btn_voltar_menu_button_down"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderGeral" to="." method="_on_slider_geral_value_changed"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderMusica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="Control/PauseMenu/FundoPause/SliderSFX" to="." method="_on_slider_sfx_value_changed"]
 
 [editable path="Control/Hud"]

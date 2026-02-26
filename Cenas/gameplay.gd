@@ -19,6 +19,11 @@ const ARQUIVO_SAVE = "user://config.cfg"
 @onready var button_voltar_menu = $Control/PauseMenu/FundoPause/BtnVoltarMenu
 @onready var interagiveis = $interagiveis
 
+# Variaveis visuais da bolinha dos sliders
+@onready var ball_geral = $Control/PauseMenu/FundoPause/SliderGeral/BallGeral
+@onready var ball_musica = $Control/PauseMenu/FundoPause/SliderMusica/BallMusica
+@onready var ball_sfx = $Control/PauseMenu/FundoPause/SliderSFX/BallSFX
+
 # Variaveis da tela de Configurações
 @onready var Visual_Config = $Control/PauseMenu/FundoPause/CadernoConfig
 
@@ -35,23 +40,26 @@ func _ready() -> void:
 	menu_pause.visible = false
 	habilita_botoes(false)
 
+# Função para mudar a posição da ball baseada no slider
+func _process(_delta):
+	var ballg = (slider_geral.value - slider_geral.min_value) / (slider_geral.max_value - slider_geral.min_value)
+	var ballm = (slider_musica.value - slider_musica.min_value) / (slider_musica.max_value - slider_musica.min_value)
+	var balls = (slider_sfx.value - slider_sfx.min_value) / (slider_sfx.max_value - slider_sfx.min_value)
+	
+	ball_geral.position.x = (ballg * 312) - 14
+	ball_musica.position.x = (ballm * 306) - 14
+	ball_sfx.position.x = (balls * 306) - 14
+	
+	if Input.is_action_just_pressed("ui_cancel") && not button_pausar.disabled:
+		pausar()
+	elif Input.is_action_just_pressed("ui_cancel") && button_pausar.disabled:
+		despausar()
+
 func _on_button_pausar_button_down() -> void:
-	path_follow.pausar()
-	temporizador.pausar()
-	interagiveis.desabilita()
-	sfx_clique.play(0.1)
-	button_pausar.visible = false
-	menu_pause.visible = true
-	habilita_botoes(true)
+	pausar()
 
 func _on_btn_voltar_button_down() -> void:
-	path_follow.despausar()
-	temporizador.despausar()
-	interagiveis.habilita()
-	sfx_clique.play(0.1)
-	button_pausar.visible = true
-	menu_pause.visible = false
-	habilita_botoes(false)
+	despausar()
 
 func _on_btn_voltar_menu_button_down() -> void:
 	get_tree().change_scene_to_packed(MENU)
@@ -108,6 +116,25 @@ func habilita_botoes(status: bool):
 	slider_geral.editable = status
 	slider_musica.editable = status
 	slider_sfx.editable = status
+	button_pausar.disabled = status
 	check_tela_cheia.disabled = not status
 	button_voltar.disabled = not status
 	button_voltar_menu.disabled = not status
+
+func pausar():
+	path_follow.pausar()
+	temporizador.pausar()
+	interagiveis.desabilita()
+	sfx_clique.play(0.1)
+	button_pausar.visible = false
+	menu_pause.visible = true
+	habilita_botoes(true)
+
+func despausar():
+	path_follow.despausar()
+	temporizador.despausar()
+	interagiveis.habilita()
+	sfx_clique.play(0.1)
+	button_pausar.visible = true
+	menu_pause.visible = false
+	habilita_botoes(false)
