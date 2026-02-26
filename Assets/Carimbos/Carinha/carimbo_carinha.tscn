@@ -50,18 +50,23 @@ _data = {
 }
 
 [node name="CarimboCarinha" type="Node2D" unique_id=2017139842]
+use_parent_material = true
 script = ExtResource("1_h83fl")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1476878074]
+use_parent_material = true
 curve = SubResource("Curve2D_h83fl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=468228753]
+use_parent_material = true
 rotates = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=647627243]
+use_parent_material = true
 texture = ExtResource("1_6qxlb")
 
 [node name="ClickControl" type="Control" parent="Path2D/PathFollow2D/Sprite2D" unique_id=854250653]
+use_parent_material = true
 layout_mode = 3
 anchor_left = 0.229
 anchor_top = 0.04398148
@@ -76,17 +81,21 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="AreaEsquerda" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1980411099 groups=["Carimbo Carinha"]]
+use_parent_material = true
 position = Vector2(-360, 385)
 priority = 1
 
 [node name="CollisionShapeE" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaEsquerda" unique_id=472197833]
+use_parent_material = true
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_bcten")
 
 [node name="AreaDireita" type="Area2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=17763046 groups=["Carimbo Carinha"]]
+use_parent_material = true
 position = Vector2(400, 385)
 
 [node name="CollisionShapeD" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite2D/AreaDireita" unique_id=1217799640]
+use_parent_material = true
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_lhow5")
 

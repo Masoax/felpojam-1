@@ -26,22 +26,21 @@
 [ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="21_66g34"]
 [ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="22_6rsyo"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
-frequency = 0.0002
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eywp2"]
-noise = SubResource("FastNoiseLite_b574n")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj3nl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1f61n"]
 shader = ExtResource("3_bkj33")
 shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.1
-shader_parameter/fps = 3.0
-shader_parameter/noise = SubResource("NoiseTexture2D_eywp2")
+shader_parameter/strength = 1.0
+shader_parameter/fps = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66g34"]
 atlas = ExtResource("4_yj3nl")
 region = Rect2(243, 142, 116, 103)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylc7e"]
+shader = ExtResource("3_bkj33")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 1.0
+shader_parameter/fps = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rsyo"]
 atlas = ExtResource("4_yj3nl")
@@ -102,6 +101,8 @@ _data = {
 script = ExtResource("1_jyft0")
 
 [node name="Control" type="Control" parent="." unique_id=88676640]
+material = SubResource("ShaderMaterial_1f61n")
+use_parent_material = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,6 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Hud" parent="Control" unique_id=1909643394 instance=ExtResource("8_jhwwu")]
+use_parent_material = true
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -117,13 +119,23 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Temporizador" parent="Control/Hud/Fundo" parent_id_path=PackedInt32Array(1909643394, 1464341148) index="0" unique_id=1943702586]
+[node name="Fundo" parent="Control/Hud" index="0" unique_id=1464341148]
+use_parent_material = true
+
+[node name="Temporizador" parent="Control/Hud/Fundo" index="0" unique_id=1943702586]
+use_parent_material = true
 value = 100.0
 texture_progress_offset = Vector2(3.035, 0)
 
+[node name="BordaPedidos" parent="Control/Hud/Fundo" index="1" unique_id=1533037619]
+use_parent_material = true
+
+[node name="HBoxContainer" parent="Control/Hud/Fundo/BordaPedidos" index="0" unique_id=1287350266]
+use_parent_material = true
+
 [node name="Fundo" type="TextureRect" parent="Control" unique_id=1751968541]
 z_index = -1
-material = SubResource("ShaderMaterial_yj3nl")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,7 +146,7 @@ texture = ExtResource("1_s4ywb")
 expand_mode = 1
 
 [node name="Esteira" type="TextureRect" parent="Control" unique_id=1217303739]
-material = SubResource("ShaderMaterial_yj3nl")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -146,6 +158,7 @@ expand_mode = 1
 
 [node name="BtnPausar" type="TextureButton" parent="Control" unique_id=2130120249 node_paths=PackedStringArray("shortcut_context")]
 top_level = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.026
@@ -164,6 +177,8 @@ stretch_mode = 4
 
 [node name="PauseMenu" type="Control" parent="Control" unique_id=656003305]
 z_index = 4
+material = SubResource("ShaderMaterial_ylc7e")
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,6 +196,7 @@ grow_vertical = 2
 color = Color(0.16470589, 0.16470589, 0.16470589, 0.60784316)
 
 [node name="FundoPause" type="TextureRect" parent="Control/PauseMenu" unique_id=402158808]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1484375
@@ -194,6 +210,7 @@ expand_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="CadernoConfig" type="TextureRect" parent="Control/PauseMenu/FundoPause" unique_id=961338843]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,6 +223,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CheckTelaCheia" type="CheckBox" parent="Control/PauseMenu/FundoPause" unique_id=1003755372]
 self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -227,6 +245,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BtnVoltar" type="Button" parent="Control/PauseMenu/FundoPause" unique_id=1501160435]
 self_modulate = Color(1, 1, 1, 0)
+use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.203125
@@ -239,6 +258,7 @@ text = "Voltar"
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnVoltarMenu" type="TextureButton" parent="Control/PauseMenu/FundoPause" unique_id=548125495]
+use_parent_material = true
 layout_mode = 0
 anchor_left = 0.21
 anchor_top = 0.7638743
@@ -333,6 +353,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Lixeira" parent="." unique_id=378623809 instance=ExtResource("2_j51uw")]
+use_parent_material = true
 position = Vector2(1120, 624)
 scale = Vector2(0.11, 0.11)
 
@@ -341,53 +362,64 @@ script = ExtResource("9_6rsyo")
 
 [node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
 z_index = 1
+use_parent_material = true
 position = Vector2(150, 280)
 scale = Vector2(0.16, 0.16)
 
 [node name="PrensaQuadrada" parent="interagiveis" unique_id=1770594812 instance=ExtResource("1_qcc3b")]
 z_index = 1
+use_parent_material = true
 position = Vector2(300, 281)
 scale = Vector2(0.16, 0.16)
 
 [node name="DispenserRosa" parent="interagiveis" unique_id=758154067 instance=ExtResource("5_s4ywb")]
 z_index = 1
+use_parent_material = true
 position = Vector2(433, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserAmarelo" parent="interagiveis" unique_id=1214482086 instance=ExtResource("6_jhwwu")]
 z_index = 1
+use_parent_material = true
 position = Vector2(558, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserVerde" parent="interagiveis" unique_id=1866376794 instance=ExtResource("7_jyft0")]
 z_index = 1
+use_parent_material = true
 position = Vector2(683, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="CarimboBela" parent="interagiveis" unique_id=2017139842 instance=ExtResource("10_2ch6n")]
 z_index = 1
+use_parent_material = true
 position = Vector2(807, 346)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 instance=ExtResource("11_ecr5f")]
 z_index = 1
+use_parent_material = true
 position = Vector2(915, 348)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 instance=ExtResource("12_oryen")]
 z_index = 1
+use_parent_material = true
 position = Vector2(1021, 350)
 scale = Vector2(0.08, 0.08)
 
 [node name="CaminhoChocolateReto" type="Path2D" parent="." unique_id=1855470123]
+use_parent_material = true
 curve = SubResource("Curve2D_j51uw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="CaminhoChocolateReto" unique_id=10136268]
+use_parent_material = true
 position = Vector2(-140, 490)
 rotates = false
 script = ExtResource("15_j51uw")
 
 [node name="ChocolateBase" parent="CaminhoChocolateReto/PathFollow2D" unique_id=25184117 instance=ExtResource("13_ecr5f")]
+use_parent_material = true
 scale = Vector2(0.07, 0.07)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037707540]

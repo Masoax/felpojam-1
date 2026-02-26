@@ -51,15 +51,19 @@ _data = {
 }
 
 [node name="PrensaCircular" type="Node2D" unique_id=1770485869]
+use_parent_material = true
 script = ExtResource("1_lfcmh")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1406064595]
+use_parent_material = true
 curve = SubResource("Curve2D_0j1gv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=144604134]
+use_parent_material = true
 rotates = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=447350219]
+use_parent_material = true
 texture = ExtResource("1_f7y2k")
 
 [node name="ClickControl" type="Control" parent="Path2D/PathFollow2D/Sprite2D" unique_id=2147052293]
@@ -89,22 +93,26 @@ scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_xxq78")
 
 [node name="extensao" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1823154141]
+use_parent_material = true
 position = Vector2(-57, -1065)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_1boq2")
 
 [node name="extensao2" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=153641913]
+use_parent_material = true
 position = Vector2(-15, -1574)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_1boq2")
 flip_h = true
 
 [node name="extensao3" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=169369932]
+use_parent_material = true
 position = Vector2(-60, -2095)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_1boq2")
 
 [node name="extensao4" type="Sprite2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=2108277708]
+use_parent_material = true
 position = Vector2(-19, -2608)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_1boq2")

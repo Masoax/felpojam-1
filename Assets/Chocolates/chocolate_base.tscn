@@ -7,9 +7,11 @@
 size = Vector2(1355, 668)
 
 [node name="ChocolateBase" type="Node2D" unique_id=1235136312]
+use_parent_material = true
 script = ExtResource("1_kkiwg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=273408905]
+use_parent_material = true
 position = Vector2(70, -226)
 texture = ExtResource("2_cml8k")
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bwj8f75xtgpbn"]
 
 [ext_resource type="Script" uid="uid://cf4lan6bwa4wa" path="res://Cenas/menu_principal.gd" id="1_bj1uy"]
+[ext_resource type="Material" uid="uid://bbbeib5buhv7s" path="res://Shaders/shader_material.tres" id="1_uhlvi"]
 [ext_resource type="PackedScene" uid="uid://csvwtbeuyp48q" path="res://Cenas/gameplay.tscn" id="3_xpioy"]
 [ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="4_hb70r"]
-[ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="7_b574n"]
 [ext_resource type="Texture2D" uid="uid://d0raukp451qpm" path="res://Sprites/Cadernos/CadernoTutorial.png" id="9_hb70r"]
 [ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="9_tv6oy"]
 [ext_resource type="Texture2D" uid="uid://37vurgy3fs8k" path="res://Sprites/Cadernos/CadernoInicial.png" id="9_uhlvi"]
@@ -13,21 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="11_tv6oy"]
 [ext_resource type="Texture2D" uid="uid://bkhg8i1ka2bec" path="res://Sprites/Cadernos/SliderBall.png" id="11_uhlvi"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_b574n"]
-frequency = 0.0002
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_611wp"]
-noise = SubResource("FastNoiseLite_b574n")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpioy"]
-shader = ExtResource("7_b574n")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 0.1
-shader_parameter/fps = 3.0
-shader_parameter/noise = SubResource("NoiseTexture2D_611wp")
-
 [node name="MenuPrincipal" type="Control" unique_id=1363727023]
-material = SubResource("ShaderMaterial_xpioy")
+material = ExtResource("1_uhlvi")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
