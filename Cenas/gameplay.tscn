@@ -182,19 +182,16 @@ color = Color(0.16470589, 0.16470589, 0.16470589, 0.60784316)
 
 [node name="FundoPause" type="TextureRect" parent="Control/PauseMenu" unique_id=402158808]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -318.33334
-offset_right = 450.0
-offset_bottom = 318.33334
+anchors_preset = -1
+anchor_left = 0.1484375
+anchor_top = 0.057870355
+anchor_right = 0.8515625
+anchor_bottom = 0.9421297
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_bkj33")
 expand_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="CadernoConfig" type="TextureRect" parent="Control/PauseMenu/FundoPause" unique_id=961338843]
 layout_mode = 1
@@ -212,12 +209,14 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.62500006
-anchor_top = 0.7875
-anchor_right = 0.8945314
-anchor_bottom = 0.8541667
-offset_right = -230.00012
-offset_bottom = -24.0
+anchor_left = 0.568099
+anchor_top = 0.783137
+anchor_right = 0.95143235
+anchor_bottom = 0.8585297
+offset_left = 51.210938
+offset_top = 2.7778015
+offset_right = -281.21094
+offset_bottom = -26.777771
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 2)
@@ -241,14 +240,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BtnVoltarMenu" type="TextureButton" parent="Control/PauseMenu/FundoPause" unique_id=548125495]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 486.33334
-offset_right = 291.0
-offset_bottom = 519.3334
+anchor_left = 0.21
+anchor_top = 0.7638743
+anchor_right = 0.32333332
+anchor_bottom = 0.8157068
+offset_top = -3.0517578e-05
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_6rsyo")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="SliderGeral" type="HSlider" parent="Control/PauseMenu/FundoPause" unique_id=337694685]
 self_modulate = Color(1, 1, 1, 0)

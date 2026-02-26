@@ -57,3 +57,4 @@ clique={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.16862746, 0.12156863, 0.42745098, 1)

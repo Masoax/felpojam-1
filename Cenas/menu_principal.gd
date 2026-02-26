@@ -101,14 +101,15 @@ func _on_slider_sfx_value_changed(value: float):
 # Configuração da tela cheia
 func _on_check_tela_cheia_toggled(toggled_on: bool):
 	if toggled_on:
-		sfx_clique.play(0.1)
 		Visual_Config.texture = textura_janela
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
-		sfx_clique.play(0.1)
 		Visual_Config.texture = textura_Cheia
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	salvar_configuracoes()
+	
+func _on_check_tela_cheia_pressed():
+	sfx_clique.play(0.1)
 		
 # funções para trocar o menu inicial com os dos creditos e vice-versa
 func exibir_creditos(mostrar_creditos: bool):
