@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://jhske44whbf6" path="res://Cenas/gameplay.gd" id="1_jyft0"]
 [ext_resource type="PackedScene" uid="uid://d3g2ssfo4j0kg" path="res://Assets/Prensas/Quadrada/prensa_quadrada.tscn" id="1_qcc3b"]
 [ext_resource type="Texture2D" uid="uid://dyoqei7mehgx" path="res://Sprites/gameplay/background.png" id="1_s4ywb"]
+[ext_resource type="Material" uid="uid://bbbeib5buhv7s" path="res://Shaders/shader_material.tres" id="2_1f61n"]
 [ext_resource type="PackedScene" uid="uid://csx8aaujrjc46" path="res://Assets/Prensas/Circular/prensa_circular.tscn" id="2_6y4ne"]
 [ext_resource type="Texture2D" uid="uid://q7t23b1l56ni" path="res://Sprites/Cadernos/CadernoFundo.png" id="2_bkj33"]
 [ext_resource type="PackedScene" uid="uid://cubwtqnwh6a37" path="res://Assets/lixeira.tscn" id="2_j51uw"]
-[ext_resource type="Shader" uid="uid://c2gptsqfbto3g" path="res://Shaders/squigglevision.gdshader" id="3_bkj33"]
 [ext_resource type="Texture2D" uid="uid://dmrmdimgqhfbw" path="res://Sprites/Cadernos/CadernoConfigW.png" id="3_eywp2"]
 [ext_resource type="Texture2D" uid="uid://bnq2pa25qj4a6" path="res://Sprites/gameplay/Esteira/esteira_frame_1.png" id="3_oryen"]
 [ext_resource type="Texture2D" uid="uid://i2sctjrbdrc" path="res://Sprites/gameplay/icones_menu_pause.png" id="4_yj3nl"]
@@ -26,21 +26,9 @@
 [ext_resource type="AudioStream" uid="uid://brqrw2ufml0ul" path="res://Sons/SFX/SfxCliqueMenu.wav" id="21_66g34"]
 [ext_resource type="AudioStream" uid="uid://b5d2saalihq23" path="res://Sons/SFX/SfxCliqueVoltar.ogg" id="22_6rsyo"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1f61n"]
-shader = ExtResource("3_bkj33")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 1.0
-shader_parameter/fps = 6.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_66g34"]
 atlas = ExtResource("4_yj3nl")
 region = Rect2(243, 142, 116, 103)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylc7e"]
-shader = ExtResource("3_bkj33")
-shader_parameter/scale = Vector2(1, 1)
-shader_parameter/strength = 1.0
-shader_parameter/fps = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6rsyo"]
 atlas = ExtResource("4_yj3nl")
@@ -101,7 +89,7 @@ _data = {
 script = ExtResource("1_jyft0")
 
 [node name="Control" type="Control" parent="." unique_id=88676640]
-material = SubResource("ShaderMaterial_1f61n")
+material = ExtResource("2_1f61n")
 use_parent_material = true
 layout_mode = 3
 anchors_preset = 15
@@ -161,23 +149,19 @@ top_level = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.026
-anchor_top = 0.042000003
-anchor_right = 0.057000004
-anchor_bottom = 0.097
-offset_left = -0.27999878
-offset_top = -0.24000168
-offset_right = 0.039993286
-offset_bottom = 0.15999603
+anchor_left = 0.02578125
+anchor_top = 0.041666668
+anchor_right = 0.05703125
+anchor_bottom = 0.09166667
 mouse_default_cursor_shape = 2
 shortcut_context = NodePath("..")
 texture_normal = SubResource("AtlasTexture_66g34")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" type="Control" parent="Control" unique_id=656003305]
 z_index = 4
-material = SubResource("ShaderMaterial_ylc7e")
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -362,7 +346,6 @@ script = ExtResource("9_6rsyo")
 
 [node name="PrensaCircular" parent="interagiveis" unique_id=1770485869 instance=ExtResource("2_6y4ne")]
 z_index = 1
-use_parent_material = true
 position = Vector2(150, 280)
 scale = Vector2(0.16, 0.16)
 
@@ -374,37 +357,31 @@ scale = Vector2(0.16, 0.16)
 
 [node name="DispenserRosa" parent="interagiveis" unique_id=758154067 instance=ExtResource("5_s4ywb")]
 z_index = 1
-use_parent_material = true
 position = Vector2(433, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserAmarelo" parent="interagiveis" unique_id=1214482086 instance=ExtResource("6_jhwwu")]
 z_index = 1
-use_parent_material = true
 position = Vector2(558, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="DispenserVerde" parent="interagiveis" unique_id=1866376794 instance=ExtResource("7_jyft0")]
 z_index = 1
-use_parent_material = true
 position = Vector2(683, 349)
 scale = Vector2(0.07, 0.07)
 
 [node name="CarimboBela" parent="interagiveis" unique_id=2017139842 instance=ExtResource("10_2ch6n")]
 z_index = 1
-use_parent_material = true
 position = Vector2(807, 346)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboCarinha" parent="interagiveis" unique_id=946577508 instance=ExtResource("11_ecr5f")]
 z_index = 1
-use_parent_material = true
 position = Vector2(915, 348)
 scale = Vector2(0.08, 0.08)
 
 [node name="CarimboMeiaum" parent="interagiveis" unique_id=1556160325 instance=ExtResource("12_oryen")]
 z_index = 1
-use_parent_material = true
 position = Vector2(1021, 350)
 scale = Vector2(0.08, 0.08)
 
@@ -419,7 +396,6 @@ rotates = false
 script = ExtResource("15_j51uw")
 
 [node name="ChocolateBase" parent="CaminhoChocolateReto/PathFollow2D" unique_id=25184117 instance=ExtResource("13_ecr5f")]
-use_parent_material = true
 scale = Vector2(0.07, 0.07)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037707540]
