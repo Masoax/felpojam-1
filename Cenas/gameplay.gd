@@ -46,9 +46,9 @@ func _process(_delta):
 	var ballm = (slider_musica.value - slider_musica.min_value) / (slider_musica.max_value - slider_musica.min_value)
 	var balls = (slider_sfx.value - slider_sfx.min_value) / (slider_sfx.max_value - slider_sfx.min_value)
 	
-	ball_geral.position.x = (ballg * 312) - 14
-	ball_musica.position.x = (ballm * 306) - 14
-	ball_sfx.position.x = (balls * 306) - 14
+	ball_geral.position.x = (ballg * 312) - 15
+	ball_musica.position.x = (ballm * 306) - 15
+	ball_sfx.position.x = (balls * 306) - 15
 	
 	if Input.is_action_just_pressed("ui_cancel") && not button_pausar.disabled:
 		pausar()
@@ -122,6 +122,7 @@ func habilita_botoes(status: bool):
 	button_voltar_menu.disabled = not status
 
 func pausar():
+	%TimerEsteira.paused = true
 	path_follow.pausar()
 	temporizador.pausar()
 	interagiveis.desabilita()
@@ -131,6 +132,7 @@ func pausar():
 	habilita_botoes(true)
 
 func despausar():
+	%TimerEsteira.paused = false
 	path_follow.despausar()
 	temporizador.despausar()
 	interagiveis.habilita()
@@ -138,3 +140,25 @@ func despausar():
 	button_pausar.visible = true
 	menu_pause.visible = false
 	habilita_botoes(false)
+
+# Masoax passou por aqui
+@export var img_esteira1: Texture2D
+@export var img_esteira2: Texture2D
+
+@onready var Visual_Esteira = %Esteira
+
+var troca_frame = true
+
+func _on_timer_esteira_timeout():
+	troca_frame = !troca_frame
+	
+	if Resultado.jogador_venceu == true:
+		if troca_frame:
+			Visual_Esteira.texture = img_esteira1
+		else:
+			Visual_Esteira.texture = img_esteira2
+	else:
+		if troca_frame:
+			Visual_Esteira.texture = img_esteira1
+		else:
+			Visual_Esteira.texture = img_esteira2
